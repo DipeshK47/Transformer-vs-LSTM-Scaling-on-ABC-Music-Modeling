@@ -1,0 +1,89 @@
+file,tune_idx,syntactic_valid,midi_ok,midi_path,error
+cond_1.abc,1,0,0,,substring not found
+cond_10.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/cond_10_t1.mid,
+cond_11.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/cond_11_t1.mid,
+cond_12.abc,1,0,0,,substring not found
+cond_13.abc,1,0,0,,substring not found
+cond_14.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/cond_14_t1.mid,
+cond_15.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/cond_15_t1.mid,
+cond_16.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/cond_16_t1.mid,
+cond_17.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/cond_17_t1.mid,
+cond_18.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/cond_18_t1.mid,
+cond_19.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/cond_19_t1.mid,
+cond_2.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/cond_2_t1.mid,
+cond_20.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/cond_20_t1.mid,
+cond_21.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/cond_21_t1.mid,
+cond_22.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/cond_22_t1.mid,
+cond_23.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/cond_23_t1.mid,
+cond_24.abc,1,0,0,,substring not found
+cond_25.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/cond_25_t1.mid,
+cond_3.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/cond_3_t1.mid,
+cond_3.abc,2,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/cond_3_t2.mid,
+cond_4.abc,1,0,0,,substring not found
+cond_5.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/cond_5_t1.mid,
+cond_6.abc,1,0,0,,substring not found
+cond_7.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/cond_7_t1.mid,
+cond_8.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/cond_8_t1.mid,
+cond_9.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/cond_9_t1.mid,
+midi/cond_10.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/cond_11.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/cond_14.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/cond_15.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/cond_16.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/cond_17.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/cond_18.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/cond_19.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/cond_2.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/cond_20.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/cond_21.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/cond_22.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/cond_23.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/cond_25.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/cond_3-1.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/cond_5.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/cond_7.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/cond_8.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/cond_9.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/uncond_1.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/uncond_10.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/uncond_11.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/uncond_12.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/uncond_13.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/uncond_14-1.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/uncond_16.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/uncond_18.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/uncond_19.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/uncond_20.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/uncond_21.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/uncond_23.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/uncond_25.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/uncond_3.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/uncond_4.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/uncond_5.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+midi/uncond_6.mid,1,0,0,,"missing headers (need X:, T:, K:)"
+uncond_1.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/uncond_1_t1.mid,
+uncond_10.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/uncond_10_t1.mid,
+uncond_11.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/uncond_11_t1.mid,
+uncond_12.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/uncond_12_t1.mid,
+uncond_13.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/uncond_13_t1.mid,
+uncond_14.abc,1,1,0,,"the object (<music21.meter.TimeSignature 3/4>, id()=23247801858368 is already found in this Stream (<music21.stream.Part 0x1524ccc0a1f0>, id()=23247798182384)"
+uncond_14.abc,2,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/uncond_14_t2.mid,
+uncond_15.abc,1,0,0,,substring not found
+uncond_16.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/uncond_16_t1.mid,
+uncond_17.abc,1,1,0,,"the object (<music21.meter.TimeSignature 6/8>, id()=23247799856096 is already found in this Stream (<music21.stream.Part 0x1524cd12c820>, id()=23247803566112)"
+uncond_18.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/uncond_18_t1.mid,
+uncond_19.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/uncond_19_t1.mid,
+uncond_2.abc,1,1,0,,"the object (<music21.meter.TimeSignature 6/8>, id()=23247828706688 is already found in this Stream (<music21.stream.Part 0x1524cce44cd0>, id()=23247800519888)"
+uncond_20.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/uncond_20_t1.mid,
+uncond_21.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/uncond_21_t1.mid,
+uncond_22.abc,1,1,0,,"the object (<music21.meter.TimeSignature 6/8>, id()=23247798844000 is already found in this Stream (<music21.stream.Part 0x1524cce0b730>, id()=23247800284976)"
+uncond_23.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/uncond_23_t1.mid,
+uncond_24.abc,1,1,0,,"the object (<music21.meter.TimeSignature 3/4>, id()=23247799717648 is already found in this Stream (<music21.stream.Part 0x1524ccb7b9a0>, id()=23247797598624)"
+uncond_25.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/uncond_25_t1.mid,
+uncond_3.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/uncond_3_t1.mid,
+uncond_4.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/uncond_4_t1.mid,
+uncond_5.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/uncond_5_t1.mid,
+uncond_6.abc,1,1,1,/scratch/dk5288/code/my_project/part4/sample_eval_out/midi/uncond_6_t1.mid,
+uncond_7.abc,1,1,0,,"the object (<music21.meter.TimeSignature 6/8>, id()=23247800285552 is already found in this Stream (<music21.stream.Part 0x1524ccdc2f70>, id()=23247799988080)"
+uncond_8.abc,1,1,0,,cannot process repeats on Stream that does not contain measures
+uncond_9.abc,1,1,0,,"the object (<music21.meter.TimeSignature 3/4>, id()=23247802270192 is already found in this Stream (<music21.stream.Part 0x1524cced9580>, id()=23247801128320)"

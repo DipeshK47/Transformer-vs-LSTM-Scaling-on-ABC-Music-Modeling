@@ -1,0 +1,12 @@
+{
+  "timestamp": "2025-12-15 21:00:12",
+  "samples_dir": "/scratch/dk5288/code/my_project/part4/samples",
+  "out_dir": "/scratch/dk5288/code/my_project/part4/sample_eval_out",
+  "total_tunes": 88,
+  "syntactic_valid_pct": 51.13636363636363,
+  "abc_to_midi_success_pct": 42.04545454545455,
+  "used_abc2midi": false,
+  "proxy_char_trigram_perplexity": 4.086756237318369,
+  "proxy_note": "This perplexity is a character trigram proxy trained on the samples, not the transformer or RNN perplexity.",
+  "details_csv": "/scratch/dk5288/code/my_project/part4/sample_eval_out/sample_eval_details.csv"
+}

@@ -1,0 +1,9 @@
+FINAL PERPLEXITY ON TEST SET = 25.16
+
+
+SAMPLE EVALUATION (ABC)
+Samples dir: /scratch/dk5288/code/my_project/part4/samples
+Total ABC files: 50
+Syntactically valid: 35 (70.00%)
+Converted to MIDI (of all): 25 (50.00%)
+Converted to MIDI (of valid only): 25 (71.43%)
