@@ -1,4 +1,4 @@
-# dataset_stats.py
+
 import os
 import json
 import random
@@ -8,9 +8,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 
-# Paths
-MIDI_ROOT = "/scratch/dk5288/data/lmd_full"  # original MIDI dataset root
-ABC_ROOT = "/scratch/dk5288/data/abc_midi2abc"  # midi2abc output
+
+MIDI_ROOT = "/scratch/dk5288/data/lmd_full"  
+ABC_ROOT = "/scratch/dk5288/data/abc_midi2abc"  
 CORPUS_DIR = "/scratch/dk5288/data/abc_char_corpus_98_1_1"
 
 STATS_JSON_PATH = os.path.join(CORPUS_DIR, "stats.json")
@@ -32,10 +32,10 @@ def load_vocab():
     print(f"Loading vocab from {VOCAB_JSON_PATH}")
     with open(VOCAB_JSON_PATH, "r", encoding="utf8") as f:
         vocab = json.load(f)
-    # vocab is token -> id
+    
     inv_vocab = {v: k for k, v in vocab.items()}
     vocab_size = len(vocab)
-    # show a small subset of tokens
+    
     sample_ids = sorted(inv_vocab.keys())[:50]
     sample_tokens = [inv_vocab[i] for i in sample_ids]
     return vocab, vocab_size, sample_tokens
@@ -86,7 +86,7 @@ def summarize_lengths(lengths):
 
 
 def plot_histograms(lengths):
-    # Simple linear scale histogram (with a cap to avoid crazy outliers dominating)
+    
     max_for_plot = np.percentile(lengths, 99.5)
     clipped = np.clip(lengths, 0, max_for_plot)
 
@@ -100,7 +100,7 @@ def plot_histograms(lengths):
     plt.close()
     print(f"Saved length histogram (linear y) to {HIST_PATH_LINEAR}")
 
-    # Log scale y for better visibility of tail
+    
     plt.figure(figsize=(8, 5))
     plt.hist(clipped, bins=100, log=True)
     plt.xlabel("Tune length (characters)")
@@ -120,7 +120,7 @@ def save_sample_abc(abc_files):
     print(f"Sampling ABC snippet from {sample_path}")
     try:
         text = sample_path.read_text(encoding="utf8", errors="ignore")
-        # keep only the first few lines for illustration
+        
         lines = text.splitlines()
         snippet = "\n".join(lines[:40])
         with open(SAMPLE_ABC_PATH, "w", encoding="utf8") as f:
@@ -133,27 +133,27 @@ def save_sample_abc(abc_files):
 def main():
     os.makedirs(CORPUS_DIR, exist_ok=True)
 
-    # 1. Load corpus-wide stats from step 1.3
+    
     corpus_stats = load_corpus_stats()
 
-    # 2. Load vocab and show some tokens
+    
     vocab, vocab_size, sample_tokens = load_vocab()
 
-    # 3. Conversion success rate and ABC file list
+    
     n_midi, n_abc, success_rate, abc_files = compute_conversion_success()
 
-    # 4. Compute per tune length distribution
+    
     lengths = compute_tune_lengths(abc_files)
     length_stats = summarize_lengths(lengths)
 
-    # 5. Histograms
+    
     if length_stats is not None:
         plot_histograms(lengths)
 
-    # 6. Save one small ABC snippet
+    
     save_sample_abc(abc_files)
 
-    # 7. Collect everything into a single JSON summary
+    
     summary = {
         "vocab_size": vocab_size,
         "vocab_example_tokens": sample_tokens,

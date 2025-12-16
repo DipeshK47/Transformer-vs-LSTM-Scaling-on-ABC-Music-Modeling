@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import re
 import sys
 import csv
@@ -8,10 +6,10 @@ from pathlib import Path
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Path to your combined RNN training log (slurm output or tee output)
+
 LOG_FILE = "/scratch/dk5288/code/my_project/part3/final_model_logs.out"
 
-# Output directory for plots and summary (will be created next to log file)
+
 OUT_DIR = Path(LOG_FILE).parent
 
 MODEL_SIZES = ["tiny", "small", "medium", "large"]
@@ -101,17 +99,17 @@ def extract_training_curves_and_times(lines):
 
     current_size = None
 
-    # "header" line before each run
+    
     start_model_re = re.compile(
         r"Running LSTM training for (tiny|small|medium|large)"
     )
 
-    # training step lines
+    
     train_line_re = re.compile(
         r"\[train\]\s+step\s+(\d+)/\d+\s+loss=([0-9.]+)"
     )
 
-    # summary lines inside the block
+    
     time_line_re = re.compile(
         r"\[train\]\s+Wall clock minutes:\s+([0-9.]+)"
     )
@@ -146,7 +144,7 @@ def extract_training_curves_and_times(lines):
             peak_mem_gb[current_size] = gb
             continue
 
-    # convert lists to numpy arrays
+    
     for s in MODEL_SIZES:
         steps = np.array(train_steps[s], dtype=np.int64) if train_steps[s] else np.array([])
         losses = np.array(train_losses[s], dtype=np.float32) if train_losses[s] else np.array([])

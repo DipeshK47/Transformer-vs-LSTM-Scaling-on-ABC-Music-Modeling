@@ -1,4 +1,4 @@
-# /scratch/dk5288/code/my_project/part4/plot.py
+
 
 from __future__ import annotations
 
@@ -6,14 +6,14 @@ import re
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
-# =========================
-# Paths (hardcoded)
-# =========================
+
+
+
 RNN_LOG_PATH = "/scratch/dk5288/code/my_project/part2/150M_Training_Log.out"
 TRANSFORMER_LOG_PATH = "/scratch/dk5288/code/my_project/part3/final_model_logs.out"
 OUT_PNG_PATH = "/scratch/dk5288/code/my_project/part4/scaling_plot.png"
 
-# If a log ever lacks params, you can fill this.
+
 SIZE_TO_PARAMS_MANUAL: Dict[str, int] = {}
 
 
@@ -29,14 +29,14 @@ def _unit_to_multiplier(unit: str) -> float:
 
 
 def _parse_size_name(segment: str) -> Optional[str]:
-    # Common patterns
+    
     pats = [
         r"\bStarting training for\s+(\w+)\b",
         r"\bmodel_size\s*[:=]\s*(\w+)\b",
         r"\bsize\s*[:=]\s*(\w+)\b",
         r"\bvariant\s*[:=]\s*(\w+)\b",
         r"\brun_name\s*[:=]\s*(\w+)\b",
-        # Your log style: "[model] RNN tiny has ... parameters"
+        
         r"^\[model\]\s+\w+\s+(\w+)\s+has\b",
     ]
     for pat in pats:
@@ -48,14 +48,14 @@ def _parse_size_name(segment: str) -> Optional[str]:
 
 def _parse_params(segment: str) -> Optional[int]:
     patterns = [
-        # "Model X has 12.3M parameters"
+        
         r"\bModel\s+\w+\s+has\s+([0-9]*\.?[0-9]+)\s*([KMB])?\s*parameters\b",
-        # "[model] RNN tiny has 145,024 trainable parameters"
+        
         r"^\[model\]\s+\w+\s+\w+\s+has\s+([0-9][0-9,]*)\s+trainable\s+parameters\b",
         r"^\[model\]\s+\w+\s+\w+\s+has\s+([0-9]*\.?[0-9]+)\s*([KMB])?\s+trainable\s+parameters\b",
-        # "[train] Parameters: 145,024"
+        
         r"^\[train\]\s+Parameters:\s*([0-9][0-9,]*)\b",
-        # generic params lines
+        
         r"\b(trainable\s+)?params?\s*[:=]\s*([0-9]*\.?[0-9]+)\s*([KMB])\b",
         r"\b(trainable\s+)?params?\s*[:=]\s*([0-9][0-9,]*)\b",
         r"\b(n_params|num_params|num_parameters|total_params|total_parameters)\s*[:=]\s*([0-9]*\.?[0-9]+)\s*([KMB])\b",
@@ -72,7 +72,7 @@ def _parse_params(segment: str) -> Optional[int]:
             if not gs:
                 continue
 
-            # float + unit cases
+            
             if len(gs) >= 2 and re.fullmatch(r"[KMB]", str(gs[-1]).strip(), flags=re.IGNORECASE):
                 try:
                     val = float(str(gs[-2]))
@@ -82,7 +82,7 @@ def _parse_params(segment: str) -> Optional[int]:
                 except Exception:
                     pass
 
-            # comma integer cases
+            
             for token in reversed(gs):
                 tok = str(token).replace(",", "").strip()
                 if re.fullmatch(r"[0-9]+", tok):
@@ -96,7 +96,7 @@ def _parse_params(segment: str) -> Optional[int]:
 
 
 def _parse_best_val_loss(segment: str) -> Optional[float]:
-    # Your log: "[train] Best val loss: 1.2306"
+    
     m = re.search(r"^\[train\]\s+Best\s+val\s+loss:\s*([0-9]*\.?[0-9]+)\b", segment, flags=re.IGNORECASE | re.MULTILINE)
     if m:
         return float(m.group(1))
@@ -104,7 +104,7 @@ def _parse_best_val_loss(segment: str) -> Optional[float]:
 
 
 def _parse_min_or_last_val_loss(segment: str) -> Optional[float]:
-    # Your log: "[eval] step 500  val_loss=1.4968"
+    
     vals = re.findall(r"\bval_loss\s*[:=]\s*([0-9]*\.?[0-9]+)\b", segment, flags=re.IGNORECASE)
     if not vals:
         vals = re.findall(r"\bval\s+loss\s*[:=]\s*([0-9]*\.?[0-9]+)\b", segment, flags=re.IGNORECASE)
@@ -114,22 +114,22 @@ def _parse_min_or_last_val_loss(segment: str) -> Optional[float]:
         return None
 
     nums = [float(x) for x in vals]
-    # Prefer min (more meaningful for "best over epoch"), but still robust
+    
     return min(nums)
 
 
 def _split_into_runs(text: str) -> List[Tuple[int, int]]:
-    # Highest priority
+    
     starts = [m.start() for m in re.finditer(r"Starting training for\s+\w+", text, flags=re.IGNORECASE)]
     if starts:
         return [(starts[i], starts[i + 1] if i + 1 < len(starts) else len(text)) for i in range(len(starts))]
 
-    # Your log style: each run begins with a [model] ... has ... parameters line
+    
     model_starts = [m.start() for m in re.finditer(r"^\[model\].*has.*parameters", text, flags=re.IGNORECASE | re.MULTILINE)]
     if len(model_starts) >= 2:
         return [(model_starts[i], model_starts[i + 1] if i + 1 < len(model_starts) else len(text)) for i in range(len(model_starts))]
 
-    # Fallback: whole file
+    
     return [(0, len(text))]
 
 

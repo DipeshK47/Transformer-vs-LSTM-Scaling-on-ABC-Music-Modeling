@@ -1,4 +1,4 @@
-# gpt_model.py
+
 import math
 from dataclasses import dataclass
 
@@ -29,35 +29,35 @@ class CausalSelfAttention(nn.Module):
         self.qkv = nn.Linear(config.n_embd, 3 * config.n_embd, bias=False)
         self.proj = nn.Linear(config.n_embd, config.n_embd, bias=False)
 
-        # causal mask kept as a buffer so we do not recreate it every time
+        
         mask = torch.tril(torch.ones(config.block_size, config.block_size))
-        # shape (1, 1, T, T) for broadcasting over batch and heads
+        
         self.register_buffer("mask", mask.view(1, 1, config.block_size, config.block_size))
 
     def forward(self, x):
-        # x: (B, T, C)
+        
         B, T, C = x.size()
 
-        qkv = self.qkv(x)  # (B, T, 3*C)
+        qkv = self.qkv(x)  
         q, k, v = qkv.split(C, dim=2)
 
-        # reshape for multi head attention
-        q = q.view(B, T, self.n_head, self.head_dim).transpose(1, 2)  # (B, nh, T, hd)
-        k = k.view(B, T, self.n_head, self.head_dim).transpose(1, 2)  # (B, nh, T, hd)
-        v = v.view(B, T, self.n_head, self.head_dim).transpose(1, 2)  # (B, nh, T, hd)
+        
+        q = q.view(B, T, self.n_head, self.head_dim).transpose(1, 2)  
+        k = k.view(B, T, self.n_head, self.head_dim).transpose(1, 2)  
+        v = v.view(B, T, self.n_head, self.head_dim).transpose(1, 2)  
 
-        # scaled dot product attention
-        att = (q @ k.transpose(-2, -1)) / math.sqrt(self.head_dim)  # (B, nh, T, T)
+        
+        att = (q @ k.transpose(-2, -1)) / math.sqrt(self.head_dim)  
 
-        # apply causal mask: only allow attention to current and previous positions
+        
         att = att.masked_fill(self.mask[:, :, :T, :T] == 0, float("-inf"))
         att = F.softmax(att, dim=-1)
 
-        y = att @ v  # (B, nh, T, hd)
+        y = att @ v  
 
-        # merge heads
-        y = y.transpose(1, 2).contiguous().view(B, T, C)  # (B, T, C)
-        y = self.proj(y)  # final projection
+        
+        y = y.transpose(1, 2).contiguous().view(B, T, C)  
+        y = self.proj(y)  
         return y
 
 
@@ -84,7 +84,7 @@ class Block(nn.Module):
         self.mlp = MLP(config)
 
     def forward(self, x):
-        # pre norm transformer block
+        
         x = x + self.attn(self.ln1(x))
         x = x + self.mlp(self.ln2(x))
         return x
@@ -105,12 +105,12 @@ class GPT(nn.Module):
         )
         self.lm_head = nn.Linear(config.n_embd, config.vocab_size, bias=False)
 
-        # weight tying (optional but standard)
+        
         self.transformer.wte.weight = self.lm_head.weight
 
         self.apply(self._init_weights)
 
-        # progress print: total parameters
+        
         total_params = sum(p.numel() for p in self.parameters())
         print(
             f"[GPT] Initialized model: layers={config.n_layer}, heads={config.n_head}, "
@@ -134,10 +134,10 @@ class GPT(nn.Module):
         B, T = idx.size()
         assert T <= self.config.block_size, "Sequence length exceeds block size"
 
-        pos = torch.arange(0, T, dtype=torch.long, device=idx.device)  # (T)
+        pos = torch.arange(0, T, dtype=torch.long, device=idx.device)  
 
-        tok_emb = self.transformer.wte(idx)          # (B, T, n_embd)
-        pos_emb = self.transformer.wpe(pos)[None]    # (1, T, n_embd)
+        tok_emb = self.transformer.wte(idx)          
+        pos_emb = self.transformer.wpe(pos)[None]    
 
         x = tok_emb + pos_emb
 
@@ -145,7 +145,7 @@ class GPT(nn.Module):
             x = block(x)
 
         x = self.transformer.ln_f(x)
-        logits = self.lm_head(x)                     # (B, T, vocab_size)
+        logits = self.lm_head(x)                     
 
         if targets is None:
             return logits, None
@@ -158,7 +158,7 @@ class GPT(nn.Module):
         return logits, loss
 
 
-# Convenience configs for scaling study
+
 
 def get_model_config(name: str, vocab_size: int, block_size: int = 512) -> GPTConfig:
     name = name.lower()
@@ -218,10 +218,10 @@ def get_model_config(name: str, vocab_size: int, block_size: int = 512) -> GPTCo
     return cfg
 
 
-# Optional small self test to show progress when you run this file directly
+
 if __name__ == "__main__":
-    vocab_size = 99   # set from your Part 1 stats
-    block_size = 512  # or 1024 if you want
+    vocab_size = 99   
+    block_size = 512  
 
     for name in ["tiny", "small", "medium", "large", "xl"]:
         print(f"\n[main] Building model '{name}'...")

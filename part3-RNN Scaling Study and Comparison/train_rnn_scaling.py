@@ -9,9 +9,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import argparse
-# ---------------------------------------------------------
-# Paths and global training setup
-# ---------------------------------------------------------
+
+
+
 
 DATA_DIR = "/scratch/dk5288/data/abc_char_corpus_98_1_1"
 TRAIN_TXT = os.path.join(DATA_DIR, "train.txt")
@@ -23,8 +23,8 @@ os.makedirs(OUT_DIR, exist_ok=True)
 
 RESULTS_CSV = Path(OUT_DIR) / "rnn_scaling_results.csv"
 
-BLOCK_SIZE = 256          # context length
-BATCH_SIZE = 64           # sequences per batch
+BLOCK_SIZE = 256          
+BATCH_SIZE = 64           
 TOKENS_PER_STEP = BLOCK_SIZE * BATCH_SIZE
 
 LR = 3e-4
@@ -32,13 +32,13 @@ WEIGHT_DECAY = 0.1
 BETAS = (0.9, 0.95)
 DROPOUT = 0.1
 
-WARMUP_FRACTION = 0.05    # first part of steps are warmup
-EVAL_EVERY = 500          # steps between full val evals
+WARMUP_FRACTION = 0.05    
+EVAL_EVERY = 500          
 
 
-# ---------------------------------------------------------
-# RNN model size configs
-# ---------------------------------------------------------
+
+
+
 
 MODEL_CONFIGS = {
     "tiny":   dict(n_layers=1, d_model=128),
@@ -48,9 +48,9 @@ MODEL_CONFIGS = {
 }
 
 
-# ---------------------------------------------------------
-# Data helpers
-# ---------------------------------------------------------
+
+
+
 
 def load_text(path: str, max_chars: int):
     print(f"[data] Loading from {path} (max_chars={max_chars})")
@@ -75,13 +75,13 @@ class TokenDatasetTXT:
     """
 
     def __init__(self, ids: torch.Tensor, max_effective_tokens=None):
-        # ids is a 1D tensor of token ids
+        
         total_tokens = ids.shape[0] - 1
         if max_effective_tokens is None:
             self.effective_tokens = total_tokens
         else:
             self.effective_tokens = min(total_tokens, max_effective_tokens)
-        # clip underlying buffer to a safe range
+        
         self.tokens = ids[: self.effective_tokens + 1]
 
     def num_steps_per_epoch(self) -> int:
@@ -93,7 +93,7 @@ class TokenDatasetTXT:
         B = BATCH_SIZE
         T = BLOCK_SIZE
 
-        # use numpy arrays then convert to torch for speed
+        
         x = np.empty((B, T), dtype=np.int64)
         y = np.empty((B, T), dtype=np.int64)
 
@@ -108,9 +108,9 @@ class TokenDatasetTXT:
         return x, y
 
 
-# ---------------------------------------------------------
-# RNN language model
-# ---------------------------------------------------------
+
+
+
 
 class RNNLM(nn.Module):
     def __init__(self, vocab_size: int, d_model: int, n_layers: int, dropout: float):
@@ -132,7 +132,7 @@ class RNNLM(nn.Module):
         self.ln_f = nn.LayerNorm(d_model)
         self.head = nn.Linear(d_model, vocab_size, bias=False)
 
-        # tie weights with embedding
+        
         self.head.weight = self.token_emb.weight
 
         self.reset_parameters()
@@ -147,11 +147,11 @@ class RNNLM(nn.Module):
         nn.init.xavier_uniform_(self.head.weight)
 
     def forward(self, idx, targets=None):
-        # idx: (B, T)
-        x = self.token_emb(idx)             # (B, T, C)
-        out, _ = self.rnn(x)                # (B, T, C)
+        
+        x = self.token_emb(idx)             
+        out, _ = self.rnn(x)                
         out = self.ln_f(out)
-        logits = self.head(out)             # (B, T, V)
+        logits = self.head(out)             
 
         loss = None
         if targets is not None:
@@ -164,14 +164,14 @@ class RNNLM(nn.Module):
         return logits, loss
 
 
-# ---------------------------------------------------------
-# Helpers shared with transformer script
-# ---------------------------------------------------------
+
+
+
 
 def load_vocab():
     with open(VOCAB_PATH, "r", encoding="utf8") as f:
         vocab = json.load(f)
-    # vocab here is char -> index
+    
     stoi = {ch: int(idx) for ch, idx in vocab.items()}
     vocab_size = len(stoi)
     return stoi, vocab_size
@@ -211,7 +211,7 @@ def create_scheduler(optimizer, total_steps: int):
             return float(step + 1) / float(max(1, warmup_steps))
         progress = float(step - warmup_steps) / float(max(1, total_steps - warmup_steps))
         progress = min(max(progress, 1e-8), 1.0)
-        # cosine from 1 down to 0
+        
         return 0.5 * (1.0 + float(torch.cos(torch.tensor(progress * 3.1415926535))))
 
     return torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda)
@@ -252,9 +252,9 @@ def append_results_csv(row: dict):
         f.write(",".join(vals) + "\n")
 
 
-# ---------------------------------------------------------
-# Main
-# ---------------------------------------------------------
+
+
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -279,7 +279,7 @@ def main():
     stoi, vocab_size = load_vocab()
     print(f"[train] Vocab size: {vocab_size}")
 
-    # Load about 100M train tokens and 1M val tokens, plus BLOCK_SIZE for shifting
+    
     max_train_tokens = 100_000_000
     max_val_tokens = 1_000_000
 

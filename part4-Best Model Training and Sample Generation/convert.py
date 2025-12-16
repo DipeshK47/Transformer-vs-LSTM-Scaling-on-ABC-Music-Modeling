@@ -1,11 +1,11 @@
-# convert_abc_to_midi.py
+
 
 import os
 from glob import glob
 
 from music21 import converter
 
-# Folder where your ABC samples are saved
+
 SAMPLES_DIR = "/scratch/dk5288/code/my_project/part4/samples"
 MIDI_DIR = os.path.join(SAMPLES_DIR, "midi")
 
@@ -21,7 +21,7 @@ def convert_abc_file(abc_path: str, midi_path: str):
         print(f"[WARN] Failed to convert {abc_path}: {e}")
 
 def main():
-    # Make sure both folders exist
+    
     os.makedirs(SAMPLES_DIR, exist_ok=True)
     os.makedirs(MIDI_DIR, exist_ok=True)
 

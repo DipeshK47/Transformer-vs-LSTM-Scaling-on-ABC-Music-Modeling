@@ -1,4 +1,4 @@
-# train_gpt_scaling.py
+
 import os
 import json
 import math
@@ -12,27 +12,27 @@ from torch.cuda.amp import autocast, GradScaler
 
 from gpt_model import GPT, get_model_config
 
-# Paths to your processed data
+
 DATA_DIR = "/scratch/dk5288/data/abc_char_corpus_98_1_1"
 TRAIN_TXT = os.path.join(DATA_DIR, "train.txt")
 VAL_TXT = os.path.join(DATA_DIR, "val.txt")
 VOCAB_PATH = os.path.join(DATA_DIR, "vocab.json")
 
-# Training regime (same for all model sizes)
-TARGET_TOKENS = 150_000_000     # tokens seen in one epoch
-VAL_TOKENS = 5_000_000          # subset of val text for eval
 
-# Heavier training but still reasonable
-BLOCK_SIZE = 256                # context length
-BATCH_SIZE = 64                 # sequences per batch
+TARGET_TOKENS = 150_000_000     
+VAL_TOKENS = 5_000_000          
+
+
+BLOCK_SIZE = 256                
+BATCH_SIZE = 64                 
 
 LEARNING_RATE = 3e-4
 WEIGHT_DECAY = 0.1
 BETAS = (0.9, 0.95)
-WARMUP_FRACTION = 0.05          # fraction of steps used for LR warmup
+WARMUP_FRACTION = 0.05          
 MAX_GRAD_NORM = 1.0
-EVAL_INTERVAL = 500             # steps between full val eval
-EVAL_ITERS = 200                # val batches per eval
+EVAL_INTERVAL = 500             
+EVAL_ITERS = 200                
 SEED = 1337
 
 
@@ -138,22 +138,22 @@ def main():
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"[train] Using device: {device}")
 
-    # reset GPU peak memory stats so we get clean numbers for this run
+    
     if device == "cuda":
         torch.cuda.reset_peak_memory_stats()
 
-    # Load vocab
+    
     with open(VOCAB_PATH, "r", encoding="utf8") as f:
         vocab = json.load(f)
     stoi = {ch: int(idx) for ch, idx in vocab.items()}
     vocab_size = len(stoi)
     print(f"[train] Vocab size: {vocab_size}")
 
-    # Load subset of train and val text for one epoch regime
+    
     train_text = load_text(TRAIN_TXT, max_chars=TARGET_TOKENS)
     val_text = load_text(VAL_TXT, max_chars=VAL_TOKENS)
 
-    # Encode to ids
+    
     train_ids = encode_text(train_text, stoi)
     val_ids = encode_text(val_text, stoi)
 
@@ -165,15 +165,15 @@ def main():
     print(f"[train] tokens_per_step = {tokens_per_step}")
     print(f"[train] max_steps (one epoch over ~{TARGET_TOKENS} tokens) = {max_steps}")
 
-    # Build model
+    
     cfg = get_model_config(args.model_size, vocab_size=vocab_size, block_size=BLOCK_SIZE)
     model = GPT(cfg).to(device)
 
-    # Count parameters
+    
     n_params = sum(p.numel() for p in model.parameters())
     print(f"[train] Model {args.model_size} has {n_params / 1e6:.2f}M parameters")
 
-    # Optimizer and scaler for mixed precision
+    
     optimizer = torch.optim.AdamW(
         model.parameters(),
         lr=LEARNING_RATE,
@@ -182,18 +182,18 @@ def main():
     )
     scaler = GradScaler()
 
-    # Training loop
+    
     print("[train] Beginning training loop...")
     start_time = time.time()
 
     best_val = float("inf")
     for step in range(max_steps):
-        # Update LR
+        
         lr = get_lr(step, max_steps)
         for param_group in optimizer.param_groups:
             param_group["lr"] = lr
 
-        # Get a batch
+        
         xb, yb = train_data.get_batch(BATCH_SIZE, device)
 
         optimizer.zero_grad(set_to_none=True)
@@ -216,7 +216,7 @@ def main():
             val_loss = estimate_val_loss(model, val_data, device)
             print(f"[eval] step {step} val_loss={val_loss:.4f}")
 
-            # Save best checkpoint for this model size
+            
             if val_loss < best_val:
                 best_val = val_loss
                 ckpt_path = os.path.join(args.out_dir, f"{args.model_size}_best.pt")
@@ -235,13 +235,13 @@ def main():
     total_time = time.time() - start_time
     print(f"[train] Done. Total training time: {total_time/60:.2f} minutes")
 
-    # report peak GPU memory
+    
     if device == "cuda":
         max_mem_bytes = torch.cuda.max_memory_allocated()
         max_mem_gb = max_mem_bytes / (1024 ** 3)
         print(f"[train] Peak GPU memory allocated: {max_mem_gb:.2f} GB")
 
-    # Save final checkpoint too
+    
     final_path = os.path.join(args.out_dir, f"{args.model_size}_final.pt")
     torch.save(
         {

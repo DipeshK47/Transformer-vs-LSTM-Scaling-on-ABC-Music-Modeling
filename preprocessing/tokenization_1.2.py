@@ -5,7 +5,7 @@ from pathlib import Path
 from collections import Counter
 from tqdm import tqdm
 
-# Input and output paths
+
 ABC_ROOT = "/scratch/dk5288/data/abc_midi2abc"
 OUT_DIR = "/scratch/dk5288/data/abc_char_corpus"
 
@@ -14,10 +14,10 @@ VAL_PATH = os.path.join(OUT_DIR, "val.txt")
 VOCAB_PATH = os.path.join(OUT_DIR, "vocab.json")
 STATS_PATH = os.path.join(OUT_DIR, "stats.json")
 
-# Hyperparameters for splitting and filtering
+
 VAL_FRACTION = 0.1
-MIN_CHARS = 64          # drop very tiny tunes
-MAX_FILE_BYTES = 2_000_000  # skip huge or corrupted ABC files (> 2 MB)
+MIN_CHARS = 64          
+MAX_FILE_BYTES = 2_000_000  
 
 def load_abc_text(path: Path) -> str:
     """
@@ -30,13 +30,13 @@ def load_abc_text(path: Path) -> str:
             if line.startswith("%"):
                 continue
             lines.append(line)
-    # Keep original newlines, plus a blank line at end to separate tunes
+    
     return "".join(lines).rstrip() + "\n\n"
 
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
 
-    # Collect all ABC files
+    
     paths = sorted(Path(ABC_ROOT).rglob("*.abc"))
     n_total = len(paths)
     print(f"Found {n_total} ABC files under {ABC_ROOT}")
@@ -45,7 +45,7 @@ def main():
         print("No ABC files found. Check ABC_ROOT.")
         return
 
-    # Shuffle and split into train and val at file level
+    
     random.seed(1337)
     random.shuffle(paths)
     n_val = int(VAL_FRACTION * n_total)
@@ -71,7 +71,7 @@ def main():
             try:
                 size_bytes = path.stat().st_size
                 if size_bytes > MAX_FILE_BYTES:
-                    # Likely corrupted or extremely long, skip to avoid OOM
+                    
                     num_skipped_large += 1
                     continue
 
@@ -86,12 +86,12 @@ def main():
                 num_skipped_short += 1
                 continue
 
-            # Update vocab and stats
+            
             char_counter.update(text)
             lengths.append(n_chars)
             total_chars += n_chars
 
-            # Write to train or val
+            
             if path in val_set:
                 f_val.write(text)
                 num_val_tunes += 1
@@ -99,11 +99,11 @@ def main():
                 f_train.write(text)
                 num_train_tunes += 1
 
-    # Build vocab mapping char -> id
+    
     vocab_chars = sorted(char_counter.keys())
     vocab = {ch: i for i, ch in enumerate(vocab_chars)}
 
-    # Compute basic stats
+    
     if lengths:
         lengths_sorted = sorted(lengths)
         n = len(lengths_sorted)
@@ -142,7 +142,7 @@ def main():
             "example_chars": [],
         }
 
-    # Save vocab and stats
+    
     with open(VOCAB_PATH, "w", encoding="utf8") as f:
         json.dump(vocab, f, indent=2)
 

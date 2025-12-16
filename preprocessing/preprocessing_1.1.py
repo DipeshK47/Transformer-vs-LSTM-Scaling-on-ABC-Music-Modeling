@@ -5,14 +5,14 @@ from pathlib import Path
 from multiprocessing import Pool, cpu_count
 from tqdm import tqdm
 
-# Path to the midi2abc binary that you built
+
 MIDI2ABC_BIN = "/scratch/dk5288/code/my_project/midi2abc/abcmidi/midi2abc"
 
-# Input and output roots
+
 INPUT_DIR = "/scratch/dk5288/data/lmd_full"
 OUTPUT_DIR = "/scratch/dk5288/data/abc_midi2abc"
 
-# Error log
+
 LOG_FILE = "midi2abc_conversion_errors.log"
 
 
@@ -28,14 +28,14 @@ def process_file(midi_path: str):
     out_path = os.path.join(out_dir, base + ".abc")
 
     try:
-        # Skip if already converted and non empty
+        
         if os.path.exists(out_path) and os.path.getsize(out_path) > 0:
             return midi_path, True, "skipped_existing"
 
-        # Call midi2abc
+        
         result = subprocess.run(
             [MIDI2ABC_BIN, "-f", midi_path, "-o", out_path],
-            stdout=subprocess.DEVNULL,   # ignore stdout
+            stdout=subprocess.DEVNULL,   
             stderr=subprocess.PIPE,
             text=True,
         )
@@ -43,7 +43,7 @@ def process_file(midi_path: str):
         if result.returncode != 0:
             raise RuntimeError(f"midi2abc failed:\n{result.stderr}")
 
-        # Check output size
+        
         if not os.path.exists(out_path) or os.path.getsize(out_path) == 0:
             raise RuntimeError("Output ABC file is empty or missing")
 

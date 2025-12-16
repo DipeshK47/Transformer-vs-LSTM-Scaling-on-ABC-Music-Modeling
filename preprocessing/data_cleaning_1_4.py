@@ -3,16 +3,16 @@ import json
 from pathlib import Path
 from tqdm import tqdm
 
-# Root where all abc files from midi2abc live
+
 ABC_ROOT = "/scratch/dk5288/data/abc_midi2abc"
 
-# Where to write the cleaning report
+
 OUT_DIR = "/scratch/dk5288/data/abc_char_corpus_98_1_1"
 REPORT_PATH = os.path.join(OUT_DIR, "cleaning_report.json")
 
-# Length thresholds for "short" and "long" pieces in characters
-MIN_LEN_SHORT = 64       # below this is "very short"
-MAX_LEN_LONG = 8192      # above this is "very long"
+
+MIN_LEN_SHORT = 64       
+MAX_LEN_LONG = 8192      
 
 def main():
     abc_files = sorted(Path(ABC_ROOT).rglob("*.abc"))
@@ -50,7 +50,7 @@ def main():
         if L > MAX_LEN_LONG:
             long_count += 1
 
-        # Check for non ascii chars
+        
         if not text.isascii():
             non_ascii_files += 1
             for ch in text:

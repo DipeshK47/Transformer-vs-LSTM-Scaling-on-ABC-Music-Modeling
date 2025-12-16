@@ -1,4 +1,4 @@
-# rnn_model.py
+
 import math
 from dataclasses import dataclass
 
@@ -40,7 +40,7 @@ class CharLSTM(nn.Module):
         self.ln_f = nn.LayerNorm(config.hidden_dim)
         self.head = nn.Linear(config.hidden_dim, config.vocab_size, bias=False)
 
-        # optional weight tying (like GPT)
+        
         if config.emb_dim == config.hidden_dim:
             self.head.weight = self.token_emb.weight
 
@@ -75,10 +75,10 @@ class CharLSTM(nn.Module):
         B, T = idx.size()
         assert T <= self.config.block_size, "Sequence length exceeds block size"
 
-        x = self.token_emb(idx)             # (B, T, emb_dim)
-        out, _ = self.lstm(x)               # (B, T, hidden_dim)
+        x = self.token_emb(idx)             
+        out, _ = self.lstm(x)               
         out = self.ln_f(out)
-        logits = self.head(out)             # (B, T, vocab_size)
+        logits = self.head(out)             
 
         if targets is None:
             return logits, None
@@ -147,7 +147,7 @@ def get_rnn_config(name: str, vocab_size: int, block_size: int = 256) -> RNNConf
 
 
 if __name__ == "__main__":
-    # quick self test
+    
     vocab_size = 99
     block_size = 256
     for name in ["tiny", "small", "medium", "large"]:

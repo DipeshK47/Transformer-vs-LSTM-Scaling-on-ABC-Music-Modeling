@@ -8,7 +8,7 @@ import torch.nn.functional as F
 
 from gpt_model import GPT, get_model_config
 
-# Paths
+
 DATA_DIR = "/scratch/dk5288/data/abc_char_corpus_98_1_1"
 TRAIN_TXT = os.path.join(DATA_DIR, "train.txt")
 VOCAB_PATH = os.path.join(DATA_DIR, "vocab.json")

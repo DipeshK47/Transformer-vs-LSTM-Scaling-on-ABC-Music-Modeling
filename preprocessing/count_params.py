@@ -1,4 +1,3 @@
-# check_param_counts.py
 import json
 import os
 import torch

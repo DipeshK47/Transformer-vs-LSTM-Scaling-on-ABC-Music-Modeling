@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+
 
 import re
 import sys
@@ -8,10 +8,10 @@ from pathlib import Path
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Path to your combined training log (slurm output or tee output)
+
 LOG_FILE = "/scratch/dk5288/code/my_project/slurm-132965.out"
 
-# Output directory for plots and summary (will be created next to log file)
+
 OUT_DIR = Path(LOG_FILE).parent
 
 
@@ -85,7 +85,7 @@ def extract_training_curves_and_times(lines):
 
     current_size = None
 
-    # patterns
+    
     start_model_re1 = re.compile(
         r"\[train\]\s+Starting training for model_size=(tiny|small|medium|large|xl)"
     )
@@ -134,7 +134,7 @@ def extract_training_curves_and_times(lines):
             peak_mem_gb[current_size] = gb
             continue
 
-    # convert to numpy arrays
+    
     for s in MODEL_SIZES:
         steps = np.array(train_steps[s], dtype=np.int64) if train_steps[s] else np.array([])
         losses = np.array(train_losses[s], dtype=np.float32) if train_losses[s] else np.array([])
@@ -153,9 +153,9 @@ def fit_power_law_with_c(Ns, Ls):
     Returns (a, alpha, c).
     """
 
-    # small grid around the minimum loss
+    
     L_min = float(Ls.min())
-    # ensure c < min(L) so that L - c > 0
+    
     c_candidates = np.linspace(0.0, 0.95 * L_min, 200)
 
     best_err = float("inf")
@@ -174,7 +174,7 @@ def fit_power_law_with_c(Ns, Ls):
         alpha = -m
         a = np.exp(b)
 
-        # compute squared error in log space
+        
         L_pred = a * (Ns ** (-alpha)) + c
         err = np.mean((np.log(Ls) - np.log(L_pred)) ** 2)
 
@@ -281,7 +281,7 @@ def write_summary_txt(
         f.write(f"alpha ≈ {alpha:.6f}\n")
         f.write(f"c ≈ {c:.6f}\n\n")
 
-        # short implication text
+        
         f.write("Implications:\n")
         f.write(
             "The exponent alpha controls how fast validation loss decreases as "
@@ -316,7 +316,7 @@ def main(log_file):
     with open(log_file, "r") as f:
         lines = f.readlines()
 
-    # parse different parts
+    
     param_counts = extract_param_counts(lines)
     val_losses = extract_val_losses(lines)
     (
@@ -343,7 +343,7 @@ def main(log_file):
     for s in MODEL_SIZES:
         print(f"  {s:6s}: {peak_mem_gb[s]}")
 
-    # model order that actually exists
+    
     model_order = [
         m for m in MODEL_SIZES if m in param_counts and m in val_losses
     ]
@@ -353,18 +353,18 @@ def main(log_file):
     Ns = np.array([param_counts[m] for m in model_order], dtype=float)
     Ls = np.array([val_losses[m] for m in model_order], dtype=float)
 
-    # fit power law with c
+    
     a, alpha, c = fit_power_law_with_c(Ns, Ls)
     print("\nPower law fit L = a * N^(-alpha) + c:")
     print(f"  a ≈ {a:.6f}")
     print(f"  alpha ≈ {alpha:.6f}")
     print(f"  c ≈ {c:.6f}")
 
-    # plots
+    
     plot_training_curves(train_steps, train_losses)
     plot_scaling_law(Ns, Ls, model_order, a, alpha, c)
 
-    # summary files
+    
     write_summary_txt(
         model_order,
         param_counts,

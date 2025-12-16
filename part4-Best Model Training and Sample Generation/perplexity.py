@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 from __future__ import annotations
 
 import csv
@@ -20,12 +20,9 @@ try:
     import torch
     import torch.nn.functional as F
 except Exception:
-    torch = None  # type: ignore
+    torch = None  
 
 
-# ============================================================
-# Paths required (edit only here)
-# ============================================================
 ABC_SAMPLES_DIR = Path("/scratch/dk5288/code/my_project/part4/samples")
 OUT_DIR = Path("/scratch/dk5288/code/my_project/part4/sample_eval_out")
 OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -33,12 +30,12 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 VOCAB_JSON = Path("/scratch/dk5288/code/my_project/part4/vocab.json")
 CHECKPOINT_PATH = Path("/scratch/dk5288/code/my_project/part4/checkpoints/best.pt")
 
-# This must point to your real model builder
-# Format: "package.module:function"
+
+
 MODEL_BUILD_FN = "my_project.models.transformer:build_model"
 
-# These kwargs must match what your build_model expects
-# Make sure vocab_size and block_size match training
+
+
 MODEL_KWARGS_JSON = r"""
 {
   "vocab_size": 0,
@@ -49,7 +46,7 @@ MODEL_KWARGS_JSON = r"""
 BLOCK_SIZE = 256
 BATCH_SIZE = 16
 DEVICE = "cuda" if (torch is not None and torch.cuda.is_available()) else "cpu"
-# ============================================================
+
 
 
 def now_str() -> str:
@@ -72,16 +69,16 @@ def load_vocab(vocab_path: Path) -> Dict[str, int]:
     if not isinstance(obj, dict):
         raise ValueError("vocab.json must be a dict mapping token to id (or id to token)")
 
-    # If keys are digits, it is likely id to token, invert it
+    
     keys = list(obj.keys())
     if keys and all(k.isdigit() for k in keys[: min(50, len(keys))]):
         inv: Dict[str, int] = {}
         for k, v in obj.items():
-            inv[str(v)] = int(k)  # type: ignore[arg-type]
-        # This inversion guess is not reliable if original format is unusual
+            inv[str(v)] = int(k)  
+        
         raise ValueError("vocab.json looks like id to token. Please provide token to id mapping.")
 
-    # token to id
+    
     tok2id: Dict[str, int] = {}
     for k, v in obj.items():
         if not isinstance(v, int):
@@ -100,8 +97,8 @@ def guess_char_level(tok2id: Dict[str, int]) -> bool:
 
 
 def encode_text(text: str, tok2id: Dict[str, int]) -> np.ndarray:
-    # Assumes char level vocab, which is typical for ABC tokenization in small projects
-    # If your project uses a different tokenizer, replace this function with your real one
+    
+    
     if not guess_char_level(tok2id):
         raise ValueError("vocab does not look char level. Replace encode_text with your real tokenizer.")
 
@@ -113,25 +110,25 @@ def encode_text(text: str, tok2id: Dict[str, int]) -> np.ndarray:
         elif unk_id is not None:
             ids.append(unk_id)
         else:
-            # skip unknown char if no unk token
+            
             continue
     return np.asarray(ids, dtype=np.int64)
 
 
 def load_checkpoint_state_dict(path: Path) -> Dict[str, Any]:
-    ckpt = torch.load(path, map_location="cpu")  # type: ignore[attr-defined]
+    ckpt = torch.load(path, map_location="cpu")  
     if isinstance(ckpt, dict):
         if "model" in ckpt and isinstance(ckpt["model"], dict):
             return ckpt["model"]
         if "state_dict" in ckpt and isinstance(ckpt["state_dict"], dict):
             return ckpt["state_dict"]
-        # maybe it is already a state dict
+        
         if any(isinstance(k, str) and ("weight" in k or "bias" in k or "." in k) for k in ckpt.keys()):
             return ckpt
     raise ValueError(f"Unrecognized checkpoint format: {path}")
 
 
-@torch.no_grad()  # type: ignore[misc]
+@torch.no_grad()  
 def perplexity_for_token_ids(model: Any, token_ids: np.ndarray) -> float:
     model.eval()
 
@@ -141,26 +138,26 @@ def perplexity_for_token_ids(model: Any, token_ids: np.ndarray) -> float:
     if token_ids.size < 2:
         return float("inf")
 
-    x_all = torch.from_numpy(token_ids.astype(np.int64)).to(DEVICE)  # type: ignore[attr-defined]
+    x_all = torch.from_numpy(token_ids.astype(np.int64)).to(DEVICE)  
 
     total_nll = 0.0
     total_tokens = 0
 
-    # Score as a sequence by sliding chunks of length BLOCK_SIZE
-    # We compute next token loss for each position that has a previous context inside the chunk
+    
+    
     stride = BLOCK_SIZE
     n = x_all.numel()
     starts = list(range(0, max(1, n - 1), stride))
 
     for s in starts:
-        # Need at least 2 tokens to form x and y
+        
         end = min(n, s + BLOCK_SIZE + 1)
         chunk = x_all[s:end]
         if chunk.numel() < 2:
             continue
 
-        x = chunk[:-1].unsqueeze(0)  # [1,T]
-        y = chunk[1:].unsqueeze(0)   # [1,T]
+        x = chunk[:-1].unsqueeze(0)  
+        y = chunk[1:].unsqueeze(0)   
 
         out = None
         loss = None
@@ -201,10 +198,10 @@ def build_and_load_model(tok2id: Dict[str, int]) -> Any:
     build_fn = import_callable(MODEL_BUILD_FN)
     kwargs = json.loads(MODEL_KWARGS_JSON)
 
-    # Fill vocab_size if left as 0
+    
     if int(kwargs.get("vocab_size", 0)) == 0:
         kwargs["vocab_size"] = len(tok2id)
-    # Ensure block_size matches
+    
     kwargs["block_size"] = int(kwargs.get("block_size", BLOCK_SIZE))
 
     model = build_fn(**kwargs)
@@ -266,7 +263,7 @@ def try_convert_with_abc2midi(abc: str, out_mid: Path) -> Tuple[bool, str]:
 
 def try_convert_with_music21(abc: str, out_mid: Path) -> Tuple[bool, str]:
     try:
-        from music21 import converter  # type: ignore
+        from music21 import converter  
     except Exception as e:
         return False, f"music21 import failed: {e}"
 
@@ -285,7 +282,7 @@ def is_syntactically_valid_abc(abc: str) -> Tuple[bool, str]:
     if not quick_header_check(abc):
         return False, "missing headers (need X:, T:, K:)"
 
-    # Best check: conversion to midi works
+    
     with tempfile.TemporaryDirectory() as td:
         tmp_mid = Path(td) / "tmp.mid"
         ok, err = try_convert_with_abc2midi(abc, tmp_mid)
@@ -361,9 +358,9 @@ def main() -> None:
             token_ids = encode_text(tune, tok2id)
             ppl = perplexity_for_token_ids(model, token_ids) if token_ids.size >= 2 else float("inf")
 
-            # Accumulate overall ppl in token space by summing NLL
-            # We approximate overall ppl from per tune ppl by reconstructing NLL
-            # avg_nll = log(ppl), total_nll = avg_nll * n_tokens
+            
+            
+            
             if np.isfinite(ppl) and ppl > 0 and token_ids.size >= 2:
                 avg_nll = math.log(ppl)
                 total_nll_sum += avg_nll * int(token_ids.size - 1)
