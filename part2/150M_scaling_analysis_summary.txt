@@ -1,0 +1,16 @@
+Scaling analysis summary
+========================
+
+Per model metrics (ordered by size):
+
+model_size, params, val_loss_after_1_epoch, epoch_time_min, epoch_time_sec, peak_gpu_mem_gb
+tiny, 960000, 1.0919, 1.14, 68.39999999999999, 0.7
+small, 4820000, 0.8896, 2.68, 160.8, 2.27
+medium, 19460000, 0.7715, 4.33, 259.8, 3.95
+large, 49440000, 0.7315, 6.61, 396.6, 6.34
+xl, 100070000, 0.6786, 9.71, 582.6, 9.4
+
+Power law fit: L = a * N^(-alpha) + c
+a ≈ 21.645411
+alpha ≈ 0.263250
+c ≈ 0.515088

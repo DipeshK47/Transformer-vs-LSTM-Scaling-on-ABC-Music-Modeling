@@ -1,0 +1,923 @@
+==============================
+Starting training for tiny
+==============================
+/scratch/dk5288/envs/cv6643/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+/scratch/dk5288/code/my_project/training_Transformer.py:180: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/scratch/dk5288/code/my_project/training_Transformer.py:197: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+/scratch/dk5288/code/my_project/training_Transformer.py:103: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+[train] Starting training for model_size=tiny
+[train] Output directory: /scratch/dk5288/models/abc_scaling
+[train] Using device: cuda
+[train] Vocab size: 99
+[load_text] Loading from /scratch/dk5288/data/abc_char_corpus_98_1_1/train.txt (max_chars=100000000)
+[load_text] Loaded 100000000 characters
+[load_text] Loading from /scratch/dk5288/data/abc_char_corpus_98_1_1/val.txt (max_chars=5000000)
+[load_text] Loaded 5000000 characters
+[encode_text] Encoding text to ids...
+[encode_text] Encoded 100000000 tokens
+[encode_text] Encoding text to ids...
+[encode_text] Encoded 5000000 tokens
+[train] tokens_per_step = 16384
+[train] max_steps (one epoch over ~100000000 tokens) = 6103
+[get_model_config] Built config 'tiny' (layers=2, heads=6, emb=192, block_size=512, vocab_size=99)
+[GPT] Initialized model: layers=2, heads=6, emb=192, block_size=512, params=1.01M
+[train] Model tiny has 1.01M parameters
+[train] Beginning training loop...
+[train] step 0/6103 train_loss=4.5888 lr=9.84e-07 elapsed=0.01 min
+[eval] step 0 val_loss=4.5999
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/tiny_best.pt
+[train] step 50/6103 train_loss=3.2069 lr=5.02e-05 elapsed=0.02 min
+[train] step 100/6103 train_loss=1.8590 lr=9.93e-05 elapsed=0.03 min
+[train] step 150/6103 train_loss=1.0855 lr=1.49e-04 elapsed=0.03 min
+[train] step 200/6103 train_loss=0.7136 lr=1.98e-04 elapsed=0.04 min
+[train] step 250/6103 train_loss=0.8217 lr=2.47e-04 elapsed=0.04 min
+[train] step 300/6103 train_loss=0.5022 lr=2.96e-04 elapsed=0.05 min
+[train] step 350/6103 train_loss=0.4286 lr=2.98e-04 elapsed=0.05 min
+[train] step 400/6103 train_loss=0.4618 lr=2.95e-04 elapsed=0.06 min
+[train] step 450/6103 train_loss=0.4824 lr=2.92e-04 elapsed=0.07 min
+[train] step 500/6103 train_loss=0.6452 lr=2.90e-04 elapsed=0.07 min
+[eval] step 500 val_loss=1.4906
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/tiny_best.pt
+[train] step 550/6103 train_loss=0.4876 lr=2.87e-04 elapsed=0.09 min
+[train] step 600/6103 train_loss=0.2885 lr=2.85e-04 elapsed=0.09 min
+[train] step 650/6103 train_loss=0.6580 lr=2.82e-04 elapsed=0.10 min
+[train] step 700/6103 train_loss=0.7196 lr=2.80e-04 elapsed=0.10 min
+[train] step 750/6103 train_loss=0.4664 lr=2.77e-04 elapsed=0.11 min
+[train] step 800/6103 train_loss=0.4231 lr=2.74e-04 elapsed=0.11 min
+[train] step 850/6103 train_loss=0.3728 lr=2.72e-04 elapsed=0.12 min
+[train] step 900/6103 train_loss=0.4761 lr=2.69e-04 elapsed=0.13 min
+[train] step 950/6103 train_loss=0.4842 lr=2.67e-04 elapsed=0.13 min
+[train] step 1000/6103 train_loss=0.3876 lr=2.64e-04 elapsed=0.14 min
+[eval] step 1000 val_loss=1.3831
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/tiny_best.pt
+[train] step 1050/6103 train_loss=0.4536 lr=2.61e-04 elapsed=0.15 min
+[train] step 1100/6103 train_loss=0.4343 lr=2.59e-04 elapsed=0.16 min
+[train] step 1150/6103 train_loss=0.5131 lr=2.56e-04 elapsed=0.16 min
+[train] step 1200/6103 train_loss=0.3211 lr=2.54e-04 elapsed=0.17 min
+[train] step 1250/6103 train_loss=0.6110 lr=2.51e-04 elapsed=0.17 min
+[train] step 1300/6103 train_loss=0.6867 lr=2.49e-04 elapsed=0.18 min
+[train] step 1350/6103 train_loss=0.4508 lr=2.46e-04 elapsed=0.19 min
+[train] step 1400/6103 train_loss=0.6055 lr=2.43e-04 elapsed=0.19 min
+[train] step 1450/6103 train_loss=0.4464 lr=2.41e-04 elapsed=0.20 min
+[train] step 1500/6103 train_loss=0.5318 lr=2.38e-04 elapsed=0.20 min
+[eval] step 1500 val_loss=1.3444
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/tiny_best.pt
+[train] step 1550/6103 train_loss=0.6414 lr=2.36e-04 elapsed=0.22 min
+[train] step 1600/6103 train_loss=0.4805 lr=2.33e-04 elapsed=0.22 min
+[train] step 1650/6103 train_loss=0.4553 lr=2.30e-04 elapsed=0.23 min
+[train] step 1700/6103 train_loss=0.3008 lr=2.28e-04 elapsed=0.23 min
+[train] step 1750/6103 train_loss=0.5295 lr=2.25e-04 elapsed=0.24 min
+[train] step 1800/6103 train_loss=0.4130 lr=2.23e-04 elapsed=0.25 min
+[train] step 1850/6103 train_loss=0.6791 lr=2.20e-04 elapsed=0.25 min
+[train] step 1900/6103 train_loss=0.2928 lr=2.17e-04 elapsed=0.26 min
+[train] step 1950/6103 train_loss=0.4366 lr=2.15e-04 elapsed=0.26 min
+[train] step 2000/6103 train_loss=0.5547 lr=2.12e-04 elapsed=0.27 min
+[eval] step 2000 val_loss=1.3439
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/tiny_best.pt
+[train] step 2050/6103 train_loss=0.6388 lr=2.10e-04 elapsed=0.28 min
+[train] step 2100/6103 train_loss=0.4685 lr=2.07e-04 elapsed=0.29 min
+[train] step 2150/6103 train_loss=0.4495 lr=2.05e-04 elapsed=0.29 min
+[train] step 2200/6103 train_loss=0.3404 lr=2.02e-04 elapsed=0.30 min
+[train] step 2250/6103 train_loss=0.3906 lr=1.99e-04 elapsed=0.31 min
+[train] step 2300/6103 train_loss=0.3061 lr=1.97e-04 elapsed=0.31 min
+[train] step 2350/6103 train_loss=0.4776 lr=1.94e-04 elapsed=0.32 min
+[train] step 2400/6103 train_loss=0.3598 lr=1.92e-04 elapsed=0.32 min
+[train] step 2450/6103 train_loss=0.5126 lr=1.89e-04 elapsed=0.33 min
+[train] step 2500/6103 train_loss=0.3489 lr=1.86e-04 elapsed=0.33 min
+[eval] step 2500 val_loss=1.2938
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/tiny_best.pt
+[train] step 2550/6103 train_loss=0.3661 lr=1.84e-04 elapsed=0.35 min
+[train] step 2600/6103 train_loss=0.3509 lr=1.81e-04 elapsed=0.35 min
+[train] step 2650/6103 train_loss=0.4571 lr=1.79e-04 elapsed=0.36 min
+[train] step 2700/6103 train_loss=0.5038 lr=1.76e-04 elapsed=0.37 min
+[train] step 2750/6103 train_loss=0.3599 lr=1.73e-04 elapsed=0.37 min
+[train] step 2800/6103 train_loss=0.3071 lr=1.71e-04 elapsed=0.38 min
+[train] step 2850/6103 train_loss=0.3808 lr=1.68e-04 elapsed=0.38 min
+[train] step 2900/6103 train_loss=0.3843 lr=1.66e-04 elapsed=0.39 min
+[train] step 2950/6103 train_loss=0.4666 lr=1.63e-04 elapsed=0.39 min
+[train] step 3000/6103 train_loss=0.3413 lr=1.61e-04 elapsed=0.40 min
+[eval] step 3000 val_loss=1.2794
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/tiny_best.pt
+[train] step 3050/6103 train_loss=0.5086 lr=1.58e-04 elapsed=0.41 min
+[train] step 3100/6103 train_loss=0.6277 lr=1.55e-04 elapsed=0.42 min
+[train] step 3150/6103 train_loss=0.3478 lr=1.53e-04 elapsed=0.43 min
+[train] step 3200/6103 train_loss=0.5182 lr=1.50e-04 elapsed=0.43 min
+[train] step 3250/6103 train_loss=0.7187 lr=1.48e-04 elapsed=0.44 min
+[train] step 3300/6103 train_loss=0.3503 lr=1.45e-04 elapsed=0.44 min
+[train] step 3350/6103 train_loss=0.4764 lr=1.42e-04 elapsed=0.45 min
+[train] step 3400/6103 train_loss=0.4560 lr=1.40e-04 elapsed=0.45 min
+[train] step 3450/6103 train_loss=0.3633 lr=1.37e-04 elapsed=0.46 min
+[train] step 3500/6103 train_loss=0.4447 lr=1.35e-04 elapsed=0.47 min
+[eval] step 3500 val_loss=1.2643
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/tiny_best.pt
+[train] step 3550/6103 train_loss=0.6365 lr=1.32e-04 elapsed=0.48 min
+[train] step 3600/6103 train_loss=0.4463 lr=1.30e-04 elapsed=0.49 min
+[train] step 3650/6103 train_loss=0.4085 lr=1.27e-04 elapsed=0.49 min
+[train] step 3700/6103 train_loss=0.3591 lr=1.24e-04 elapsed=0.50 min
+[train] step 3750/6103 train_loss=0.6167 lr=1.22e-04 elapsed=0.50 min
+[train] step 3800/6103 train_loss=0.3700 lr=1.19e-04 elapsed=0.51 min
+[train] step 3850/6103 train_loss=0.5058 lr=1.17e-04 elapsed=0.51 min
+[train] step 3900/6103 train_loss=0.3152 lr=1.14e-04 elapsed=0.52 min
+[train] step 3950/6103 train_loss=0.6402 lr=1.11e-04 elapsed=0.53 min
+[train] step 4000/6103 train_loss=0.4099 lr=1.09e-04 elapsed=0.53 min
+[eval] step 4000 val_loss=1.2566
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/tiny_best.pt
+[train] step 4050/6103 train_loss=0.4331 lr=1.06e-04 elapsed=0.55 min
+[train] step 4100/6103 train_loss=0.3262 lr=1.04e-04 elapsed=0.55 min
+[train] step 4150/6103 train_loss=0.6825 lr=1.01e-04 elapsed=0.56 min
+[train] step 4200/6103 train_loss=0.3665 lr=9.85e-05 elapsed=0.56 min
+[train] step 4250/6103 train_loss=0.3832 lr=9.59e-05 elapsed=0.57 min
+[train] step 4300/6103 train_loss=0.4432 lr=9.33e-05 elapsed=0.57 min
+[train] step 4350/6103 train_loss=0.5776 lr=9.07e-05 elapsed=0.58 min
+[train] step 4400/6103 train_loss=0.4594 lr=8.81e-05 elapsed=0.59 min
+[train] step 4450/6103 train_loss=0.2904 lr=8.55e-05 elapsed=0.59 min
+[train] step 4500/6103 train_loss=0.3441 lr=8.29e-05 elapsed=0.60 min
+[eval] step 4500 val_loss=1.2380
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/tiny_best.pt
+[train] step 4550/6103 train_loss=0.4520 lr=8.04e-05 elapsed=0.61 min
+[train] step 4600/6103 train_loss=0.6517 lr=7.78e-05 elapsed=0.62 min
+[train] step 4650/6103 train_loss=0.4137 lr=7.52e-05 elapsed=0.62 min
+[train] step 4700/6103 train_loss=0.5767 lr=7.26e-05 elapsed=0.63 min
+[train] step 4750/6103 train_loss=0.4427 lr=7.00e-05 elapsed=0.63 min
+[train] step 4800/6103 train_loss=0.4016 lr=6.74e-05 elapsed=0.64 min
+[train] step 4850/6103 train_loss=0.3835 lr=6.48e-05 elapsed=0.65 min
+[train] step 4900/6103 train_loss=0.3140 lr=6.22e-05 elapsed=0.65 min
+[train] step 4950/6103 train_loss=0.5563 lr=5.97e-05 elapsed=0.66 min
+[train] step 5000/6103 train_loss=0.3625 lr=5.71e-05 elapsed=0.66 min
+[eval] step 5000 val_loss=1.2164
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/tiny_best.pt
+[train] step 5050/6103 train_loss=0.4261 lr=5.45e-05 elapsed=0.68 min
+[train] step 5100/6103 train_loss=0.4002 lr=5.19e-05 elapsed=0.68 min
+[train] step 5150/6103 train_loss=0.5136 lr=4.93e-05 elapsed=0.69 min
+[train] step 5200/6103 train_loss=0.3286 lr=4.67e-05 elapsed=0.69 min
+[train] step 5250/6103 train_loss=0.3733 lr=4.41e-05 elapsed=0.70 min
+[train] step 5300/6103 train_loss=0.3291 lr=4.15e-05 elapsed=0.71 min
+[train] step 5350/6103 train_loss=0.4168 lr=3.90e-05 elapsed=0.71 min
+[train] step 5400/6103 train_loss=0.4754 lr=3.64e-05 elapsed=0.72 min
+[train] step 5450/6103 train_loss=0.3411 lr=3.38e-05 elapsed=0.72 min
+[train] step 5500/6103 train_loss=0.3321 lr=3.12e-05 elapsed=0.73 min
+[eval] step 5500 val_loss=1.2166
+[train] step 5550/6103 train_loss=0.3227 lr=2.86e-05 elapsed=0.74 min
+[train] step 5600/6103 train_loss=0.3499 lr=2.60e-05 elapsed=0.75 min
+[train] step 5650/6103 train_loss=0.6182 lr=2.34e-05 elapsed=0.75 min
+[train] step 5700/6103 train_loss=0.2580 lr=2.09e-05 elapsed=0.76 min
+[train] step 5750/6103 train_loss=0.5835 lr=1.83e-05 elapsed=0.76 min
+[train] step 5800/6103 train_loss=0.3547 lr=1.57e-05 elapsed=0.77 min
+[train] step 5850/6103 train_loss=0.4567 lr=1.31e-05 elapsed=0.78 min
+[train] step 5900/6103 train_loss=0.6990 lr=1.05e-05 elapsed=0.78 min
+[train] step 5950/6103 train_loss=0.6502 lr=7.92e-06 elapsed=0.79 min
+[train] step 6000/6103 train_loss=0.3439 lr=5.33e-06 elapsed=0.79 min
+[eval] step 6000 val_loss=1.2123
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/tiny_best.pt
+[train] step 6050/6103 train_loss=0.4318 lr=2.74e-06 elapsed=0.81 min
+[train] step 6100/6103 train_loss=0.6261 lr=1.55e-07 elapsed=0.81 min
+[eval] step 6102 val_loss=1.2026
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/tiny_best.pt
+[train] Done. Total training time: 0.82 minutes
+[train] Peak GPU memory allocated: 1.17 GB
+[ckpt] Saved final model to /scratch/dk5288/models/abc_scaling/tiny_final.pt
+[train] Training script finished cleanly.
+Finished tiny
+==============================
+Starting training for small
+==============================
+/scratch/dk5288/envs/cv6643/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+/scratch/dk5288/code/my_project/training_Transformer.py:180: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/scratch/dk5288/code/my_project/training_Transformer.py:197: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+/scratch/dk5288/code/my_project/training_Transformer.py:103: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+[train] Starting training for model_size=small
+[train] Output directory: /scratch/dk5288/models/abc_scaling
+[train] Using device: cuda
+[train] Vocab size: 99
+[load_text] Loading from /scratch/dk5288/data/abc_char_corpus_98_1_1/train.txt (max_chars=100000000)
+[load_text] Loaded 100000000 characters
+[load_text] Loading from /scratch/dk5288/data/abc_char_corpus_98_1_1/val.txt (max_chars=5000000)
+[load_text] Loaded 5000000 characters
+[encode_text] Encoding text to ids...
+[encode_text] Encoded 100000000 tokens
+[encode_text] Encoding text to ids...
+[encode_text] Encoded 5000000 tokens
+[train] tokens_per_step = 16384
+[train] max_steps (one epoch over ~100000000 tokens) = 6103
+[get_model_config] Built config 'small' (layers=6, heads=8, emb=256, block_size=512, vocab_size=99)
+[GPT] Initialized model: layers=6, heads=8, emb=256, block_size=512, params=4.89M
+[train] Model small has 4.89M parameters
+[train] Beginning training loop...
+[train] step 0/6103 train_loss=4.7297 lr=9.84e-07 elapsed=0.01 min
+[eval] step 0 val_loss=4.6350
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/small_best.pt
+[train] step 50/6103 train_loss=2.5126 lr=5.02e-05 elapsed=0.05 min
+[train] step 100/6103 train_loss=1.0122 lr=9.93e-05 elapsed=0.06 min
+[train] step 150/6103 train_loss=0.7058 lr=1.49e-04 elapsed=0.08 min
+[train] step 200/6103 train_loss=0.5396 lr=1.98e-04 elapsed=0.09 min
+[train] step 250/6103 train_loss=0.6150 lr=2.47e-04 elapsed=0.11 min
+[train] step 300/6103 train_loss=0.4702 lr=2.96e-04 elapsed=0.13 min
+[train] step 350/6103 train_loss=0.6385 lr=2.98e-04 elapsed=0.14 min
+[train] step 400/6103 train_loss=0.6950 lr=2.95e-04 elapsed=0.16 min
+[train] step 450/6103 train_loss=0.4470 lr=2.92e-04 elapsed=0.17 min
+[train] step 500/6103 train_loss=0.6689 lr=2.90e-04 elapsed=0.19 min
+[eval] step 500 val_loss=1.4638
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/small_best.pt
+[train] step 550/6103 train_loss=0.4192 lr=2.87e-04 elapsed=0.23 min
+[train] step 600/6103 train_loss=0.4077 lr=2.85e-04 elapsed=0.24 min
+[train] step 650/6103 train_loss=0.4707 lr=2.82e-04 elapsed=0.26 min
+[train] step 700/6103 train_loss=0.3748 lr=2.80e-04 elapsed=0.27 min
+[train] step 750/6103 train_loss=0.4750 lr=2.77e-04 elapsed=0.29 min
+[train] step 800/6103 train_loss=0.2869 lr=2.74e-04 elapsed=0.31 min
+[train] step 850/6103 train_loss=0.5095 lr=2.72e-04 elapsed=0.32 min
+[train] step 900/6103 train_loss=0.2632 lr=2.69e-04 elapsed=0.34 min
+[train] step 950/6103 train_loss=0.5756 lr=2.67e-04 elapsed=0.35 min
+[train] step 1000/6103 train_loss=0.6460 lr=2.64e-04 elapsed=0.37 min
+[eval] step 1000 val_loss=1.3506
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/small_best.pt
+[train] step 1050/6103 train_loss=0.4323 lr=2.61e-04 elapsed=0.41 min
+[train] step 1100/6103 train_loss=0.4049 lr=2.59e-04 elapsed=0.42 min
+[train] step 1150/6103 train_loss=0.3737 lr=2.56e-04 elapsed=0.44 min
+[train] step 1200/6103 train_loss=0.5140 lr=2.54e-04 elapsed=0.46 min
+[train] step 1250/6103 train_loss=0.2729 lr=2.51e-04 elapsed=0.47 min
+[train] step 1300/6103 train_loss=0.3838 lr=2.49e-04 elapsed=0.49 min
+[train] step 1350/6103 train_loss=0.4015 lr=2.46e-04 elapsed=0.50 min
+[train] step 1400/6103 train_loss=0.5282 lr=2.43e-04 elapsed=0.52 min
+[train] step 1450/6103 train_loss=0.3192 lr=2.41e-04 elapsed=0.53 min
+[train] step 1500/6103 train_loss=0.2790 lr=2.38e-04 elapsed=0.55 min
+[eval] step 1500 val_loss=1.2823
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/small_best.pt
+[train] step 1550/6103 train_loss=0.5226 lr=2.36e-04 elapsed=0.59 min
+[train] step 1600/6103 train_loss=0.3125 lr=2.33e-04 elapsed=0.61 min
+[train] step 1650/6103 train_loss=0.4113 lr=2.30e-04 elapsed=0.62 min
+[train] step 1700/6103 train_loss=0.2873 lr=2.28e-04 elapsed=0.64 min
+[train] step 1750/6103 train_loss=0.4529 lr=2.25e-04 elapsed=0.65 min
+[train] step 1800/6103 train_loss=0.6378 lr=2.23e-04 elapsed=0.67 min
+[train] step 1850/6103 train_loss=0.6188 lr=2.20e-04 elapsed=0.68 min
+[train] step 1900/6103 train_loss=0.4478 lr=2.17e-04 elapsed=0.70 min
+[train] step 1950/6103 train_loss=0.4525 lr=2.15e-04 elapsed=0.72 min
+[train] step 2000/6103 train_loss=0.5525 lr=2.12e-04 elapsed=0.73 min
+[eval] step 2000 val_loss=1.2302
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/small_best.pt
+[train] step 2050/6103 train_loss=0.2394 lr=2.10e-04 elapsed=0.77 min
+[train] step 2100/6103 train_loss=0.5580 lr=2.07e-04 elapsed=0.79 min
+[train] step 2150/6103 train_loss=0.4410 lr=2.05e-04 elapsed=0.80 min
+[train] step 2200/6103 train_loss=0.4913 lr=2.02e-04 elapsed=0.82 min
+[train] step 2250/6103 train_loss=0.5578 lr=1.99e-04 elapsed=0.83 min
+[train] step 2300/6103 train_loss=0.3837 lr=1.97e-04 elapsed=0.85 min
+[train] step 2350/6103 train_loss=0.4266 lr=1.94e-04 elapsed=0.87 min
+[train] step 2400/6103 train_loss=0.5226 lr=1.92e-04 elapsed=0.88 min
+[train] step 2450/6103 train_loss=0.4638 lr=1.89e-04 elapsed=0.90 min
+[train] step 2500/6103 train_loss=0.4912 lr=1.86e-04 elapsed=0.91 min
+[eval] step 2500 val_loss=1.1829
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/small_best.pt
+[train] step 2550/6103 train_loss=0.3724 lr=1.84e-04 elapsed=0.95 min
+[train] step 2600/6103 train_loss=0.5900 lr=1.81e-04 elapsed=0.97 min
+[train] step 2650/6103 train_loss=0.3951 lr=1.79e-04 elapsed=0.98 min
+[train] step 2700/6103 train_loss=0.3383 lr=1.76e-04 elapsed=1.00 min
+[train] step 2750/6103 train_loss=0.4129 lr=1.73e-04 elapsed=1.01 min
+[train] step 2800/6103 train_loss=0.3893 lr=1.71e-04 elapsed=1.03 min
+[train] step 2850/6103 train_loss=0.4782 lr=1.68e-04 elapsed=1.05 min
+[train] step 2900/6103 train_loss=0.2115 lr=1.66e-04 elapsed=1.06 min
+[train] step 2950/6103 train_loss=0.3595 lr=1.63e-04 elapsed=1.08 min
+[train] step 3000/6103 train_loss=0.3680 lr=1.61e-04 elapsed=1.09 min
+[eval] step 3000 val_loss=1.1649
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/small_best.pt
+[train] step 3050/6103 train_loss=0.1988 lr=1.58e-04 elapsed=1.13 min
+[train] step 3100/6103 train_loss=0.4830 lr=1.55e-04 elapsed=1.15 min
+[train] step 3150/6103 train_loss=0.3788 lr=1.53e-04 elapsed=1.16 min
+[train] step 3200/6103 train_loss=0.3989 lr=1.50e-04 elapsed=1.18 min
+[train] step 3250/6103 train_loss=0.4160 lr=1.48e-04 elapsed=1.20 min
+[train] step 3300/6103 train_loss=0.4596 lr=1.45e-04 elapsed=1.21 min
+[train] step 3350/6103 train_loss=0.4618 lr=1.42e-04 elapsed=1.23 min
+[train] step 3400/6103 train_loss=0.3494 lr=1.40e-04 elapsed=1.24 min
+[train] step 3450/6103 train_loss=0.4877 lr=1.37e-04 elapsed=1.26 min
+[train] step 3500/6103 train_loss=0.4731 lr=1.35e-04 elapsed=1.27 min
+[eval] step 3500 val_loss=1.1360
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/small_best.pt
+[train] step 3550/6103 train_loss=0.6409 lr=1.32e-04 elapsed=1.31 min
+[train] step 3600/6103 train_loss=0.4330 lr=1.30e-04 elapsed=1.33 min
+[train] step 3650/6103 train_loss=0.4617 lr=1.27e-04 elapsed=1.34 min
+[train] step 3700/6103 train_loss=0.3263 lr=1.24e-04 elapsed=1.36 min
+[train] step 3750/6103 train_loss=0.2990 lr=1.22e-04 elapsed=1.38 min
+[train] step 3800/6103 train_loss=0.5333 lr=1.19e-04 elapsed=1.39 min
+[train] step 3850/6103 train_loss=0.3814 lr=1.17e-04 elapsed=1.41 min
+[train] step 3900/6103 train_loss=0.3699 lr=1.14e-04 elapsed=1.42 min
+[train] step 3950/6103 train_loss=0.2660 lr=1.11e-04 elapsed=1.44 min
+[train] step 4000/6103 train_loss=0.5378 lr=1.09e-04 elapsed=1.45 min
+[eval] step 4000 val_loss=1.1274
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/small_best.pt
+[train] step 4050/6103 train_loss=0.3076 lr=1.06e-04 elapsed=1.49 min
+[train] step 4100/6103 train_loss=0.4203 lr=1.04e-04 elapsed=1.51 min
+[train] step 4150/6103 train_loss=0.4741 lr=1.01e-04 elapsed=1.53 min
+[train] step 4200/6103 train_loss=0.2445 lr=9.85e-05 elapsed=1.54 min
+[train] step 4250/6103 train_loss=0.3654 lr=9.59e-05 elapsed=1.56 min
+[train] step 4300/6103 train_loss=0.3376 lr=9.33e-05 elapsed=1.57 min
+[train] step 4350/6103 train_loss=0.5289 lr=9.07e-05 elapsed=1.59 min
+[train] step 4400/6103 train_loss=0.1822 lr=8.81e-05 elapsed=1.60 min
+[train] step 4450/6103 train_loss=0.2208 lr=8.55e-05 elapsed=1.62 min
+[train] step 4500/6103 train_loss=0.2683 lr=8.29e-05 elapsed=1.64 min
+[eval] step 4500 val_loss=1.0997
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/small_best.pt
+[train] step 4550/6103 train_loss=0.1624 lr=8.04e-05 elapsed=1.67 min
+[train] step 4600/6103 train_loss=0.4491 lr=7.78e-05 elapsed=1.69 min
+[train] step 4650/6103 train_loss=0.6585 lr=7.52e-05 elapsed=1.71 min
+[train] step 4700/6103 train_loss=0.4320 lr=7.26e-05 elapsed=1.72 min
+[train] step 4750/6103 train_loss=0.2448 lr=7.00e-05 elapsed=1.74 min
+[train] step 4800/6103 train_loss=0.2360 lr=6.74e-05 elapsed=1.75 min
+[train] step 4850/6103 train_loss=0.3987 lr=6.48e-05 elapsed=1.77 min
+[train] step 4900/6103 train_loss=0.4438 lr=6.22e-05 elapsed=1.78 min
+[train] step 4950/6103 train_loss=0.2923 lr=5.97e-05 elapsed=1.80 min
+[train] step 5000/6103 train_loss=0.2971 lr=5.71e-05 elapsed=1.82 min
+[eval] step 5000 val_loss=1.0921
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/small_best.pt
+[train] step 5050/6103 train_loss=0.4518 lr=5.45e-05 elapsed=1.86 min
+[train] step 5100/6103 train_loss=0.4416 lr=5.19e-05 elapsed=1.87 min
+[train] step 5150/6103 train_loss=0.4010 lr=4.93e-05 elapsed=1.89 min
+[train] step 5200/6103 train_loss=0.4338 lr=4.67e-05 elapsed=1.90 min
+[train] step 5250/6103 train_loss=0.3934 lr=4.41e-05 elapsed=1.92 min
+[train] step 5300/6103 train_loss=0.4218 lr=4.15e-05 elapsed=1.93 min
+[train] step 5350/6103 train_loss=0.4042 lr=3.90e-05 elapsed=1.95 min
+[train] step 5400/6103 train_loss=0.4062 lr=3.64e-05 elapsed=1.97 min
+[train] step 5450/6103 train_loss=0.4994 lr=3.38e-05 elapsed=1.98 min
+[train] step 5500/6103 train_loss=0.2709 lr=3.12e-05 elapsed=2.00 min
+[eval] step 5500 val_loss=1.0834
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/small_best.pt
+[train] step 5550/6103 train_loss=0.4784 lr=2.86e-05 elapsed=2.04 min
+[train] step 5600/6103 train_loss=0.3329 lr=2.60e-05 elapsed=2.05 min
+[train] step 5650/6103 train_loss=0.4113 lr=2.34e-05 elapsed=2.07 min
+[train] step 5700/6103 train_loss=0.5188 lr=2.09e-05 elapsed=2.08 min
+[train] step 5750/6103 train_loss=0.3145 lr=1.83e-05 elapsed=2.10 min
+[train] step 5800/6103 train_loss=0.3312 lr=1.57e-05 elapsed=2.12 min
+[train] step 5850/6103 train_loss=0.2906 lr=1.31e-05 elapsed=2.13 min
+[train] step 5900/6103 train_loss=0.4890 lr=1.05e-05 elapsed=2.15 min
+[train] step 5950/6103 train_loss=0.3775 lr=7.92e-06 elapsed=2.16 min
+[train] step 6000/6103 train_loss=0.4253 lr=5.33e-06 elapsed=2.18 min
+[eval] step 6000 val_loss=1.0796
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/small_best.pt
+[train] step 6050/6103 train_loss=0.5061 lr=2.74e-06 elapsed=2.22 min
+[train] step 6100/6103 train_loss=0.4475 lr=1.55e-07 elapsed=2.23 min
+[eval] step 6102 val_loss=1.0821
+[train] Done. Total training time: 2.26 minutes
+[train] Peak GPU memory allocated: 3.66 GB
+[ckpt] Saved final model to /scratch/dk5288/models/abc_scaling/small_final.pt
+[train] Training script finished cleanly.
+Finished small
+==============================
+Starting training for medium
+==============================
+/scratch/dk5288/envs/cv6643/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+/scratch/dk5288/code/my_project/training_Transformer.py:180: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/scratch/dk5288/code/my_project/training_Transformer.py:197: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+/scratch/dk5288/code/my_project/training_Transformer.py:103: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+[train] Starting training for model_size=medium
+[train] Output directory: /scratch/dk5288/models/abc_scaling
+[train] Using device: cuda
+[train] Vocab size: 99
+[load_text] Loading from /scratch/dk5288/data/abc_char_corpus_98_1_1/train.txt (max_chars=100000000)
+[load_text] Loaded 100000000 characters
+[load_text] Loading from /scratch/dk5288/data/abc_char_corpus_98_1_1/val.txt (max_chars=5000000)
+[load_text] Loaded 5000000 characters
+[encode_text] Encoding text to ids...
+[encode_text] Encoded 100000000 tokens
+[encode_text] Encoding text to ids...
+[encode_text] Encoded 5000000 tokens
+[train] tokens_per_step = 16384
+[train] max_steps (one epoch over ~100000000 tokens) = 6103
+[get_model_config] Built config 'medium' (layers=8, heads=8, emb=448, block_size=512, vocab_size=99)
+[GPT] Initialized model: layers=8, heads=8, emb=448, block_size=512, params=19.57M
+[train] Model medium has 19.57M parameters
+[train] Beginning training loop...
+[train] step 0/6103 train_loss=4.7882 lr=9.84e-07 elapsed=0.01 min
+[eval] step 0 val_loss=4.6145
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/medium_best.pt
+[train] step 50/6103 train_loss=1.8212 lr=5.02e-05 elapsed=0.07 min
+[train] step 100/6103 train_loss=0.6040 lr=9.93e-05 elapsed=0.10 min
+[train] step 150/6103 train_loss=0.7187 lr=1.49e-04 elapsed=0.12 min
+[train] step 200/6103 train_loss=0.4588 lr=1.98e-04 elapsed=0.14 min
+[train] step 250/6103 train_loss=0.6903 lr=2.47e-04 elapsed=0.17 min
+[train] step 300/6103 train_loss=0.7448 lr=2.96e-04 elapsed=0.19 min
+[train] step 350/6103 train_loss=0.5914 lr=2.98e-04 elapsed=0.22 min
+[train] step 400/6103 train_loss=0.4104 lr=2.95e-04 elapsed=0.24 min
+[train] step 450/6103 train_loss=0.3908 lr=2.92e-04 elapsed=0.27 min
+[train] step 500/6103 train_loss=0.6286 lr=2.90e-04 elapsed=0.29 min
+[eval] step 500 val_loss=1.4667
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/medium_best.pt
+[train] step 550/6103 train_loss=0.7029 lr=2.87e-04 elapsed=0.35 min
+[train] step 600/6103 train_loss=0.4203 lr=2.85e-04 elapsed=0.38 min
+[train] step 650/6103 train_loss=0.5587 lr=2.82e-04 elapsed=0.40 min
+[train] step 700/6103 train_loss=0.6181 lr=2.80e-04 elapsed=0.43 min
+[train] step 750/6103 train_loss=0.1647 lr=2.77e-04 elapsed=0.45 min
+[train] step 800/6103 train_loss=0.5807 lr=2.74e-04 elapsed=0.48 min
+[train] step 850/6103 train_loss=0.6054 lr=2.72e-04 elapsed=0.50 min
+[train] step 900/6103 train_loss=0.4894 lr=2.69e-04 elapsed=0.53 min
+[train] step 950/6103 train_loss=0.3806 lr=2.67e-04 elapsed=0.55 min
+[train] step 1000/6103 train_loss=0.5192 lr=2.64e-04 elapsed=0.58 min
+[eval] step 1000 val_loss=1.2985
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/medium_best.pt
+[train] step 1050/6103 train_loss=0.4796 lr=2.61e-04 elapsed=0.64 min
+[train] step 1100/6103 train_loss=0.4270 lr=2.59e-04 elapsed=0.66 min
+[train] step 1150/6103 train_loss=0.4364 lr=2.56e-04 elapsed=0.69 min
+[train] step 1200/6103 train_loss=0.4764 lr=2.54e-04 elapsed=0.71 min
+[train] step 1250/6103 train_loss=0.6713 lr=2.51e-04 elapsed=0.73 min
+[train] step 1300/6103 train_loss=0.3634 lr=2.49e-04 elapsed=0.76 min
+[train] step 1350/6103 train_loss=0.7198 lr=2.46e-04 elapsed=0.78 min
+[train] step 1400/6103 train_loss=0.4511 lr=2.43e-04 elapsed=0.81 min
+[train] step 1450/6103 train_loss=0.1742 lr=2.41e-04 elapsed=0.83 min
+[train] step 1500/6103 train_loss=0.4424 lr=2.38e-04 elapsed=0.86 min
+[eval] step 1500 val_loss=1.2396
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/medium_best.pt
+[train] step 1550/6103 train_loss=0.5465 lr=2.36e-04 elapsed=0.92 min
+[train] step 1600/6103 train_loss=0.5462 lr=2.33e-04 elapsed=0.94 min
+[train] step 1650/6103 train_loss=0.5337 lr=2.30e-04 elapsed=0.97 min
+[train] step 1700/6103 train_loss=0.4458 lr=2.28e-04 elapsed=0.99 min
+[train] step 1750/6103 train_loss=0.3263 lr=2.25e-04 elapsed=1.02 min
+[train] step 1800/6103 train_loss=0.7621 lr=2.23e-04 elapsed=1.04 min
+[train] step 1850/6103 train_loss=0.3617 lr=2.20e-04 elapsed=1.07 min
+[train] step 1900/6103 train_loss=0.3992 lr=2.17e-04 elapsed=1.09 min
+[train] step 1950/6103 train_loss=0.3653 lr=2.15e-04 elapsed=1.12 min
+[train] step 2000/6103 train_loss=0.2483 lr=2.12e-04 elapsed=1.14 min
+[eval] step 2000 val_loss=1.1865
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/medium_best.pt
+[train] step 2050/6103 train_loss=0.3771 lr=2.10e-04 elapsed=1.20 min
+[train] step 2100/6103 train_loss=0.4406 lr=2.07e-04 elapsed=1.23 min
+[train] step 2150/6103 train_loss=0.4461 lr=2.05e-04 elapsed=1.25 min
+[train] step 2200/6103 train_loss=0.3068 lr=2.02e-04 elapsed=1.28 min
+[train] step 2250/6103 train_loss=0.2880 lr=1.99e-04 elapsed=1.30 min
+[train] step 2300/6103 train_loss=0.3529 lr=1.97e-04 elapsed=1.32 min
+[train] step 2350/6103 train_loss=0.4669 lr=1.94e-04 elapsed=1.35 min
+[train] step 2400/6103 train_loss=0.1722 lr=1.92e-04 elapsed=1.37 min
+[train] step 2450/6103 train_loss=0.4356 lr=1.89e-04 elapsed=1.40 min
+[train] step 2500/6103 train_loss=0.2374 lr=1.86e-04 elapsed=1.42 min
+[eval] step 2500 val_loss=1.1203
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/medium_best.pt
+[train] step 2550/6103 train_loss=0.5323 lr=1.84e-04 elapsed=1.48 min
+[train] step 2600/6103 train_loss=0.2752 lr=1.81e-04 elapsed=1.51 min
+[train] step 2650/6103 train_loss=0.4225 lr=1.79e-04 elapsed=1.53 min
+[train] step 2700/6103 train_loss=0.5142 lr=1.76e-04 elapsed=1.56 min
+[train] step 2750/6103 train_loss=0.3677 lr=1.73e-04 elapsed=1.58 min
+[train] step 2800/6103 train_loss=0.4431 lr=1.71e-04 elapsed=1.61 min
+[train] step 2850/6103 train_loss=0.5047 lr=1.68e-04 elapsed=1.63 min
+[train] step 2900/6103 train_loss=0.2593 lr=1.66e-04 elapsed=1.66 min
+[train] step 2950/6103 train_loss=0.4117 lr=1.63e-04 elapsed=1.68 min
+[train] step 3000/6103 train_loss=0.1276 lr=1.61e-04 elapsed=1.71 min
+[eval] step 3000 val_loss=1.0943
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/medium_best.pt
+[train] step 3050/6103 train_loss=0.3541 lr=1.58e-04 elapsed=1.77 min
+[train] step 3100/6103 train_loss=0.3863 lr=1.55e-04 elapsed=1.79 min
+[train] step 3150/6103 train_loss=0.3868 lr=1.53e-04 elapsed=1.82 min
+[train] step 3200/6103 train_loss=0.4102 lr=1.50e-04 elapsed=1.84 min
+[train] step 3250/6103 train_loss=0.3626 lr=1.48e-04 elapsed=1.86 min
+[train] step 3300/6103 train_loss=0.3622 lr=1.45e-04 elapsed=1.89 min
+[train] step 3350/6103 train_loss=0.4260 lr=1.42e-04 elapsed=1.91 min
+[train] step 3400/6103 train_loss=0.3666 lr=1.40e-04 elapsed=1.94 min
+[train] step 3450/6103 train_loss=0.5518 lr=1.37e-04 elapsed=1.96 min
+[train] step 3500/6103 train_loss=0.4282 lr=1.35e-04 elapsed=1.99 min
+[eval] step 3500 val_loss=1.0502
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/medium_best.pt
+[train] step 3550/6103 train_loss=0.3824 lr=1.32e-04 elapsed=2.05 min
+[train] step 3600/6103 train_loss=0.3307 lr=1.30e-04 elapsed=2.07 min
+[train] step 3650/6103 train_loss=0.3583 lr=1.27e-04 elapsed=2.10 min
+[train] step 3700/6103 train_loss=0.3771 lr=1.24e-04 elapsed=2.12 min
+[train] step 3750/6103 train_loss=0.4421 lr=1.22e-04 elapsed=2.15 min
+[train] step 3800/6103 train_loss=0.3197 lr=1.19e-04 elapsed=2.17 min
+[train] step 3850/6103 train_loss=0.4183 lr=1.17e-04 elapsed=2.20 min
+[train] step 3900/6103 train_loss=0.3908 lr=1.14e-04 elapsed=2.22 min
+[train] step 3950/6103 train_loss=0.2967 lr=1.11e-04 elapsed=2.25 min
+[train] step 4000/6103 train_loss=0.3854 lr=1.09e-04 elapsed=2.27 min
+[eval] step 4000 val_loss=1.0033
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/medium_best.pt
+[train] step 4050/6103 train_loss=0.3407 lr=1.06e-04 elapsed=2.33 min
+[train] step 4100/6103 train_loss=0.2220 lr=1.04e-04 elapsed=2.36 min
+[train] step 4150/6103 train_loss=0.3447 lr=1.01e-04 elapsed=2.38 min
+[train] step 4200/6103 train_loss=0.2694 lr=9.85e-05 elapsed=2.41 min
+[train] step 4250/6103 train_loss=0.3845 lr=9.59e-05 elapsed=2.43 min
+[train] step 4300/6103 train_loss=0.4054 lr=9.33e-05 elapsed=2.45 min
+[train] step 4350/6103 train_loss=0.2053 lr=9.07e-05 elapsed=2.48 min
+[train] step 4400/6103 train_loss=0.2899 lr=8.81e-05 elapsed=2.50 min
+[train] step 4450/6103 train_loss=0.3561 lr=8.55e-05 elapsed=2.53 min
+[train] step 4500/6103 train_loss=0.4187 lr=8.29e-05 elapsed=2.55 min
+[eval] step 4500 val_loss=0.9758
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/medium_best.pt
+[train] step 4550/6103 train_loss=0.2541 lr=8.04e-05 elapsed=2.61 min
+[train] step 4600/6103 train_loss=0.3259 lr=7.78e-05 elapsed=2.64 min
+[train] step 4650/6103 train_loss=0.4583 lr=7.52e-05 elapsed=2.66 min
+[train] step 4700/6103 train_loss=0.2860 lr=7.26e-05 elapsed=2.69 min
+[train] step 4750/6103 train_loss=0.2629 lr=7.00e-05 elapsed=2.71 min
+[train] step 4800/6103 train_loss=0.3420 lr=6.74e-05 elapsed=2.74 min
+[train] step 4850/6103 train_loss=0.3127 lr=6.48e-05 elapsed=2.76 min
+[train] step 4900/6103 train_loss=0.2500 lr=6.22e-05 elapsed=2.79 min
+[train] step 4950/6103 train_loss=0.3765 lr=5.97e-05 elapsed=2.81 min
+[train] step 5000/6103 train_loss=0.1940 lr=5.71e-05 elapsed=2.84 min
+[eval] step 5000 val_loss=0.9507
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/medium_best.pt
+[train] step 5050/6103 train_loss=0.3292 lr=5.45e-05 elapsed=2.90 min
+[train] step 5100/6103 train_loss=0.2747 lr=5.19e-05 elapsed=2.92 min
+[train] step 5150/6103 train_loss=0.3415 lr=4.93e-05 elapsed=2.95 min
+[train] step 5200/6103 train_loss=0.3905 lr=4.67e-05 elapsed=2.97 min
+[train] step 5250/6103 train_loss=0.2805 lr=4.41e-05 elapsed=3.00 min
+[train] step 5300/6103 train_loss=0.2431 lr=4.15e-05 elapsed=3.02 min
+[train] step 5350/6103 train_loss=0.4215 lr=3.90e-05 elapsed=3.04 min
+[train] step 5400/6103 train_loss=0.2452 lr=3.64e-05 elapsed=3.07 min
+[train] step 5450/6103 train_loss=0.3500 lr=3.38e-05 elapsed=3.09 min
+[train] step 5500/6103 train_loss=0.3123 lr=3.12e-05 elapsed=3.12 min
+[eval] step 5500 val_loss=0.9420
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/medium_best.pt
+[train] step 5550/6103 train_loss=0.4366 lr=2.86e-05 elapsed=3.18 min
+[train] step 5600/6103 train_loss=0.3068 lr=2.60e-05 elapsed=3.20 min
+[train] step 5650/6103 train_loss=0.2548 lr=2.34e-05 elapsed=3.23 min
+[train] step 5700/6103 train_loss=0.3779 lr=2.09e-05 elapsed=3.25 min
+[train] step 5750/6103 train_loss=0.4175 lr=1.83e-05 elapsed=3.28 min
+[train] step 5800/6103 train_loss=0.3195 lr=1.57e-05 elapsed=3.30 min
+[train] step 5850/6103 train_loss=0.2676 lr=1.31e-05 elapsed=3.33 min
+[train] step 5900/6103 train_loss=0.3115 lr=1.05e-05 elapsed=3.35 min
+[train] step 5950/6103 train_loss=0.2707 lr=7.92e-06 elapsed=3.38 min
+[train] step 6000/6103 train_loss=0.3159 lr=5.33e-06 elapsed=3.40 min
+[eval] step 6000 val_loss=0.9391
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/medium_best.pt
+[train] step 6050/6103 train_loss=0.1756 lr=2.74e-06 elapsed=3.46 min
+[train] step 6100/6103 train_loss=0.4021 lr=1.55e-07 elapsed=3.49 min
+[eval] step 6102 val_loss=0.9337
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/medium_best.pt
+[train] Done. Total training time: 3.52 minutes
+[train] Peak GPU memory allocated: 5.68 GB
+[ckpt] Saved final model to /scratch/dk5288/models/abc_scaling/medium_final.pt
+[train] Training script finished cleanly.
+Finished medium
+==============================
+Starting training for large
+==============================
+/scratch/dk5288/envs/cv6643/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+/scratch/dk5288/code/my_project/training_Transformer.py:180: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/scratch/dk5288/code/my_project/training_Transformer.py:197: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+/scratch/dk5288/code/my_project/training_Transformer.py:103: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+[train] Starting training for model_size=large
+[train] Output directory: /scratch/dk5288/models/abc_scaling
+[train] Using device: cuda
+[train] Vocab size: 99
+[load_text] Loading from /scratch/dk5288/data/abc_char_corpus_98_1_1/train.txt (max_chars=100000000)
+[load_text] Loaded 100000000 characters
+[load_text] Loading from /scratch/dk5288/data/abc_char_corpus_98_1_1/val.txt (max_chars=5000000)
+[load_text] Loaded 5000000 characters
+[encode_text] Encoding text to ids...
+[encode_text] Encoded 100000000 tokens
+[encode_text] Encoding text to ids...
+[encode_text] Encoded 5000000 tokens
+[train] tokens_per_step = 16384
+[train] max_steps (one epoch over ~100000000 tokens) = 6103
+[get_model_config] Built config 'large' (layers=10, heads=8, emb=640, block_size=512, vocab_size=99)
+[GPT] Initialized model: layers=10, heads=8, emb=640, block_size=512, params=49.60M
+[train] Model large has 49.60M parameters
+[train] Beginning training loop...
+[train] step 0/6103 train_loss=4.7378 lr=9.84e-07 elapsed=0.01 min
+[eval] step 0 val_loss=4.6209
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/large_best.pt
+[train] step 50/6103 train_loss=1.6631 lr=5.02e-05 elapsed=0.10 min
+[train] step 100/6103 train_loss=0.8086 lr=9.93e-05 elapsed=0.14 min
+[train] step 150/6103 train_loss=0.4004 lr=1.49e-04 elapsed=0.17 min
+[train] step 200/6103 train_loss=0.6293 lr=1.98e-04 elapsed=0.21 min
+[train] step 250/6103 train_loss=0.5775 lr=2.47e-04 elapsed=0.24 min
+[train] step 300/6103 train_loss=0.7402 lr=2.96e-04 elapsed=0.28 min
+[train] step 350/6103 train_loss=0.6848 lr=2.98e-04 elapsed=0.32 min
+[train] step 400/6103 train_loss=0.3652 lr=2.95e-04 elapsed=0.35 min
+[train] step 450/6103 train_loss=0.5193 lr=2.92e-04 elapsed=0.39 min
+[train] step 500/6103 train_loss=0.5357 lr=2.90e-04 elapsed=0.43 min
+[eval] step 500 val_loss=1.4101
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/large_best.pt
+[train] step 550/6103 train_loss=0.5369 lr=2.87e-04 elapsed=0.52 min
+[train] step 600/6103 train_loss=0.3575 lr=2.85e-04 elapsed=0.55 min
+[train] step 650/6103 train_loss=0.5223 lr=2.82e-04 elapsed=0.59 min
+[train] step 700/6103 train_loss=0.3539 lr=2.80e-04 elapsed=0.63 min
+[train] step 750/6103 train_loss=0.5761 lr=2.77e-04 elapsed=0.66 min
+[train] step 800/6103 train_loss=0.3258 lr=2.74e-04 elapsed=0.70 min
+[train] step 850/6103 train_loss=0.6669 lr=2.72e-04 elapsed=0.73 min
+[train] step 900/6103 train_loss=0.3828 lr=2.69e-04 elapsed=0.77 min
+[train] step 950/6103 train_loss=0.3474 lr=2.67e-04 elapsed=0.81 min
+[train] step 1000/6103 train_loss=0.3079 lr=2.64e-04 elapsed=0.84 min
+[eval] step 1000 val_loss=1.2711
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/large_best.pt
+[train] step 1050/6103 train_loss=0.5743 lr=2.61e-04 elapsed=0.94 min
+[train] step 1100/6103 train_loss=0.3830 lr=2.59e-04 elapsed=0.97 min
+[train] step 1150/6103 train_loss=0.4096 lr=2.56e-04 elapsed=1.01 min
+[train] step 1200/6103 train_loss=0.6122 lr=2.54e-04 elapsed=1.04 min
+[train] step 1250/6103 train_loss=0.1895 lr=2.51e-04 elapsed=1.08 min
+[train] step 1300/6103 train_loss=0.4873 lr=2.49e-04 elapsed=1.12 min
+[train] step 1350/6103 train_loss=0.2133 lr=2.46e-04 elapsed=1.15 min
+[train] step 1400/6103 train_loss=0.4812 lr=2.43e-04 elapsed=1.19 min
+[train] step 1450/6103 train_loss=0.4448 lr=2.41e-04 elapsed=1.22 min
+[train] step 1500/6103 train_loss=0.4034 lr=2.38e-04 elapsed=1.26 min
+[eval] step 1500 val_loss=1.2132
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/large_best.pt
+[train] step 1550/6103 train_loss=0.4509 lr=2.36e-04 elapsed=1.35 min
+[train] step 1600/6103 train_loss=0.3434 lr=2.33e-04 elapsed=1.39 min
+[train] step 1650/6103 train_loss=0.3256 lr=2.30e-04 elapsed=1.42 min
+[train] step 1700/6103 train_loss=0.4528 lr=2.28e-04 elapsed=1.46 min
+[train] step 1750/6103 train_loss=0.4167 lr=2.25e-04 elapsed=1.50 min
+[train] step 1800/6103 train_loss=0.4524 lr=2.23e-04 elapsed=1.53 min
+[train] step 1850/6103 train_loss=0.4938 lr=2.20e-04 elapsed=1.57 min
+[train] step 1900/6103 train_loss=0.4091 lr=2.17e-04 elapsed=1.61 min
+[train] step 1950/6103 train_loss=0.3298 lr=2.15e-04 elapsed=1.64 min
+[train] step 2000/6103 train_loss=0.4186 lr=2.12e-04 elapsed=1.68 min
+[eval] step 2000 val_loss=1.1568
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/large_best.pt
+[train] step 2050/6103 train_loss=0.4789 lr=2.10e-04 elapsed=1.77 min
+[train] step 2100/6103 train_loss=0.4417 lr=2.07e-04 elapsed=1.81 min
+[train] step 2150/6103 train_loss=0.3802 lr=2.05e-04 elapsed=1.84 min
+[train] step 2200/6103 train_loss=0.4763 lr=2.02e-04 elapsed=1.88 min
+[train] step 2250/6103 train_loss=0.2863 lr=1.99e-04 elapsed=1.91 min
+[train] step 2300/6103 train_loss=0.3786 lr=1.97e-04 elapsed=1.95 min
+[train] step 2350/6103 train_loss=0.4074 lr=1.94e-04 elapsed=1.99 min
+[train] step 2400/6103 train_loss=0.4925 lr=1.92e-04 elapsed=2.02 min
+[train] step 2450/6103 train_loss=0.4148 lr=1.89e-04 elapsed=2.06 min
+[train] step 2500/6103 train_loss=0.2705 lr=1.86e-04 elapsed=2.09 min
+[eval] step 2500 val_loss=1.0585
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/large_best.pt
+[train] step 2550/6103 train_loss=0.4363 lr=1.84e-04 elapsed=2.19 min
+[train] step 2600/6103 train_loss=0.3728 lr=1.81e-04 elapsed=2.22 min
+[train] step 2650/6103 train_loss=0.3046 lr=1.79e-04 elapsed=2.26 min
+[train] step 2700/6103 train_loss=0.2041 lr=1.76e-04 elapsed=2.30 min
+[train] step 2750/6103 train_loss=0.3265 lr=1.73e-04 elapsed=2.33 min
+[train] step 2800/6103 train_loss=0.5308 lr=1.71e-04 elapsed=2.37 min
+[train] step 2850/6103 train_loss=0.2631 lr=1.68e-04 elapsed=2.40 min
+[train] step 2900/6103 train_loss=0.3705 lr=1.66e-04 elapsed=2.44 min
+[train] step 2950/6103 train_loss=0.3303 lr=1.63e-04 elapsed=2.48 min
+[train] step 3000/6103 train_loss=0.3826 lr=1.61e-04 elapsed=2.51 min
+[eval] step 3000 val_loss=0.9906
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/large_best.pt
+[train] step 3050/6103 train_loss=0.3624 lr=1.58e-04 elapsed=2.60 min
+[train] step 3100/6103 train_loss=0.2673 lr=1.55e-04 elapsed=2.64 min
+[train] step 3150/6103 train_loss=0.3491 lr=1.53e-04 elapsed=2.68 min
+[train] step 3200/6103 train_loss=0.2854 lr=1.50e-04 elapsed=2.71 min
+[train] step 3250/6103 train_loss=0.5033 lr=1.48e-04 elapsed=2.75 min
+[train] step 3300/6103 train_loss=0.3681 lr=1.45e-04 elapsed=2.78 min
+[train] step 3350/6103 train_loss=0.3625 lr=1.42e-04 elapsed=2.82 min
+[train] step 3400/6103 train_loss=0.2002 lr=1.40e-04 elapsed=2.86 min
+[train] step 3450/6103 train_loss=0.4271 lr=1.37e-04 elapsed=2.89 min
+[train] step 3500/6103 train_loss=0.4802 lr=1.35e-04 elapsed=2.93 min
+[eval] step 3500 val_loss=0.9525
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/large_best.pt
+[train] step 3550/6103 train_loss=0.3946 lr=1.32e-04 elapsed=3.02 min
+[train] step 3600/6103 train_loss=0.2240 lr=1.30e-04 elapsed=3.06 min
+[train] step 3650/6103 train_loss=0.3215 lr=1.27e-04 elapsed=3.09 min
+[train] step 3700/6103 train_loss=0.2888 lr=1.24e-04 elapsed=3.13 min
+[train] step 3750/6103 train_loss=0.4201 lr=1.22e-04 elapsed=3.17 min
+[train] step 3800/6103 train_loss=0.2312 lr=1.19e-04 elapsed=3.20 min
+[train] step 3850/6103 train_loss=0.3571 lr=1.17e-04 elapsed=3.24 min
+[train] step 3900/6103 train_loss=0.3432 lr=1.14e-04 elapsed=3.27 min
+[train] step 3950/6103 train_loss=0.2350 lr=1.11e-04 elapsed=3.31 min
+[train] step 4000/6103 train_loss=0.2966 lr=1.09e-04 elapsed=3.35 min
+[eval] step 4000 val_loss=0.9220
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/large_best.pt
+[train] step 4050/6103 train_loss=0.3108 lr=1.06e-04 elapsed=3.44 min
+[train] step 4100/6103 train_loss=0.3773 lr=1.04e-04 elapsed=3.48 min
+[train] step 4150/6103 train_loss=0.4039 lr=1.01e-04 elapsed=3.51 min
+[train] step 4200/6103 train_loss=0.3519 lr=9.85e-05 elapsed=3.55 min
+[train] step 4250/6103 train_loss=0.3916 lr=9.59e-05 elapsed=3.58 min
+[train] step 4300/6103 train_loss=0.2500 lr=9.33e-05 elapsed=3.62 min
+[train] step 4350/6103 train_loss=0.1246 lr=9.07e-05 elapsed=3.66 min
+[train] step 4400/6103 train_loss=0.3837 lr=8.81e-05 elapsed=3.69 min
+[train] step 4450/6103 train_loss=0.3590 lr=8.55e-05 elapsed=3.73 min
+[train] step 4500/6103 train_loss=0.2663 lr=8.29e-05 elapsed=3.76 min
+[eval] step 4500 val_loss=0.8861
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/large_best.pt
+[train] step 4550/6103 train_loss=0.3136 lr=8.04e-05 elapsed=3.86 min
+[train] step 4600/6103 train_loss=0.2753 lr=7.78e-05 elapsed=3.89 min
+[train] step 4650/6103 train_loss=0.4393 lr=7.52e-05 elapsed=3.93 min
+[train] step 4700/6103 train_loss=0.5629 lr=7.26e-05 elapsed=3.96 min
+[train] step 4750/6103 train_loss=0.2626 lr=7.00e-05 elapsed=4.00 min
+[train] step 4800/6103 train_loss=0.2927 lr=6.74e-05 elapsed=4.04 min
+[train] step 4850/6103 train_loss=0.4261 lr=6.48e-05 elapsed=4.07 min
+[train] step 4900/6103 train_loss=0.2680 lr=6.22e-05 elapsed=4.11 min
+[train] step 4950/6103 train_loss=0.3502 lr=5.97e-05 elapsed=4.14 min
+[train] step 5000/6103 train_loss=0.2957 lr=5.71e-05 elapsed=4.18 min
+[eval] step 5000 val_loss=0.8685
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/large_best.pt
+[train] step 5050/6103 train_loss=0.2773 lr=5.45e-05 elapsed=4.27 min
+[train] step 5100/6103 train_loss=0.2036 lr=5.19e-05 elapsed=4.31 min
+[train] step 5150/6103 train_loss=0.2004 lr=4.93e-05 elapsed=4.35 min
+[train] step 5200/6103 train_loss=0.3487 lr=4.67e-05 elapsed=4.38 min
+[train] step 5250/6103 train_loss=0.2537 lr=4.41e-05 elapsed=4.42 min
+[train] step 5300/6103 train_loss=0.2569 lr=4.15e-05 elapsed=4.45 min
+[train] step 5350/6103 train_loss=0.2920 lr=3.90e-05 elapsed=4.49 min
+[train] step 5400/6103 train_loss=0.1694 lr=3.64e-05 elapsed=4.53 min
+[train] step 5450/6103 train_loss=0.4175 lr=3.38e-05 elapsed=4.56 min
+[train] step 5500/6103 train_loss=0.1836 lr=3.12e-05 elapsed=4.60 min
+[eval] step 5500 val_loss=0.8547
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/large_best.pt
+[train] step 5550/6103 train_loss=0.2298 lr=2.86e-05 elapsed=4.69 min
+[train] step 5600/6103 train_loss=0.2633 lr=2.60e-05 elapsed=4.73 min
+[train] step 5650/6103 train_loss=0.2565 lr=2.34e-05 elapsed=4.76 min
+[train] step 5700/6103 train_loss=0.2325 lr=2.09e-05 elapsed=4.80 min
+[train] step 5750/6103 train_loss=0.2474 lr=1.83e-05 elapsed=4.83 min
+[train] step 5800/6103 train_loss=0.3244 lr=1.57e-05 elapsed=4.87 min
+[train] step 5850/6103 train_loss=0.3650 lr=1.31e-05 elapsed=4.91 min
+[train] step 5900/6103 train_loss=0.3390 lr=1.05e-05 elapsed=4.94 min
+[train] step 5950/6103 train_loss=0.2853 lr=7.92e-06 elapsed=4.98 min
+[train] step 6000/6103 train_loss=0.2621 lr=5.33e-06 elapsed=5.02 min
+[eval] step 6000 val_loss=0.8530
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/large_best.pt
+[train] step 6050/6103 train_loss=0.1208 lr=2.74e-06 elapsed=5.11 min
+[train] step 6100/6103 train_loss=0.3208 lr=1.55e-07 elapsed=5.14 min
+[eval] step 6102 val_loss=0.8564
+[train] Done. Total training time: 5.20 minutes
+[train] Peak GPU memory allocated: 8.31 GB
+[ckpt] Saved final model to /scratch/dk5288/models/abc_scaling/large_final.pt
+[train] Training script finished cleanly.
+Finished large
+==============================
+Starting training for xl
+==============================
+/scratch/dk5288/envs/cv6643/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+/scratch/dk5288/code/my_project/training_Transformer.py:180: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+/scratch/dk5288/code/my_project/training_Transformer.py:197: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+/scratch/dk5288/code/my_project/training_Transformer.py:103: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+[train] Starting training for model_size=xl
+[train] Output directory: /scratch/dk5288/models/abc_scaling
+[train] Using device: cuda
+[train] Vocab size: 99
+[load_text] Loading from /scratch/dk5288/data/abc_char_corpus_98_1_1/train.txt (max_chars=100000000)
+[load_text] Loaded 100000000 characters
+[load_text] Loading from /scratch/dk5288/data/abc_char_corpus_98_1_1/val.txt (max_chars=5000000)
+[load_text] Loaded 5000000 characters
+[encode_text] Encoding text to ids...
+[encode_text] Encoded 100000000 tokens
+[encode_text] Encoding text to ids...
+[encode_text] Encoded 5000000 tokens
+[train] tokens_per_step = 16384
+[train] max_steps (one epoch over ~100000000 tokens) = 6103
+[get_model_config] Built config 'xl' (layers=12, heads=8, emb=832, block_size=512, vocab_size=99)
+[GPT] Initialized model: layers=12, heads=8, emb=832, block_size=512, params=100.28M
+[train] Model xl has 100.28M parameters
+[train] Beginning training loop...
+[train] step 0/6103 train_loss=4.8355 lr=9.84e-07 elapsed=0.01 min
+[eval] step 0 val_loss=4.7385
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/xl_best.pt
+[train] step 50/6103 train_loss=1.4259 lr=5.02e-05 elapsed=0.14 min
+[train] step 100/6103 train_loss=0.8777 lr=9.93e-05 elapsed=0.19 min
+[train] step 150/6103 train_loss=0.7746 lr=1.49e-04 elapsed=0.25 min
+[train] step 200/6103 train_loss=0.4577 lr=1.98e-04 elapsed=0.30 min
+[train] step 250/6103 train_loss=0.5846 lr=2.47e-04 elapsed=0.35 min
+[train] step 300/6103 train_loss=0.5816 lr=2.96e-04 elapsed=0.40 min
+[train] step 350/6103 train_loss=0.6009 lr=2.98e-04 elapsed=0.45 min
+[train] step 400/6103 train_loss=0.5587 lr=2.95e-04 elapsed=0.51 min
+[train] step 450/6103 train_loss=0.3696 lr=2.92e-04 elapsed=0.56 min
+[train] step 500/6103 train_loss=0.6614 lr=2.90e-04 elapsed=0.61 min
+[eval] step 500 val_loss=1.3830
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/xl_best.pt
+[train] step 550/6103 train_loss=0.6807 lr=2.87e-04 elapsed=0.74 min
+[train] step 600/6103 train_loss=0.4531 lr=2.85e-04 elapsed=0.79 min
+[train] step 650/6103 train_loss=0.2899 lr=2.82e-04 elapsed=0.85 min
+[train] step 700/6103 train_loss=0.3309 lr=2.80e-04 elapsed=0.90 min
+[train] step 750/6103 train_loss=0.3184 lr=2.77e-04 elapsed=0.95 min
+[train] step 800/6103 train_loss=0.4617 lr=2.74e-04 elapsed=1.00 min
+[train] step 850/6103 train_loss=0.4669 lr=2.72e-04 elapsed=1.05 min
+[train] step 900/6103 train_loss=0.4266 lr=2.69e-04 elapsed=1.10 min
+[train] step 950/6103 train_loss=0.4652 lr=2.67e-04 elapsed=1.16 min
+[train] step 1000/6103 train_loss=0.4932 lr=2.64e-04 elapsed=1.21 min
+[eval] step 1000 val_loss=1.2815
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/xl_best.pt
+[train] step 1050/6103 train_loss=0.4300 lr=2.61e-04 elapsed=1.34 min
+[train] step 1100/6103 train_loss=0.4796 lr=2.59e-04 elapsed=1.39 min
+[train] step 1150/6103 train_loss=0.3488 lr=2.56e-04 elapsed=1.44 min
+[train] step 1200/6103 train_loss=0.4137 lr=2.54e-04 elapsed=1.50 min
+[train] step 1250/6103 train_loss=0.2971 lr=2.51e-04 elapsed=1.55 min
+[train] step 1300/6103 train_loss=0.4520 lr=2.49e-04 elapsed=1.60 min
+[train] step 1350/6103 train_loss=0.3187 lr=2.46e-04 elapsed=1.65 min
+[train] step 1400/6103 train_loss=0.5122 lr=2.43e-04 elapsed=1.70 min
+[train] step 1450/6103 train_loss=0.3302 lr=2.41e-04 elapsed=1.75 min
+[train] step 1500/6103 train_loss=0.5516 lr=2.38e-04 elapsed=1.81 min
+[eval] step 1500 val_loss=1.1949
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/xl_best.pt
+[train] step 1550/6103 train_loss=0.4491 lr=2.36e-04 elapsed=1.94 min
+[train] step 1600/6103 train_loss=0.1104 lr=2.33e-04 elapsed=1.99 min
+[train] step 1650/6103 train_loss=0.4071 lr=2.30e-04 elapsed=2.04 min
+[train] step 1700/6103 train_loss=0.4545 lr=2.28e-04 elapsed=2.09 min
+[train] step 1750/6103 train_loss=0.3077 lr=2.25e-04 elapsed=2.15 min
+[train] step 1800/6103 train_loss=0.5110 lr=2.23e-04 elapsed=2.20 min
+[train] step 1850/6103 train_loss=0.3125 lr=2.20e-04 elapsed=2.25 min
+[train] step 1900/6103 train_loss=0.2656 lr=2.17e-04 elapsed=2.30 min
+[train] step 1950/6103 train_loss=0.4607 lr=2.15e-04 elapsed=2.35 min
+[train] step 2000/6103 train_loss=0.4219 lr=2.12e-04 elapsed=2.40 min
+[eval] step 2000 val_loss=1.0818
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/xl_best.pt
+[train] step 2050/6103 train_loss=0.1982 lr=2.10e-04 elapsed=2.54 min
+[train] step 2100/6103 train_loss=0.3433 lr=2.07e-04 elapsed=2.59 min
+[train] step 2150/6103 train_loss=0.3252 lr=2.05e-04 elapsed=2.64 min
+[train] step 2200/6103 train_loss=0.2667 lr=2.02e-04 elapsed=2.69 min
+[train] step 2250/6103 train_loss=0.3689 lr=1.99e-04 elapsed=2.74 min
+[train] step 2300/6103 train_loss=0.1837 lr=1.97e-04 elapsed=2.80 min
+[train] step 2350/6103 train_loss=0.3339 lr=1.94e-04 elapsed=2.85 min
+[train] step 2400/6103 train_loss=0.3818 lr=1.92e-04 elapsed=2.90 min
+[train] step 2450/6103 train_loss=0.4016 lr=1.89e-04 elapsed=2.95 min
+[train] step 2500/6103 train_loss=0.2370 lr=1.86e-04 elapsed=3.00 min
+[eval] step 2500 val_loss=0.9757
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/xl_best.pt
+[train] step 2550/6103 train_loss=0.2711 lr=1.84e-04 elapsed=3.14 min
+[train] step 2600/6103 train_loss=0.5010 lr=1.81e-04 elapsed=3.19 min
+[train] step 2650/6103 train_loss=0.2602 lr=1.79e-04 elapsed=3.24 min
+[train] step 2700/6103 train_loss=0.3144 lr=1.76e-04 elapsed=3.29 min
+[train] step 2750/6103 train_loss=0.3151 lr=1.73e-04 elapsed=3.34 min
+[train] step 2800/6103 train_loss=0.3171 lr=1.71e-04 elapsed=3.39 min
+[train] step 2850/6103 train_loss=0.3105 lr=1.68e-04 elapsed=3.45 min
+[train] step 2900/6103 train_loss=0.5080 lr=1.66e-04 elapsed=3.50 min
+[train] step 2950/6103 train_loss=0.1648 lr=1.63e-04 elapsed=3.55 min
+[train] step 3000/6103 train_loss=0.2722 lr=1.61e-04 elapsed=3.60 min
+[eval] step 3000 val_loss=0.9119
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/xl_best.pt
+[train] step 3050/6103 train_loss=0.2045 lr=1.58e-04 elapsed=3.73 min
+[train] step 3100/6103 train_loss=0.1834 lr=1.55e-04 elapsed=3.79 min
+[train] step 3150/6103 train_loss=0.3644 lr=1.53e-04 elapsed=3.84 min
+[train] step 3200/6103 train_loss=0.3377 lr=1.50e-04 elapsed=3.89 min
+[train] step 3250/6103 train_loss=0.2156 lr=1.48e-04 elapsed=3.94 min
+[train] step 3300/6103 train_loss=0.2838 lr=1.45e-04 elapsed=3.99 min
+[train] step 3350/6103 train_loss=0.4063 lr=1.42e-04 elapsed=4.04 min
+[train] step 3400/6103 train_loss=0.1742 lr=1.40e-04 elapsed=4.10 min
+[train] step 3450/6103 train_loss=0.2714 lr=1.37e-04 elapsed=4.15 min
+[train] step 3500/6103 train_loss=0.2543 lr=1.35e-04 elapsed=4.20 min
+[eval] step 3500 val_loss=0.8774
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/xl_best.pt
+[train] step 3550/6103 train_loss=0.4331 lr=1.32e-04 elapsed=4.33 min
+[train] step 3600/6103 train_loss=0.3362 lr=1.30e-04 elapsed=4.38 min
+[train] step 3650/6103 train_loss=0.4026 lr=1.27e-04 elapsed=4.44 min
+[train] step 3700/6103 train_loss=0.3349 lr=1.24e-04 elapsed=4.49 min
+[train] step 3750/6103 train_loss=0.2226 lr=1.22e-04 elapsed=4.54 min
+[train] step 3800/6103 train_loss=0.2798 lr=1.19e-04 elapsed=4.59 min
+[train] step 3850/6103 train_loss=0.3180 lr=1.17e-04 elapsed=4.64 min
+[train] step 3900/6103 train_loss=0.3286 lr=1.14e-04 elapsed=4.69 min
+[train] step 3950/6103 train_loss=0.3427 lr=1.11e-04 elapsed=4.75 min
+[train] step 4000/6103 train_loss=0.3625 lr=1.09e-04 elapsed=4.80 min
+[eval] step 4000 val_loss=0.8515
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/xl_best.pt
+[train] step 4050/6103 train_loss=0.3601 lr=1.06e-04 elapsed=4.93 min
+[train] step 4100/6103 train_loss=0.1973 lr=1.04e-04 elapsed=4.98 min
+[train] step 4150/6103 train_loss=0.2883 lr=1.01e-04 elapsed=5.03 min
+[train] step 4200/6103 train_loss=0.2257 lr=9.85e-05 elapsed=5.09 min
+[train] step 4250/6103 train_loss=0.2186 lr=9.59e-05 elapsed=5.14 min
+[train] step 4300/6103 train_loss=0.3219 lr=9.33e-05 elapsed=5.19 min
+[train] step 4350/6103 train_loss=0.3122 lr=9.07e-05 elapsed=5.24 min
+[train] step 4400/6103 train_loss=0.3405 lr=8.81e-05 elapsed=5.29 min
+[train] step 4450/6103 train_loss=0.2353 lr=8.55e-05 elapsed=5.35 min
+[train] step 4500/6103 train_loss=0.5350 lr=8.29e-05 elapsed=5.40 min
+[eval] step 4500 val_loss=0.8229
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/xl_best.pt
+[train] step 4550/6103 train_loss=0.4478 lr=8.04e-05 elapsed=5.53 min
+[train] step 4600/6103 train_loss=0.1545 lr=7.78e-05 elapsed=5.58 min
+[train] step 4650/6103 train_loss=0.3333 lr=7.52e-05 elapsed=5.64 min
+[train] step 4700/6103 train_loss=0.2849 lr=7.26e-05 elapsed=5.69 min
+[train] step 4750/6103 train_loss=0.3061 lr=7.00e-05 elapsed=5.74 min
+[train] step 4800/6103 train_loss=0.2637 lr=6.74e-05 elapsed=5.79 min
+[train] step 4850/6103 train_loss=0.2280 lr=6.48e-05 elapsed=5.84 min
+[train] step 4900/6103 train_loss=0.2434 lr=6.22e-05 elapsed=5.89 min
+[train] step 4950/6103 train_loss=0.1511 lr=5.97e-05 elapsed=5.95 min
+[train] step 5000/6103 train_loss=0.1766 lr=5.71e-05 elapsed=6.00 min
+[eval] step 5000 val_loss=0.8117
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/xl_best.pt
+[train] step 5050/6103 train_loss=0.3045 lr=5.45e-05 elapsed=6.13 min
+[train] step 5100/6103 train_loss=0.3287 lr=5.19e-05 elapsed=6.18 min
+[train] step 5150/6103 train_loss=0.2450 lr=4.93e-05 elapsed=6.23 min
+[train] step 5200/6103 train_loss=0.2706 lr=4.67e-05 elapsed=6.28 min
+[train] step 5250/6103 train_loss=0.3536 lr=4.41e-05 elapsed=6.34 min
+[train] step 5300/6103 train_loss=0.3221 lr=4.15e-05 elapsed=6.39 min
+[train] step 5350/6103 train_loss=0.2942 lr=3.90e-05 elapsed=6.44 min
+[train] step 5400/6103 train_loss=0.3794 lr=3.64e-05 elapsed=6.49 min
+[train] step 5450/6103 train_loss=0.2115 lr=3.38e-05 elapsed=6.54 min
+[train] step 5500/6103 train_loss=0.3510 lr=3.12e-05 elapsed=6.60 min
+[eval] step 5500 val_loss=0.8007
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/xl_best.pt
+[train] step 5550/6103 train_loss=0.2626 lr=2.86e-05 elapsed=6.73 min
+[train] step 5600/6103 train_loss=0.3651 lr=2.60e-05 elapsed=6.78 min
+[train] step 5650/6103 train_loss=0.2381 lr=2.34e-05 elapsed=6.83 min
+[train] step 5700/6103 train_loss=0.3747 lr=2.09e-05 elapsed=6.88 min
+[train] step 5750/6103 train_loss=0.2163 lr=1.83e-05 elapsed=6.93 min
+[train] step 5800/6103 train_loss=0.3280 lr=1.57e-05 elapsed=6.99 min
+[train] step 5850/6103 train_loss=0.2248 lr=1.31e-05 elapsed=7.04 min
+[train] step 5900/6103 train_loss=0.3876 lr=1.05e-05 elapsed=7.09 min
+[train] step 5950/6103 train_loss=0.3011 lr=7.92e-06 elapsed=7.14 min
+[train] step 6000/6103 train_loss=0.4386 lr=5.33e-06 elapsed=7.19 min
+[eval] step 6000 val_loss=0.7998
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/xl_best.pt
+[train] step 6050/6103 train_loss=0.3545 lr=2.74e-06 elapsed=7.33 min
+[train] step 6100/6103 train_loss=0.2030 lr=1.55e-07 elapsed=7.38 min
+[eval] step 6102 val_loss=0.7965
+[ckpt] Saved new best model to /scratch/dk5288/models/abc_scaling/xl_best.pt
+[train] Done. Total training time: 7.46 minutes
+[train] Peak GPU memory allocated: 11.66 GB
+[ckpt] Saved final model to /scratch/dk5288/models/abc_scaling/xl_final.pt
+[train] Training script finished cleanly.
+Finished xl
+All model sizes finished.

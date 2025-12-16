@@ -1,0 +1,6 @@
+model_size,epoch_time_min,epoch_time_sec,peak_gpu_mem_gb
+tiny,1.14,68.39999999999999,0.7
+small,2.68,160.8,2.27
+medium,4.33,259.8,3.95
+large,6.61,396.6,6.34
+xl,9.71,582.6,9.4
