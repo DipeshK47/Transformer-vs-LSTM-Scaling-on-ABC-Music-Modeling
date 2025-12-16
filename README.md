@@ -194,7 +194,7 @@ Generate at least 10 samples:
 Store them under a samples directory, for example:
 
 ```text
-/scratch/dk5288/code/my_project/part4/samples
+/scratch/dk5288/code/my_project/50_samples
 ```
 
 ### Evaluate samples
