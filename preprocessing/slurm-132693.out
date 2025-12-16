@@ -1,0 +1,6 @@
+Vocab size from file: 99
+tiny  : 1.01M parameters
+small : 4.89M parameters
+medium: 19.57M parameters
+large : 49.60M parameters
+xl    : 100.28M parameters

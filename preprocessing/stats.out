@@ -1,0 +1,36 @@
+Parameter counts found:
+  tiny: 960000
+  small: 4820000
+  medium: 19460000
+  large: 49440000
+  xl: 100070000
+
+Validation losses found:
+  tiny: 1.0919
+  small: 0.8896
+  medium: 0.7715
+  large: 0.7315
+  xl: 0.6786
+
+Wall clock time per epoch (minutes):
+  tiny  : 1.14
+  small : 2.68
+  medium: 4.33
+  large : 6.61
+  xl    : 9.71
+
+Peak GPU memory usage (GB):
+  tiny  : 0.7
+  small : 2.27
+  medium: 3.95
+  large : 6.34
+  xl    : 9.4
+
+Power law fit L = a * N^(-alpha) + c:
+  a ≈ 21.645411
+  alpha ≈ 0.263250
+  c ≈ 0.515088
+Saved /scratch/dk5288/code/my_project/150M_training_loss_curves_all_models.png
+Saved /scratch/dk5288/code/my_project/150M_scaling_law_val_loss_vs_params.png
+Wrote summary to /scratch/dk5288/code/my_project/150M_scaling_analysis_summary.txt
+Saved /scratch/dk5288/code/my_project/150M_scaling_extra_metrics.csv
