@@ -1,0 +1,14 @@
+abcFormat: WARNING: Could not get pitch information from note:  ^, assuming C
+FINAL PERPLEXITY ON TEST SET (from logs if present)
+RNN: ppl=1.9711162369030983  loss=0.6786
+Transformer: ppl=296.99045492898256  loss=5.6937
+
+SAMPLE EVALUATION (ABC)
+Samples dir: /scratch/dk5288/code/my_project/part4/samples
+Total ABC files: 50
+Syntactically valid: 35 (70.00%)
+Converted to MIDI (of all): 25 (50.00%)
+Converted to MIDI (of valid only): 25 (71.43%)
+
+Per file CSV: /scratch/dk5288/code/my_project/part4/sample_eval_out/per_file_results.csv
+MIDI output dir: /scratch/dk5288/code/my_project/part4/sample_eval_out/midi
