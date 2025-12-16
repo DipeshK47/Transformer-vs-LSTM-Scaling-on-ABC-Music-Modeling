@@ -1,0 +1,16 @@
+RNN scaling analysis summary
+============================
+
+Per model metrics ordered by size:
+
+model_size, params, val_loss_after_1_epoch, epoch_time_min, epoch_time_sec, peak_gpu_mem_gb
+tiny, 145024, 1.2306, 0.4, 24.0, 345.09
+small, 1078528, 1.1418, 1.3, 78.0, 496.32
+medium, 2404224, 1.1026, 1.5, 90.0, 709.6
+large, 6355456, 1.0813, 1.9, 114.0, 1165.81
+
+Power law fit: L = a * N^(-alpha) + c
+a ≈ 2.718381
+alpha ≈ 0.184958
+c ≈ 0.929157
+

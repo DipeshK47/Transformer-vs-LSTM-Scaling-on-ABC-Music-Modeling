@@ -1,0 +1,741 @@
+==============================
+Running LSTM training for tiny
+==============================
+/scratch/dk5288/envs/cv6643/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+/scratch/dk5288/code/my_project/part3/train_rnn_scaling.py:103: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments.
+  x[i] = self.tokens[start:end]
+/scratch/dk5288/code/my_project/part3/train_rnn_scaling.py:104: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments.
+  y[i] = self.tokens[start + 1 : end + 1]
+==============================
+Running LSTM training for tiny
+==============================
+[train] Using device: cuda
+[train] Output directory: /scratch/dk5288/code/my_project/part3
+[train] Vocab size: 99
+[data] Loading from /scratch/dk5288/data/abc_char_corpus_98_1_1/train.txt (max_chars=100000256)
+[data] Loaded 100000256 characters from /scratch/dk5288/data/abc_char_corpus_98_1_1/train.txt
+[data] Loading from /scratch/dk5288/data/abc_char_corpus_98_1_1/val.txt (max_chars=1000256)
+[data] Loaded 1000256 characters from /scratch/dk5288/data/abc_char_corpus_98_1_1/val.txt
+[data] Encoding text to ids...
+[data] Encoded 100000256 tokens
+[data] Encoding text to ids...
+[data] Encoded 1000256 tokens
+[train] Train effective tokens: 100,000,000
+[train] Val effective tokens:   1,000,000
+[train] Tokens per step:        16,384
+[train] Steps per epoch:        6,103
+[train] Total train tokens:     99,991,552
+[model] RNN config for tiny: {'n_layers': 1, 'd_model': 128}
+[model] RNN tiny has 145,024 trainable parameters
+[train] GPU memory at start: 0.55 MB
+[train] Training for exactly one epoch over streaming batches
+[train] step 1/6103 loss=5.1498 lr=1.97e-06 elapsed=0.00 min
+[train] step 50/6103 loss=4.5089 lr=5.02e-05 elapsed=0.01 min
+[train] step 100/6103 loss=3.1460 lr=9.93e-05 elapsed=0.01 min
+[train] step 150/6103 loss=2.1082 lr=1.49e-04 elapsed=0.01 min
+[train] step 200/6103 loss=1.8259 lr=1.98e-04 elapsed=0.02 min
+[train] step 250/6103 loss=2.7199 lr=2.47e-04 elapsed=0.02 min
+[train] step 300/6103 loss=1.8276 lr=2.96e-04 elapsed=0.02 min
+[train] step 350/6103 loss=1.4770 lr=3.00e-04 elapsed=0.03 min
+[train] step 400/6103 loss=1.4387 lr=3.00e-04 elapsed=0.03 min
+[train] step 450/6103 loss=1.5717 lr=3.00e-04 elapsed=0.03 min
+[train] step 500/6103 loss=2.0569 lr=2.99e-04 elapsed=0.04 min
+[eval] step 500  val_loss=1.4968
+[ckpt] Saved new best model to /scratch/dk5288/code/my_project/part3/rnn_tiny_best.pt
+[train] step 550/6103 loss=1.5788 lr=2.99e-04 elapsed=0.04 min
+[train] step 600/6103 loss=1.2347 lr=2.98e-04 elapsed=0.04 min
+[train] step 650/6103 loss=1.3510 lr=2.97e-04 elapsed=0.05 min
+[train] step 700/6103 loss=1.4097 lr=2.97e-04 elapsed=0.05 min
+[train] step 750/6103 loss=1.5587 lr=2.96e-04 elapsed=0.05 min
+[train] step 800/6103 loss=1.5871 lr=2.95e-04 elapsed=0.06 min
+[train] step 850/6103 loss=1.5773 lr=2.94e-04 elapsed=0.06 min
+[train] step 900/6103 loss=0.8134 lr=2.92e-04 elapsed=0.06 min
+[train] step 950/6103 loss=1.3008 lr=2.91e-04 elapsed=0.07 min
+[train] step 1000/6103 loss=1.3887 lr=2.89e-04 elapsed=0.07 min
+[eval] step 1000  val_loss=1.3042
+[ckpt] Saved new best model to /scratch/dk5288/code/my_project/part3/rnn_tiny_best.pt
+[train] step 1050/6103 loss=1.1874 lr=2.88e-04 elapsed=0.07 min
+[train] step 1100/6103 loss=1.3347 lr=2.86e-04 elapsed=0.08 min
+[train] step 1150/6103 loss=1.4514 lr=2.85e-04 elapsed=0.08 min
+[train] step 1200/6103 loss=1.2968 lr=2.83e-04 elapsed=0.08 min
+[train] step 1250/6103 loss=0.9532 lr=2.81e-04 elapsed=0.09 min
+[train] step 1300/6103 loss=1.3335 lr=2.79e-04 elapsed=0.09 min
+[train] step 1350/6103 loss=1.2654 lr=2.77e-04 elapsed=0.09 min
+[train] step 1400/6103 loss=1.1023 lr=2.74e-04 elapsed=0.10 min
+[train] step 1450/6103 loss=1.6721 lr=2.72e-04 elapsed=0.10 min
+[train] step 1500/6103 loss=1.5974 lr=2.70e-04 elapsed=0.10 min
+[eval] step 1500  val_loss=1.2942
+[ckpt] Saved new best model to /scratch/dk5288/code/my_project/part3/rnn_tiny_best.pt
+[train] step 1550/6103 loss=1.4148 lr=2.67e-04 elapsed=0.11 min
+[train] step 1600/6103 loss=1.5085 lr=2.65e-04 elapsed=0.11 min
+[train] step 1650/6103 loss=1.9746 lr=2.62e-04 elapsed=0.11 min
+[train] step 1700/6103 loss=1.3486 lr=2.59e-04 elapsed=0.12 min
+[train] step 1750/6103 loss=1.2170 lr=2.56e-04 elapsed=0.12 min
+[train] step 1800/6103 loss=1.1738 lr=2.53e-04 elapsed=0.12 min
+[train] step 1850/6103 loss=1.1332 lr=2.50e-04 elapsed=0.13 min
+[train] step 1900/6103 loss=1.0303 lr=2.47e-04 elapsed=0.13 min
+[train] step 1950/6103 loss=1.0234 lr=2.44e-04 elapsed=0.13 min
+[train] step 2000/6103 loss=1.0662 lr=2.41e-04 elapsed=0.14 min
+[eval] step 2000  val_loss=1.2306
+[ckpt] Saved new best model to /scratch/dk5288/code/my_project/part3/rnn_tiny_best.pt
+[train] step 2050/6103 loss=0.9881 lr=2.38e-04 elapsed=0.14 min
+[train] step 2100/6103 loss=1.0281 lr=2.34e-04 elapsed=0.15 min
+[train] step 2150/6103 loss=1.3092 lr=2.31e-04 elapsed=0.15 min
+[train] step 2200/6103 loss=0.0694 lr=2.28e-04 elapsed=0.15 min
+[train] step 2250/6103 loss=0.0432 lr=2.24e-04 elapsed=0.15 min
+[train] step 2300/6103 loss=0.0254 lr=2.21e-04 elapsed=0.16 min
+[train] step 2350/6103 loss=0.0138 lr=2.17e-04 elapsed=0.16 min
+[train] step 2400/6103 loss=0.0083 lr=2.13e-04 elapsed=0.16 min
+[train] step 2450/6103 loss=0.0057 lr=2.10e-04 elapsed=0.17 min
+[train] step 2500/6103 loss=0.0030 lr=2.06e-04 elapsed=0.17 min
+[eval] step 2500  val_loss=2.8356
+[train] step 2550/6103 loss=0.0027 lr=2.02e-04 elapsed=0.18 min
+[train] step 2600/6103 loss=0.0027 lr=1.98e-04 elapsed=0.18 min
+[train] step 2650/6103 loss=0.0027 lr=1.94e-04 elapsed=0.18 min
+[train] step 2700/6103 loss=0.0026 lr=1.90e-04 elapsed=0.18 min
+[train] step 2750/6103 loss=0.0026 lr=1.87e-04 elapsed=0.19 min
+[train] step 2800/6103 loss=0.0026 lr=1.83e-04 elapsed=0.19 min
+[train] step 2850/6103 loss=0.0026 lr=1.79e-04 elapsed=0.19 min
+[train] step 2900/6103 loss=0.0026 lr=1.75e-04 elapsed=0.20 min
+[train] step 2950/6103 loss=0.0026 lr=1.71e-04 elapsed=0.20 min
+[train] step 3000/6103 loss=0.0026 lr=1.67e-04 elapsed=0.20 min
+[eval] step 3000  val_loss=3.4533
+[train] step 3050/6103 loss=0.0026 lr=1.63e-04 elapsed=0.21 min
+[train] step 3100/6103 loss=0.0026 lr=1.58e-04 elapsed=0.21 min
+[train] step 3150/6103 loss=0.0026 lr=1.54e-04 elapsed=0.21 min
+[train] step 3200/6103 loss=0.0026 lr=1.50e-04 elapsed=0.22 min
+[train] step 3250/6103 loss=0.0026 lr=1.46e-04 elapsed=0.22 min
+[train] step 3300/6103 loss=0.0026 lr=1.42e-04 elapsed=0.22 min
+[train] step 3350/6103 loss=0.0026 lr=1.38e-04 elapsed=0.23 min
+[train] step 3400/6103 loss=0.0026 lr=1.34e-04 elapsed=0.23 min
+[train] step 3450/6103 loss=0.0026 lr=1.30e-04 elapsed=0.23 min
+[train] step 3500/6103 loss=0.0026 lr=1.26e-04 elapsed=0.24 min
+[eval] step 3500  val_loss=3.4939
+[train] step 3550/6103 loss=0.0026 lr=1.22e-04 elapsed=0.24 min
+[train] step 3600/6103 loss=0.0026 lr=1.18e-04 elapsed=0.24 min
+[train] step 3650/6103 loss=0.0026 lr=1.14e-04 elapsed=0.25 min
+[train] step 3700/6103 loss=0.0026 lr=1.10e-04 elapsed=0.25 min
+[train] step 3750/6103 loss=0.0026 lr=1.06e-04 elapsed=0.25 min
+[train] step 3800/6103 loss=0.0026 lr=1.02e-04 elapsed=0.26 min
+[train] step 3850/6103 loss=0.0026 lr=9.86e-05 elapsed=0.26 min
+[train] step 3900/6103 loss=0.0026 lr=9.48e-05 elapsed=0.26 min
+[train] step 3950/6103 loss=0.0026 lr=9.10e-05 elapsed=0.27 min
+[train] step 4000/6103 loss=0.0026 lr=8.73e-05 elapsed=0.27 min
+[eval] step 4000  val_loss=3.6558
+[train] step 4050/6103 loss=0.0026 lr=8.36e-05 elapsed=0.28 min
+[train] step 4100/6103 loss=0.0026 lr=8.00e-05 elapsed=0.28 min
+[train] step 4150/6103 loss=0.0026 lr=7.64e-05 elapsed=0.28 min
+[train] step 4200/6103 loss=0.0026 lr=7.29e-05 elapsed=0.28 min
+[train] step 4250/6103 loss=0.0026 lr=6.95e-05 elapsed=0.29 min
+[train] step 4300/6103 loss=0.0026 lr=6.61e-05 elapsed=0.29 min
+[train] step 4350/6103 loss=0.0026 lr=6.27e-05 elapsed=0.29 min
+[train] step 4400/6103 loss=0.0240 lr=5.95e-05 elapsed=0.30 min
+[train] step 4450/6103 loss=0.0129 lr=5.62e-05 elapsed=0.30 min
+[train] step 4500/6103 loss=0.0098 lr=5.31e-05 elapsed=0.30 min
+[eval] step 4500  val_loss=3.3986
+[train] step 4550/6103 loss=0.0075 lr=5.00e-05 elapsed=0.31 min
+[train] step 4600/6103 loss=0.0062 lr=4.71e-05 elapsed=0.31 min
+[train] step 4650/6103 loss=0.0046 lr=4.41e-05 elapsed=0.31 min
+[train] step 4700/6103 loss=0.0031 lr=4.13e-05 elapsed=0.32 min
+[train] step 4750/6103 loss=0.0027 lr=3.85e-05 elapsed=0.32 min
+[train] step 4800/6103 loss=0.0026 lr=3.59e-05 elapsed=0.32 min
+[train] step 4850/6103 loss=0.0026 lr=3.33e-05 elapsed=0.33 min
+[train] step 4900/6103 loss=0.0026 lr=3.08e-05 elapsed=0.33 min
+[train] step 4950/6103 loss=0.0026 lr=2.83e-05 elapsed=0.33 min
+[train] step 5000/6103 loss=0.0026 lr=2.60e-05 elapsed=0.34 min
+[eval] step 5000  val_loss=3.6087
+[train] step 5050/6103 loss=0.0026 lr=2.38e-05 elapsed=0.34 min
+[train] step 5100/6103 loss=0.0026 lr=2.16e-05 elapsed=0.34 min
+[train] step 5150/6103 loss=0.0026 lr=1.96e-05 elapsed=0.35 min
+[train] step 5200/6103 loss=0.0026 lr=1.76e-05 elapsed=0.35 min
+[train] step 5250/6103 loss=0.0026 lr=1.57e-05 elapsed=0.35 min
+[train] step 5300/6103 loss=0.0026 lr=1.40e-05 elapsed=0.36 min
+[train] step 5350/6103 loss=0.0026 lr=1.23e-05 elapsed=0.36 min
+[train] step 5400/6103 loss=0.0026 lr=1.08e-05 elapsed=0.36 min
+[train] step 5450/6103 loss=0.0026 lr=9.29e-06 elapsed=0.37 min
+[train] step 5500/6103 loss=0.0026 lr=7.94e-06 elapsed=0.37 min
+[eval] step 5500  val_loss=3.6427
+[train] step 5550/6103 loss=0.0315 lr=6.68e-06 elapsed=0.37 min
+[train] step 5600/6103 loss=0.0267 lr=5.54e-06 elapsed=0.38 min
+[train] step 5650/6103 loss=0.0227 lr=4.50e-06 elapsed=0.38 min
+[train] step 5700/6103 loss=0.0207 lr=3.56e-06 elapsed=0.38 min
+[train] step 5750/6103 loss=0.0202 lr=2.74e-06 elapsed=0.39 min
+[train] step 5800/6103 loss=0.0192 lr=2.02e-06 elapsed=0.39 min
+[train] step 5850/6103 loss=0.0176 lr=1.41e-06 elapsed=0.39 min
+[train] step 5900/6103 loss=0.0169 lr=9.06e-07 elapsed=0.40 min
+[train] step 5950/6103 loss=0.0170 lr=5.15e-07 elapsed=0.40 min
+[train] step 6000/6103 loss=0.0174 lr=2.34e-07 elapsed=0.40 min
+[eval] step 6000  val_loss=3.6222
+[train] step 6050/6103 loss=0.0167 lr=6.19e-08 elapsed=0.41 min
+[train] step 6100/6103 loss=0.0162 lr=1.97e-10 elapsed=0.41 min
+[eval] step 6103  val_loss=3.6217
+===========================================
+[train] RNN model name:     tiny
+[train] Parameters:         145,024
+[train] Best val loss:      1.2306
+[train] Steps in 1 epoch:   6103
+[train] Total train tokens: 99,991,552
+[train] Wall clock seconds: 24.8
+[train] Wall clock minutes: 0.4
+[train] GPU memory start:   0.55 MB
+[train] GPU memory end:     72.65 MB
+[train] GPU memory peak:    345.09 MB
+===========================================
+[ckpt] Saved final model to /scratch/dk5288/code/my_project/part3/rnn_tiny_final.pt
+==============================
+Running LSTM training for small
+==============================
+/scratch/dk5288/envs/cv6643/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+/scratch/dk5288/code/my_project/part3/train_rnn_scaling.py:103: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments.
+  x[i] = self.tokens[start:end]
+/scratch/dk5288/code/my_project/part3/train_rnn_scaling.py:104: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments.
+  y[i] = self.tokens[start + 1 : end + 1]
+==============================
+Running LSTM training for small
+==============================
+[train] Using device: cuda
+[train] Output directory: /scratch/dk5288/code/my_project/part3
+[train] Vocab size: 99
+[data] Loading from /scratch/dk5288/data/abc_char_corpus_98_1_1/train.txt (max_chars=100000256)
+[data] Loaded 100000256 characters from /scratch/dk5288/data/abc_char_corpus_98_1_1/train.txt
+[data] Loading from /scratch/dk5288/data/abc_char_corpus_98_1_1/val.txt (max_chars=1000256)
+[data] Loaded 1000256 characters from /scratch/dk5288/data/abc_char_corpus_98_1_1/val.txt
+[data] Encoding text to ids...
+[data] Encoded 100000256 tokens
+[data] Encoding text to ids...
+[data] Encoded 1000256 tokens
+[train] Train effective tokens: 100,000,000
+[train] Val effective tokens:   1,000,000
+[train] Tokens per step:        16,384
+[train] Steps per epoch:        6,103
+[train] Total train tokens:     99,991,552
+[model] RNN config for small: {'n_layers': 2, 'd_model': 256}
+[model] RNN small has 1,078,528 trainable parameters
+[train] GPU memory at start: 4.11 MB
+[train] Training for exactly one epoch over streaming batches
+[train] step 1/6103 loss=4.9259 lr=1.97e-06 elapsed=0.00 min
+[train] step 50/6103 loss=3.0136 lr=5.02e-05 elapsed=0.01 min
+[train] step 100/6103 loss=2.1284 lr=9.93e-05 elapsed=0.02 min
+[train] step 150/6103 loss=1.7124 lr=1.49e-04 elapsed=0.03 min
+[train] step 200/6103 loss=1.5060 lr=1.98e-04 elapsed=0.04 min
+[train] step 250/6103 loss=2.2946 lr=2.47e-04 elapsed=0.05 min
+[train] step 300/6103 loss=1.6090 lr=2.96e-04 elapsed=0.06 min
+[train] step 350/6103 loss=1.4286 lr=3.00e-04 elapsed=0.07 min
+[train] step 400/6103 loss=1.2586 lr=3.00e-04 elapsed=0.08 min
+[train] step 450/6103 loss=1.3616 lr=3.00e-04 elapsed=0.09 min
+[train] step 500/6103 loss=2.0357 lr=2.99e-04 elapsed=0.10 min
+[eval] step 500  val_loss=1.4295
+[ckpt] Saved new best model to /scratch/dk5288/code/my_project/part3/rnn_small_best.pt
+[train] step 550/6103 loss=1.4595 lr=2.99e-04 elapsed=0.12 min
+[train] step 600/6103 loss=1.0868 lr=2.98e-04 elapsed=0.13 min
+[train] step 650/6103 loss=1.1824 lr=2.97e-04 elapsed=0.14 min
+[train] step 700/6103 loss=1.4249 lr=2.97e-04 elapsed=0.15 min
+[train] step 750/6103 loss=1.5185 lr=2.96e-04 elapsed=0.16 min
+[train] step 800/6103 loss=1.5546 lr=2.95e-04 elapsed=0.17 min
+[train] step 850/6103 loss=1.5910 lr=2.94e-04 elapsed=0.18 min
+[train] step 900/6103 loss=0.7343 lr=2.92e-04 elapsed=0.19 min
+[train] step 950/6103 loss=1.2295 lr=2.91e-04 elapsed=0.20 min
+[train] step 1000/6103 loss=1.1811 lr=2.89e-04 elapsed=0.21 min
+[eval] step 1000  val_loss=1.2083
+[ckpt] Saved new best model to /scratch/dk5288/code/my_project/part3/rnn_small_best.pt
+[train] step 1050/6103 loss=1.1028 lr=2.88e-04 elapsed=0.22 min
+[train] step 1100/6103 loss=1.1998 lr=2.86e-04 elapsed=0.23 min
+[train] step 1150/6103 loss=0.7014 lr=2.85e-04 elapsed=0.24 min
+[train] step 1200/6103 loss=1.1912 lr=2.83e-04 elapsed=0.25 min
+[train] step 1250/6103 loss=0.8381 lr=2.81e-04 elapsed=0.26 min
+[train] step 1300/6103 loss=1.3068 lr=2.79e-04 elapsed=0.27 min
+[train] step 1350/6103 loss=1.2069 lr=2.77e-04 elapsed=0.28 min
+[train] step 1400/6103 loss=1.0551 lr=2.74e-04 elapsed=0.29 min
+[train] step 1450/6103 loss=1.5891 lr=2.72e-04 elapsed=0.30 min
+[train] step 1500/6103 loss=1.4284 lr=2.70e-04 elapsed=0.31 min
+[eval] step 1500  val_loss=1.2020
+[ckpt] Saved new best model to /scratch/dk5288/code/my_project/part3/rnn_small_best.pt
+[train] step 1550/6103 loss=1.3451 lr=2.67e-04 elapsed=0.33 min
+[train] step 1600/6103 loss=1.4129 lr=2.65e-04 elapsed=0.34 min
+[train] step 1650/6103 loss=1.8938 lr=2.62e-04 elapsed=0.35 min
+[train] step 1700/6103 loss=1.3201 lr=2.59e-04 elapsed=0.36 min
+[train] step 1750/6103 loss=1.1464 lr=2.56e-04 elapsed=0.37 min
+[train] step 1800/6103 loss=1.0795 lr=2.53e-04 elapsed=0.38 min
+[train] step 1850/6103 loss=1.0368 lr=2.50e-04 elapsed=0.39 min
+[train] step 1900/6103 loss=0.9742 lr=2.47e-04 elapsed=0.40 min
+[train] step 1950/6103 loss=0.8782 lr=2.44e-04 elapsed=0.41 min
+[train] step 2000/6103 loss=0.9651 lr=2.41e-04 elapsed=0.42 min
+[eval] step 2000  val_loss=1.1418
+[ckpt] Saved new best model to /scratch/dk5288/code/my_project/part3/rnn_small_best.pt
+[train] step 2050/6103 loss=0.9244 lr=2.38e-04 elapsed=0.43 min
+[train] step 2100/6103 loss=0.9361 lr=2.34e-04 elapsed=0.44 min
+[train] step 2150/6103 loss=0.4940 lr=2.31e-04 elapsed=0.45 min
+[train] step 2200/6103 loss=0.0398 lr=2.28e-04 elapsed=0.46 min
+[train] step 2250/6103 loss=0.0129 lr=2.24e-04 elapsed=0.47 min
+[train] step 2300/6103 loss=0.0069 lr=2.21e-04 elapsed=0.48 min
+[train] step 2350/6103 loss=0.0047 lr=2.17e-04 elapsed=0.49 min
+[train] step 2400/6103 loss=0.0030 lr=2.13e-04 elapsed=0.50 min
+[train] step 2450/6103 loss=0.0030 lr=2.10e-04 elapsed=0.51 min
+[train] step 2500/6103 loss=0.0026 lr=2.06e-04 elapsed=0.52 min
+[eval] step 2500  val_loss=3.2527
+[train] step 2550/6103 loss=0.0026 lr=2.02e-04 elapsed=0.54 min
+[train] step 2600/6103 loss=0.0027 lr=1.98e-04 elapsed=0.55 min
+[train] step 2650/6103 loss=0.0027 lr=1.94e-04 elapsed=0.56 min
+[train] step 2700/6103 loss=0.0026 lr=1.90e-04 elapsed=0.57 min
+[train] step 2750/6103 loss=0.0026 lr=1.87e-04 elapsed=0.58 min
+[train] step 2800/6103 loss=0.0025 lr=1.83e-04 elapsed=0.59 min
+[train] step 2850/6103 loss=0.0026 lr=1.79e-04 elapsed=0.60 min
+[train] step 2900/6103 loss=0.0025 lr=1.75e-04 elapsed=0.61 min
+[train] step 2950/6103 loss=0.0025 lr=1.71e-04 elapsed=0.62 min
+[train] step 3000/6103 loss=0.0027 lr=1.67e-04 elapsed=0.63 min
+[eval] step 3000  val_loss=5.7495
+[train] step 3050/6103 loss=0.0027 lr=1.63e-04 elapsed=0.64 min
+[train] step 3100/6103 loss=0.0025 lr=1.58e-04 elapsed=0.65 min
+[train] step 3150/6103 loss=0.0025 lr=1.54e-04 elapsed=0.66 min
+[train] step 3200/6103 loss=0.0026 lr=1.50e-04 elapsed=0.67 min
+[train] step 3250/6103 loss=0.0025 lr=1.46e-04 elapsed=0.68 min
+[train] step 3300/6103 loss=0.0026 lr=1.42e-04 elapsed=0.69 min
+[train] step 3350/6103 loss=0.0026 lr=1.38e-04 elapsed=0.70 min
+[train] step 3400/6103 loss=0.0026 lr=1.34e-04 elapsed=0.71 min
+[train] step 3450/6103 loss=0.0026 lr=1.30e-04 elapsed=0.72 min
+[train] step 3500/6103 loss=0.0026 lr=1.26e-04 elapsed=0.73 min
+[eval] step 3500  val_loss=4.6920
+[train] step 3550/6103 loss=0.0026 lr=1.22e-04 elapsed=0.74 min
+[train] step 3600/6103 loss=0.0026 lr=1.18e-04 elapsed=0.75 min
+[train] step 3650/6103 loss=0.0025 lr=1.14e-04 elapsed=0.76 min
+[train] step 3700/6103 loss=0.0026 lr=1.10e-04 elapsed=0.77 min
+[train] step 3750/6103 loss=0.0026 lr=1.06e-04 elapsed=0.78 min
+[train] step 3800/6103 loss=0.0025 lr=1.02e-04 elapsed=0.79 min
+[train] step 3850/6103 loss=0.0025 lr=9.86e-05 elapsed=0.80 min
+[train] step 3900/6103 loss=0.0025 lr=9.48e-05 elapsed=0.81 min
+[train] step 3950/6103 loss=0.0026 lr=9.10e-05 elapsed=0.82 min
+[train] step 4000/6103 loss=0.0025 lr=8.73e-05 elapsed=0.83 min
+[eval] step 4000  val_loss=5.0906
+[train] step 4050/6103 loss=0.0026 lr=8.36e-05 elapsed=0.85 min
+[train] step 4100/6103 loss=0.0025 lr=8.00e-05 elapsed=0.86 min
+[train] step 4150/6103 loss=0.0026 lr=7.64e-05 elapsed=0.87 min
+[train] step 4200/6103 loss=0.0025 lr=7.29e-05 elapsed=0.88 min
+[train] step 4250/6103 loss=0.0025 lr=6.95e-05 elapsed=0.89 min
+[train] step 4300/6103 loss=0.0025 lr=6.61e-05 elapsed=0.90 min
+[train] step 4350/6103 loss=0.0026 lr=6.27e-05 elapsed=0.91 min
+[train] step 4400/6103 loss=0.0118 lr=5.95e-05 elapsed=0.92 min
+[train] step 4450/6103 loss=0.0077 lr=5.62e-05 elapsed=0.93 min
+[train] step 4500/6103 loss=0.0058 lr=5.31e-05 elapsed=0.94 min
+[eval] step 4500  val_loss=4.6300
+[train] step 4550/6103 loss=0.0043 lr=5.00e-05 elapsed=0.95 min
+[train] step 4600/6103 loss=0.0032 lr=4.71e-05 elapsed=0.96 min
+[train] step 4650/6103 loss=0.0027 lr=4.41e-05 elapsed=0.97 min
+[train] step 4700/6103 loss=0.0027 lr=4.13e-05 elapsed=0.98 min
+[train] step 4750/6103 loss=0.0026 lr=3.85e-05 elapsed=0.99 min
+[train] step 4800/6103 loss=0.0026 lr=3.59e-05 elapsed=1.00 min
+[train] step 4850/6103 loss=0.0027 lr=3.33e-05 elapsed=1.01 min
+[train] step 4900/6103 loss=0.0027 lr=3.08e-05 elapsed=1.02 min
+[train] step 4950/6103 loss=0.0026 lr=2.83e-05 elapsed=1.03 min
+[train] step 5000/6103 loss=0.0027 lr=2.60e-05 elapsed=1.04 min
+[eval] step 5000  val_loss=5.1209
+[train] step 5050/6103 loss=0.0026 lr=2.38e-05 elapsed=1.05 min
+[train] step 5100/6103 loss=0.0028 lr=2.16e-05 elapsed=1.06 min
+[train] step 5150/6103 loss=0.0027 lr=1.96e-05 elapsed=1.07 min
+[train] step 5200/6103 loss=0.0026 lr=1.76e-05 elapsed=1.08 min
+[train] step 5250/6103 loss=0.0027 lr=1.57e-05 elapsed=1.09 min
+[train] step 5300/6103 loss=0.0026 lr=1.40e-05 elapsed=1.10 min
+[train] step 5350/6103 loss=0.0026 lr=1.23e-05 elapsed=1.11 min
+[train] step 5400/6103 loss=0.0026 lr=1.08e-05 elapsed=1.12 min
+[train] step 5450/6103 loss=0.0027 lr=9.29e-06 elapsed=1.13 min
+[train] step 5500/6103 loss=0.0026 lr=7.94e-06 elapsed=1.14 min
+[eval] step 5500  val_loss=5.0955
+[train] step 5550/6103 loss=0.0166 lr=6.68e-06 elapsed=1.16 min
+[train] step 5600/6103 loss=0.0132 lr=5.54e-06 elapsed=1.17 min
+[train] step 5650/6103 loss=0.0114 lr=4.50e-06 elapsed=1.18 min
+[train] step 5700/6103 loss=0.0097 lr=3.56e-06 elapsed=1.19 min
+[train] step 5750/6103 loss=0.0090 lr=2.74e-06 elapsed=1.20 min
+[train] step 5800/6103 loss=0.0082 lr=2.02e-06 elapsed=1.21 min
+[train] step 5850/6103 loss=0.0081 lr=1.41e-06 elapsed=1.22 min
+[train] step 5900/6103 loss=0.0076 lr=9.06e-07 elapsed=1.23 min
+[train] step 5950/6103 loss=0.0074 lr=5.15e-07 elapsed=1.24 min
+[train] step 6000/6103 loss=0.0075 lr=2.34e-07 elapsed=1.25 min
+[eval] step 6000  val_loss=4.6962
+[train] step 6050/6103 loss=0.0074 lr=6.19e-08 elapsed=1.26 min
+[train] step 6100/6103 loss=0.0072 lr=1.97e-10 elapsed=1.27 min
+[eval] step 6103  val_loss=4.6961
+===========================================
+[train] RNN model name:     small
+[train] Parameters:         1,078,528
+[train] Best val loss:      1.1418
+[train] Steps in 1 epoch:   6103
+[train] Total train tokens: 99,991,552
+[train] Wall clock seconds: 76.6
+[train] Wall clock minutes: 1.3
+[train] GPU memory start:   4.11 MB
+[train] GPU memory end:     93.08 MB
+[train] GPU memory peak:    496.32 MB
+===========================================
+[ckpt] Saved final model to /scratch/dk5288/code/my_project/part3/rnn_small_final.pt
+==============================
+Running LSTM training for medium
+==============================
+/scratch/dk5288/envs/cv6643/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+/scratch/dk5288/code/my_project/part3/train_rnn_scaling.py:103: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments.
+  x[i] = self.tokens[start:end]
+/scratch/dk5288/code/my_project/part3/train_rnn_scaling.py:104: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments.
+  y[i] = self.tokens[start + 1 : end + 1]
+==============================
+Running LSTM training for medium
+==============================
+[train] Using device: cuda
+[train] Output directory: /scratch/dk5288/code/my_project/part3
+[train] Vocab size: 99
+[data] Loading from /scratch/dk5288/data/abc_char_corpus_98_1_1/train.txt (max_chars=100000256)
+[data] Loaded 100000256 characters from /scratch/dk5288/data/abc_char_corpus_98_1_1/train.txt
+[data] Loading from /scratch/dk5288/data/abc_char_corpus_98_1_1/val.txt (max_chars=1000256)
+[data] Loaded 1000256 characters from /scratch/dk5288/data/abc_char_corpus_98_1_1/val.txt
+[data] Encoding text to ids...
+[data] Encoded 100000256 tokens
+[data] Encoding text to ids...
+[data] Encoded 1000256 tokens
+[train] Train effective tokens: 100,000,000
+[train] Val effective tokens:   1,000,000
+[train] Tokens per step:        16,384
+[train] Steps per epoch:        6,103
+[train] Total train tokens:     99,991,552
+[model] RNN config for medium: {'n_layers': 2, 'd_model': 384}
+[model] RNN medium has 2,404,224 trainable parameters
+[train] GPU memory at start: 9.17 MB
+[train] Training for exactly one epoch over streaming batches
+[train] step 1/6103 loss=4.8816 lr=1.97e-06 elapsed=0.00 min
+[train] step 50/6103 loss=2.6401 lr=5.02e-05 elapsed=0.01 min
+[train] step 100/6103 loss=1.8357 lr=9.93e-05 elapsed=0.03 min
+[train] step 150/6103 loss=1.5297 lr=1.49e-04 elapsed=0.04 min
+[train] step 200/6103 loss=1.3683 lr=1.98e-04 elapsed=0.05 min
+[train] step 250/6103 loss=2.1768 lr=2.47e-04 elapsed=0.06 min
+[train] step 300/6103 loss=1.6057 lr=2.96e-04 elapsed=0.07 min
+[train] step 350/6103 loss=1.4416 lr=3.00e-04 elapsed=0.08 min
+[train] step 400/6103 loss=1.2698 lr=3.00e-04 elapsed=0.10 min
+[train] step 450/6103 loss=1.3520 lr=3.00e-04 elapsed=0.11 min
+[train] step 500/6103 loss=2.0235 lr=2.99e-04 elapsed=0.12 min
+[eval] step 500  val_loss=1.4079
+[ckpt] Saved new best model to /scratch/dk5288/code/my_project/part3/rnn_medium_best.pt
+[train] step 550/6103 loss=1.4737 lr=2.99e-04 elapsed=0.14 min
+[train] step 600/6103 loss=1.0633 lr=2.98e-04 elapsed=0.15 min
+[train] step 650/6103 loss=1.1754 lr=2.97e-04 elapsed=0.16 min
+[train] step 700/6103 loss=1.3753 lr=2.97e-04 elapsed=0.17 min
+[train] step 750/6103 loss=1.5216 lr=2.96e-04 elapsed=0.18 min
+[train] step 800/6103 loss=1.5509 lr=2.95e-04 elapsed=0.20 min
+[train] step 850/6103 loss=1.5685 lr=2.94e-04 elapsed=0.21 min
+[train] step 900/6103 loss=0.7300 lr=2.92e-04 elapsed=0.22 min
+[train] step 950/6103 loss=1.2067 lr=2.91e-04 elapsed=0.23 min
+[train] step 1000/6103 loss=1.1596 lr=2.89e-04 elapsed=0.24 min
+[eval] step 1000  val_loss=1.2011
+[ckpt] Saved new best model to /scratch/dk5288/code/my_project/part3/rnn_medium_best.pt
+[train] step 1050/6103 loss=1.0961 lr=2.88e-04 elapsed=0.26 min
+[train] step 1100/6103 loss=1.1541 lr=2.86e-04 elapsed=0.27 min
+[train] step 1150/6103 loss=0.6487 lr=2.85e-04 elapsed=0.28 min
+[train] step 1200/6103 loss=1.1887 lr=2.83e-04 elapsed=0.30 min
+[train] step 1250/6103 loss=0.8264 lr=2.81e-04 elapsed=0.31 min
+[train] step 1300/6103 loss=1.2797 lr=2.79e-04 elapsed=0.32 min
+[train] step 1350/6103 loss=1.1992 lr=2.77e-04 elapsed=0.33 min
+[train] step 1400/6103 loss=1.0978 lr=2.74e-04 elapsed=0.34 min
+[train] step 1450/6103 loss=1.5719 lr=2.72e-04 elapsed=0.35 min
+[train] step 1500/6103 loss=1.4521 lr=2.70e-04 elapsed=0.37 min
+[eval] step 1500  val_loss=1.1981
+[ckpt] Saved new best model to /scratch/dk5288/code/my_project/part3/rnn_medium_best.pt
+[train] step 1550/6103 loss=1.3478 lr=2.67e-04 elapsed=0.38 min
+[train] step 1600/6103 loss=1.3832 lr=2.65e-04 elapsed=0.39 min
+[train] step 1650/6103 loss=1.8818 lr=2.62e-04 elapsed=0.41 min
+[train] step 1700/6103 loss=1.3045 lr=2.59e-04 elapsed=0.42 min
+[train] step 1750/6103 loss=1.1065 lr=2.56e-04 elapsed=0.43 min
+[train] step 1800/6103 loss=1.0425 lr=2.53e-04 elapsed=0.44 min
+[train] step 1850/6103 loss=1.0133 lr=2.50e-04 elapsed=0.45 min
+[train] step 1900/6103 loss=0.9740 lr=2.47e-04 elapsed=0.46 min
+[train] step 1950/6103 loss=0.8407 lr=2.44e-04 elapsed=0.48 min
+[train] step 2000/6103 loss=0.9081 lr=2.41e-04 elapsed=0.49 min
+[eval] step 2000  val_loss=1.1026
+[ckpt] Saved new best model to /scratch/dk5288/code/my_project/part3/rnn_medium_best.pt
+[train] step 2050/6103 loss=0.8651 lr=2.38e-04 elapsed=0.51 min
+[train] step 2100/6103 loss=0.8980 lr=2.34e-04 elapsed=0.52 min
+[train] step 2150/6103 loss=0.2086 lr=2.31e-04 elapsed=0.53 min
+[train] step 2200/6103 loss=0.0189 lr=2.28e-04 elapsed=0.54 min
+[train] step 2250/6103 loss=0.0077 lr=2.24e-04 elapsed=0.55 min
+[train] step 2300/6103 loss=0.0052 lr=2.21e-04 elapsed=0.56 min
+[train] step 2350/6103 loss=0.0035 lr=2.17e-04 elapsed=0.58 min
+[train] step 2400/6103 loss=0.0026 lr=2.13e-04 elapsed=0.59 min
+[train] step 2450/6103 loss=0.0028 lr=2.10e-04 elapsed=0.60 min
+[train] step 2500/6103 loss=0.0029 lr=2.06e-04 elapsed=0.61 min
+[eval] step 2500  val_loss=2.8401
+[train] step 2550/6103 loss=0.0027 lr=2.02e-04 elapsed=0.63 min
+[train] step 2600/6103 loss=0.0027 lr=1.98e-04 elapsed=0.64 min
+[train] step 2650/6103 loss=0.0027 lr=1.94e-04 elapsed=0.65 min
+[train] step 2700/6103 loss=0.0026 lr=1.90e-04 elapsed=0.66 min
+[train] step 2750/6103 loss=0.0026 lr=1.87e-04 elapsed=0.67 min
+[train] step 2800/6103 loss=0.0025 lr=1.83e-04 elapsed=0.69 min
+[train] step 2850/6103 loss=0.0026 lr=1.79e-04 elapsed=0.70 min
+[train] step 2900/6103 loss=0.0026 lr=1.75e-04 elapsed=0.71 min
+[train] step 2950/6103 loss=0.0026 lr=1.71e-04 elapsed=0.72 min
+[train] step 3000/6103 loss=0.0027 lr=1.67e-04 elapsed=0.73 min
+[eval] step 3000  val_loss=5.1538
+[train] step 3050/6103 loss=0.0026 lr=1.63e-04 elapsed=0.75 min
+[train] step 3100/6103 loss=0.0026 lr=1.58e-04 elapsed=0.76 min
+[train] step 3150/6103 loss=0.0026 lr=1.54e-04 elapsed=0.77 min
+[train] step 3200/6103 loss=0.0025 lr=1.50e-04 elapsed=0.78 min
+[train] step 3250/6103 loss=0.0026 lr=1.46e-04 elapsed=0.79 min
+[train] step 3300/6103 loss=0.0026 lr=1.42e-04 elapsed=0.81 min
+[train] step 3350/6103 loss=0.0025 lr=1.38e-04 elapsed=0.82 min
+[train] step 3400/6103 loss=0.0026 lr=1.34e-04 elapsed=0.83 min
+[train] step 3450/6103 loss=0.0025 lr=1.30e-04 elapsed=0.84 min
+[train] step 3500/6103 loss=0.0026 lr=1.26e-04 elapsed=0.85 min
+[eval] step 3500  val_loss=4.2828
+[train] step 3550/6103 loss=0.0026 lr=1.22e-04 elapsed=0.87 min
+[train] step 3600/6103 loss=0.0025 lr=1.18e-04 elapsed=0.88 min
+[train] step 3650/6103 loss=0.0026 lr=1.14e-04 elapsed=0.89 min
+[train] step 3700/6103 loss=0.0026 lr=1.10e-04 elapsed=0.90 min
+[train] step 3750/6103 loss=0.0026 lr=1.06e-04 elapsed=0.92 min
+[train] step 3800/6103 loss=0.0026 lr=1.02e-04 elapsed=0.93 min
+[train] step 3850/6103 loss=0.0026 lr=9.86e-05 elapsed=0.94 min
+[train] step 3900/6103 loss=0.0025 lr=9.48e-05 elapsed=0.95 min
+[train] step 3950/6103 loss=0.0026 lr=9.10e-05 elapsed=0.96 min
+[train] step 4000/6103 loss=0.0026 lr=8.73e-05 elapsed=0.97 min
+[eval] step 4000  val_loss=4.8830
+[train] step 4050/6103 loss=0.0025 lr=8.36e-05 elapsed=0.99 min
+[train] step 4100/6103 loss=0.0025 lr=8.00e-05 elapsed=1.00 min
+[train] step 4150/6103 loss=0.0026 lr=7.64e-05 elapsed=1.02 min
+[train] step 4200/6103 loss=0.0025 lr=7.29e-05 elapsed=1.03 min
+[train] step 4250/6103 loss=0.0025 lr=6.95e-05 elapsed=1.04 min
+[train] step 4300/6103 loss=0.0025 lr=6.61e-05 elapsed=1.05 min
+[train] step 4350/6103 loss=0.0026 lr=6.27e-05 elapsed=1.06 min
+[train] step 4400/6103 loss=0.0107 lr=5.95e-05 elapsed=1.07 min
+[train] step 4450/6103 loss=0.0067 lr=5.62e-05 elapsed=1.08 min
+[train] step 4500/6103 loss=0.0043 lr=5.31e-05 elapsed=1.10 min
+[eval] step 4500  val_loss=4.6308
+[train] step 4550/6103 loss=0.0028 lr=5.00e-05 elapsed=1.11 min
+[train] step 4600/6103 loss=0.0026 lr=4.71e-05 elapsed=1.12 min
+[train] step 4650/6103 loss=0.0027 lr=4.41e-05 elapsed=1.14 min
+[train] step 4700/6103 loss=0.0026 lr=4.13e-05 elapsed=1.15 min
+[train] step 4750/6103 loss=0.0027 lr=3.85e-05 elapsed=1.16 min
+[train] step 4800/6103 loss=0.0026 lr=3.59e-05 elapsed=1.17 min
+[train] step 4850/6103 loss=0.0026 lr=3.33e-05 elapsed=1.18 min
+[train] step 4900/6103 loss=0.0026 lr=3.08e-05 elapsed=1.19 min
+[train] step 4950/6103 loss=0.0026 lr=2.83e-05 elapsed=1.21 min
+[train] step 5000/6103 loss=0.0025 lr=2.60e-05 elapsed=1.22 min
+[eval] step 5000  val_loss=4.8632
+[train] step 5050/6103 loss=0.0027 lr=2.38e-05 elapsed=1.23 min
+[train] step 5100/6103 loss=0.0027 lr=2.16e-05 elapsed=1.25 min
+[train] step 5150/6103 loss=0.0026 lr=1.96e-05 elapsed=1.26 min
+[train] step 5200/6103 loss=0.0026 lr=1.76e-05 elapsed=1.27 min
+[train] step 5250/6103 loss=0.0026 lr=1.57e-05 elapsed=1.28 min
+[train] step 5300/6103 loss=0.0027 lr=1.40e-05 elapsed=1.29 min
+[train] step 5350/6103 loss=0.0027 lr=1.23e-05 elapsed=1.30 min
+[train] step 5400/6103 loss=0.0025 lr=1.08e-05 elapsed=1.32 min
+[train] step 5450/6103 loss=0.0025 lr=9.29e-06 elapsed=1.33 min
+[train] step 5500/6103 loss=0.0025 lr=7.94e-06 elapsed=1.34 min
+[eval] step 5500  val_loss=4.8528
+[train] step 5550/6103 loss=0.0159 lr=6.68e-06 elapsed=1.36 min
+[train] step 5600/6103 loss=0.0129 lr=5.54e-06 elapsed=1.37 min
+[train] step 5650/6103 loss=0.0104 lr=4.50e-06 elapsed=1.38 min
+[train] step 5700/6103 loss=0.0084 lr=3.56e-06 elapsed=1.39 min
+[train] step 5750/6103 loss=0.0077 lr=2.74e-06 elapsed=1.40 min
+[train] step 5800/6103 loss=0.0071 lr=2.02e-06 elapsed=1.41 min
+[train] step 5850/6103 loss=0.0067 lr=1.41e-06 elapsed=1.43 min
+[train] step 5900/6103 loss=0.0064 lr=9.06e-07 elapsed=1.44 min
+[train] step 5950/6103 loss=0.0063 lr=5.15e-07 elapsed=1.45 min
+[train] step 6000/6103 loss=0.0063 lr=2.34e-07 elapsed=1.46 min
+[eval] step 6000  val_loss=4.1227
+[train] step 6050/6103 loss=0.0063 lr=6.19e-08 elapsed=1.48 min
+[train] step 6100/6103 loss=0.0060 lr=1.97e-10 elapsed=1.49 min
+[eval] step 6103  val_loss=4.1213
+===========================================
+[train] RNN model name:     medium
+[train] Parameters:         2,404,224
+[train] Best val loss:      1.1026
+[train] Steps in 1 epoch:   6103
+[train] Total train tokens: 99,991,552
+[train] Wall clock seconds: 89.7
+[train] Wall clock minutes: 1.5
+[train] GPU memory start:   9.17 MB
+[train] GPU memory end:     113.87 MB
+[train] GPU memory peak:    709.60 MB
+===========================================
+[ckpt] Saved final model to /scratch/dk5288/code/my_project/part3/rnn_medium_final.pt
+==============================
+Running LSTM training for large
+==============================
+/scratch/dk5288/envs/cv6643/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+/scratch/dk5288/code/my_project/part3/train_rnn_scaling.py:103: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments.
+  x[i] = self.tokens[start:end]
+/scratch/dk5288/code/my_project/part3/train_rnn_scaling.py:104: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments.
+  y[i] = self.tokens[start + 1 : end + 1]
+==============================
+Running LSTM training for large
+==============================
+[train] Using device: cuda
+[train] Output directory: /scratch/dk5288/code/my_project/part3
+[train] Vocab size: 99
+[data] Loading from /scratch/dk5288/data/abc_char_corpus_98_1_1/train.txt (max_chars=100000256)
+[data] Loaded 100000256 characters from /scratch/dk5288/data/abc_char_corpus_98_1_1/train.txt
+[data] Loading from /scratch/dk5288/data/abc_char_corpus_98_1_1/val.txt (max_chars=1000256)
+[data] Loaded 1000256 characters from /scratch/dk5288/data/abc_char_corpus_98_1_1/val.txt
+[data] Encoding text to ids...
+[data] Encoded 100000256 tokens
+[data] Encoding text to ids...
+[data] Encoded 1000256 tokens
+[train] Train effective tokens: 100,000,000
+[train] Val effective tokens:   1,000,000
+[train] Tokens per step:        16,384
+[train] Steps per epoch:        6,103
+[train] Total train tokens:     99,991,552
+[model] RNN config for large: {'n_layers': 3, 'd_model': 512}
+[model] RNN large has 6,355,456 trainable parameters
+[train] GPU memory at start: 24.24 MB
+[train] Training for exactly one epoch over streaming batches
+[train] step 1/6103 loss=4.7684 lr=1.97e-06 elapsed=0.00 min
+[train] step 50/6103 loss=2.7616 lr=5.02e-05 elapsed=0.02 min
+[train] step 100/6103 loss=2.0948 lr=9.93e-05 elapsed=0.03 min
+[train] step 150/6103 loss=1.7424 lr=1.49e-04 elapsed=0.05 min
+[train] step 200/6103 loss=1.4455 lr=1.98e-04 elapsed=0.06 min
+[train] step 250/6103 loss=2.2827 lr=2.47e-04 elapsed=0.08 min
+[train] step 300/6103 loss=1.7368 lr=2.96e-04 elapsed=0.09 min
+[train] step 350/6103 loss=1.5196 lr=3.00e-04 elapsed=0.11 min
+[train] step 400/6103 loss=1.3417 lr=3.00e-04 elapsed=0.12 min
+[train] step 450/6103 loss=1.3260 lr=3.00e-04 elapsed=0.14 min
+[train] step 500/6103 loss=2.0974 lr=2.99e-04 elapsed=0.15 min
+[eval] step 500  val_loss=1.4858
+[ckpt] Saved new best model to /scratch/dk5288/code/my_project/part3/rnn_large_best.pt
+[train] step 550/6103 loss=1.5483 lr=2.99e-04 elapsed=0.18 min
+[train] step 600/6103 loss=1.1131 lr=2.98e-04 elapsed=0.19 min
+[train] step 650/6103 loss=1.1596 lr=2.97e-04 elapsed=0.21 min
+[train] step 700/6103 loss=1.3768 lr=2.97e-04 elapsed=0.22 min
+[train] step 750/6103 loss=1.5393 lr=2.96e-04 elapsed=0.24 min
+[train] step 800/6103 loss=1.5794 lr=2.95e-04 elapsed=0.25 min
+[train] step 850/6103 loss=1.5842 lr=2.94e-04 elapsed=0.27 min
+[train] step 900/6103 loss=0.7495 lr=2.92e-04 elapsed=0.28 min
+[train] step 950/6103 loss=1.2279 lr=2.91e-04 elapsed=0.30 min
+[train] step 1000/6103 loss=1.1724 lr=2.89e-04 elapsed=0.31 min
+[eval] step 1000  val_loss=1.2363
+[ckpt] Saved new best model to /scratch/dk5288/code/my_project/part3/rnn_large_best.pt
+[train] step 1050/6103 loss=1.1108 lr=2.88e-04 elapsed=0.34 min
+[train] step 1100/6103 loss=1.1554 lr=2.86e-04 elapsed=0.35 min
+[train] step 1150/6103 loss=0.6017 lr=2.85e-04 elapsed=0.37 min
+[train] step 1200/6103 loss=1.1976 lr=2.83e-04 elapsed=0.38 min
+[train] step 1250/6103 loss=0.8047 lr=2.81e-04 elapsed=0.40 min
+[train] step 1300/6103 loss=1.2816 lr=2.79e-04 elapsed=0.41 min
+[train] step 1350/6103 loss=1.2124 lr=2.77e-04 elapsed=0.43 min
+[train] step 1400/6103 loss=1.0753 lr=2.74e-04 elapsed=0.44 min
+[train] step 1450/6103 loss=1.6258 lr=2.72e-04 elapsed=0.46 min
+[train] step 1500/6103 loss=1.4113 lr=2.70e-04 elapsed=0.47 min
+[eval] step 1500  val_loss=1.2156
+[ckpt] Saved new best model to /scratch/dk5288/code/my_project/part3/rnn_large_best.pt
+[train] step 1550/6103 loss=1.3684 lr=2.67e-04 elapsed=0.50 min
+[train] step 1600/6103 loss=1.3690 lr=2.65e-04 elapsed=0.51 min
+[train] step 1650/6103 loss=1.9096 lr=2.62e-04 elapsed=0.53 min
+[train] step 1700/6103 loss=1.2846 lr=2.59e-04 elapsed=0.54 min
+[train] step 1750/6103 loss=1.1043 lr=2.56e-04 elapsed=0.56 min
+[train] step 1800/6103 loss=1.0217 lr=2.53e-04 elapsed=0.57 min
+[train] step 1850/6103 loss=1.0103 lr=2.50e-04 elapsed=0.59 min
+[train] step 1900/6103 loss=0.9523 lr=2.47e-04 elapsed=0.60 min
+[train] step 1950/6103 loss=0.8172 lr=2.44e-04 elapsed=0.62 min
+[train] step 2000/6103 loss=0.8844 lr=2.41e-04 elapsed=0.63 min
+[eval] step 2000  val_loss=1.0813
+[ckpt] Saved new best model to /scratch/dk5288/code/my_project/part3/rnn_large_best.pt
+[train] step 2050/6103 loss=0.8745 lr=2.38e-04 elapsed=0.66 min
+[train] step 2100/6103 loss=0.9058 lr=2.34e-04 elapsed=0.67 min
+[train] step 2150/6103 loss=0.1028 lr=2.31e-04 elapsed=0.69 min
+[train] step 2200/6103 loss=0.0114 lr=2.28e-04 elapsed=0.70 min
+[train] step 2250/6103 loss=0.0059 lr=2.24e-04 elapsed=0.72 min
+[train] step 2300/6103 loss=0.0051 lr=2.21e-04 elapsed=0.73 min
+[train] step 2350/6103 loss=0.0044 lr=2.17e-04 elapsed=0.75 min
+[train] step 2400/6103 loss=0.0027 lr=2.13e-04 elapsed=0.76 min
+[train] step 2450/6103 loss=0.0026 lr=2.10e-04 elapsed=0.77 min
+[train] step 2500/6103 loss=0.0025 lr=2.06e-04 elapsed=0.79 min
+[eval] step 2500  val_loss=3.1165
+[train] step 2550/6103 loss=0.0027 lr=2.02e-04 elapsed=0.81 min
+[train] step 2600/6103 loss=0.0026 lr=1.98e-04 elapsed=0.83 min
+[train] step 2650/6103 loss=0.0026 lr=1.94e-04 elapsed=0.84 min
+[train] step 2700/6103 loss=0.0025 lr=1.90e-04 elapsed=0.86 min
+[train] step 2750/6103 loss=0.0026 lr=1.87e-04 elapsed=0.87 min
+[train] step 2800/6103 loss=0.0026 lr=1.83e-04 elapsed=0.89 min
+[train] step 2850/6103 loss=0.0026 lr=1.79e-04 elapsed=0.90 min
+[train] step 2900/6103 loss=0.0026 lr=1.75e-04 elapsed=0.92 min
+[train] step 2950/6103 loss=0.0026 lr=1.71e-04 elapsed=0.93 min
+[train] step 3000/6103 loss=0.0025 lr=1.67e-04 elapsed=0.95 min
+[eval] step 3000  val_loss=5.6094
+[train] step 3050/6103 loss=0.0025 lr=1.63e-04 elapsed=0.97 min
+[train] step 3100/6103 loss=0.0026 lr=1.58e-04 elapsed=0.98 min
+[train] step 3150/6103 loss=0.0025 lr=1.54e-04 elapsed=1.00 min
+[train] step 3200/6103 loss=0.0025 lr=1.50e-04 elapsed=1.01 min
+[train] step 3250/6103 loss=0.0026 lr=1.46e-04 elapsed=1.03 min
+[train] step 3300/6103 loss=0.0026 lr=1.42e-04 elapsed=1.04 min
+[train] step 3350/6103 loss=0.0025 lr=1.38e-04 elapsed=1.06 min
+[train] step 3400/6103 loss=0.0026 lr=1.34e-04 elapsed=1.07 min
+[train] step 3450/6103 loss=0.0026 lr=1.30e-04 elapsed=1.09 min
+[train] step 3500/6103 loss=0.0026 lr=1.26e-04 elapsed=1.10 min
+[eval] step 3500  val_loss=4.8984
+[train] step 3550/6103 loss=0.0025 lr=1.22e-04 elapsed=1.13 min
+[train] step 3600/6103 loss=0.0027 lr=1.18e-04 elapsed=1.14 min
+[train] step 3650/6103 loss=0.0025 lr=1.14e-04 elapsed=1.15 min
+[train] step 3700/6103 loss=0.0025 lr=1.10e-04 elapsed=1.17 min
+[train] step 3750/6103 loss=0.0025 lr=1.06e-04 elapsed=1.18 min
+[train] step 3800/6103 loss=0.0026 lr=1.02e-04 elapsed=1.20 min
+[train] step 3850/6103 loss=0.0025 lr=9.86e-05 elapsed=1.21 min
+[train] step 3900/6103 loss=0.0025 lr=9.48e-05 elapsed=1.23 min
+[train] step 3950/6103 loss=0.0026 lr=9.10e-05 elapsed=1.24 min
+[train] step 4000/6103 loss=0.0026 lr=8.73e-05 elapsed=1.26 min
+[eval] step 4000  val_loss=5.3628
+[train] step 4050/6103 loss=0.0025 lr=8.36e-05 elapsed=1.28 min
+[train] step 4100/6103 loss=0.0026 lr=8.00e-05 elapsed=1.30 min
+[train] step 4150/6103 loss=0.0026 lr=7.64e-05 elapsed=1.31 min
+[train] step 4200/6103 loss=0.0026 lr=7.29e-05 elapsed=1.33 min
+[train] step 4250/6103 loss=0.0025 lr=6.95e-05 elapsed=1.34 min
+[train] step 4300/6103 loss=0.0026 lr=6.61e-05 elapsed=1.36 min
+[train] step 4350/6103 loss=0.0026 lr=6.27e-05 elapsed=1.37 min
+[train] step 4400/6103 loss=0.0089 lr=5.95e-05 elapsed=1.39 min
+[train] step 4450/6103 loss=0.0049 lr=5.62e-05 elapsed=1.40 min
+[train] step 4500/6103 loss=0.0032 lr=5.31e-05 elapsed=1.42 min
+[eval] step 4500  val_loss=5.7555
+[train] step 4550/6103 loss=0.0026 lr=5.00e-05 elapsed=1.44 min
+[train] step 4600/6103 loss=0.0025 lr=4.71e-05 elapsed=1.45 min
+[train] step 4650/6103 loss=0.0027 lr=4.41e-05 elapsed=1.47 min
+[train] step 4700/6103 loss=0.0026 lr=4.13e-05 elapsed=1.48 min
+[train] step 4750/6103 loss=0.0026 lr=3.85e-05 elapsed=1.50 min
+[train] step 4800/6103 loss=0.0026 lr=3.59e-05 elapsed=1.51 min
+[train] step 4850/6103 loss=0.0028 lr=3.33e-05 elapsed=1.53 min
+[train] step 4900/6103 loss=0.0026 lr=3.08e-05 elapsed=1.54 min
+[train] step 4950/6103 loss=0.0026 lr=2.83e-05 elapsed=1.56 min
+[train] step 5000/6103 loss=0.0026 lr=2.60e-05 elapsed=1.57 min
+[eval] step 5000  val_loss=5.7699
+[train] step 5050/6103 loss=0.0025 lr=2.38e-05 elapsed=1.60 min
+[train] step 5100/6103 loss=0.0026 lr=2.16e-05 elapsed=1.61 min
+[train] step 5150/6103 loss=0.0026 lr=1.96e-05 elapsed=1.63 min
+[train] step 5200/6103 loss=0.0025 lr=1.76e-05 elapsed=1.64 min
+[train] step 5250/6103 loss=0.0026 lr=1.57e-05 elapsed=1.66 min
+[train] step 5300/6103 loss=0.0026 lr=1.40e-05 elapsed=1.67 min
+[train] step 5350/6103 loss=0.0026 lr=1.23e-05 elapsed=1.69 min
+[train] step 5400/6103 loss=0.0026 lr=1.08e-05 elapsed=1.70 min
+[train] step 5450/6103 loss=0.0026 lr=9.29e-06 elapsed=1.72 min
+[train] step 5500/6103 loss=0.0026 lr=7.94e-06 elapsed=1.73 min
+[eval] step 5500  val_loss=5.8584
+[train] step 5550/6103 loss=0.0161 lr=6.68e-06 elapsed=1.75 min
+[train] step 5600/6103 loss=0.0102 lr=5.54e-06 elapsed=1.77 min
+[train] step 5650/6103 loss=0.0071 lr=4.50e-06 elapsed=1.78 min
+[train] step 5700/6103 loss=0.0051 lr=3.56e-06 elapsed=1.80 min
+[train] step 5750/6103 loss=0.0043 lr=2.74e-06 elapsed=1.81 min
+[train] step 5800/6103 loss=0.0039 lr=2.02e-06 elapsed=1.83 min
+[train] step 5850/6103 loss=0.0037 lr=1.41e-06 elapsed=1.84 min
+[train] step 5900/6103 loss=0.0035 lr=9.06e-07 elapsed=1.86 min
+[train] step 5950/6103 loss=0.0034 lr=5.15e-07 elapsed=1.87 min
+[train] step 6000/6103 loss=0.0034 lr=2.34e-07 elapsed=1.89 min
+[eval] step 6000  val_loss=5.6940
+[train] step 6050/6103 loss=0.0035 lr=6.19e-08 elapsed=1.91 min
+[train] step 6100/6103 loss=0.0034 lr=1.97e-10 elapsed=1.92 min
+[eval] step 6103  val_loss=5.6937
+===========================================
+[train] RNN model name:     large
+[train] Parameters:         6,355,456
+[train] Best val loss:      1.0813
+[train] Steps in 1 epoch:   6103
+[train] Total train tokens: 99,991,552
+[train] Wall clock seconds: 115.9
+[train] Wall clock minutes: 1.9
+[train] GPU memory start:   24.24 MB
+[train] GPU memory end:     173.60 MB
+[train] GPU memory peak:    1165.81 MB
+===========================================
+[ckpt] Saved final model to /scratch/dk5288/code/my_project/part3/rnn_large_final.pt
+All LSTM models finished.
