@@ -213,17 +213,6 @@ From your run:
 - Converted to MIDI (of all): 25 (50.00%)
 - Converted to MIDI (of valid only): 25 (71.43%)
 
-## Reproducing the report figures
-
-Figures referenced in the report:
-
-- Transformer training curves: `150M_training_loss_curves_all_models.png`
-- Transformer scaling law plot: `150M_scaling_law_val_loss_vs_params.png`
-- RNN training curves: `rnn_training_loss_curves_all_models.png`
-- RNN scaling law plot: `rnn_scaling_law_val_loss_vs_params.png`
-- Combined scaling plot: `transformer_vs_rnn_scaling.png`
-- Combined time vs params: `combined_time_vs_params.png`
-- Combined memory vs params: `combined_mem_vs_params.png`
 
 ## Notes
 
