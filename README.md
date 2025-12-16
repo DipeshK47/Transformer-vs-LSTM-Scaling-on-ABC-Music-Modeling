@@ -221,4 +221,4 @@ From your run:
 
 ## License
 
-This project is for coursework and research experimentation. Add a license here if you plan to publish the code publicly.
+This project is for coursework and research experimentation.
