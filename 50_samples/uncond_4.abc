@@ -1,0 +1,50 @@
+X:4
+T:AI Waltz
+M:3/4
+K:F
+% Latch/dk5288/data/lmd_full/4/446240864a16fb92c7936332c63acccc.mid
+M: 4/4
+L: 1/8
+Q:1/4=80
+% Last note suggests Mixolydian mode tune
+K:G % 1 sharps
+V:1
+z8| \
+z8| \
+z8| \
+z8|
+z8| \
+z8| \
+z8| \
+z8|
+z8| \
+z8| \
+%%MIDI program 26
+%  
+% Sake 
+[FD^A,]3/2z/2 
+% taid 
+[GEC]3/2z/2 
+% the sain 
+[FDA,]3/2z/2 
+% sight 
+%  
+[GEC]3/2z/2| \
+% Sand 
+[FD^A,]3/2z/2 
+% try 
+%  
+[GEC]3/2z/2 
+% Sa
+[FDA,]3/2z/2 
+% ri
+[GEC]3/2z/2|
+% gling 
+[FD^A,]3/2z/2 
+% a
+[GEC]3/2z/2 
+% res 
+%  
+[GEC]3/2z/2 
+% There 
+[GEA,]3/2z/2| 

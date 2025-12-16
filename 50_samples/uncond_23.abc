@@ -1,0 +1,31 @@
+X:3
+T:AI Reel
+M:4/4
+K:D
+% 2| \
+%%MIDI program 48
+z8| \
+A4- A3/2z/2 A2| \
+^c2 z2 dz d2-|
+d2- d/2z3/2 ^c3z| \
+d2- d/2z/2d zd2-d/2z/2| \
+^c2 z2 d3z| \
+d2- d/2z/2d zd2z|
+e2- e/2z/2d z2 d2| \
+B4- B3/2z/2 ^Gz| \
+A4- A3/2z/2 A2| \
+^c2 z2 d3z|
+d2- d/2z/2d zd2-d/2z/2| \
+e4- e3/2z/2 e2-| \
+e/2z/2e2d3/2z3/2 B3/2z/2| \
+B8-|
+B3/2z/2 Bz B3/2z/2 B3/2z/2| \
+B8| \
+d3/2z/2 dz d3/2z/2 dz| \
+^d2- d/2z/2d3/2z/2d2-d/2z/2|
+e4 d3-d/2z/2| \
+B3/2z/2 Bz B2 d3/2z/2| \
+d6- d3/2z/2| \
+e3/2z3/2f3/2z/2g3/2z/2a-|
+[^a=a]/2^g/2=g/2f/2 =g4 z2| \
+f2>g2 ^g

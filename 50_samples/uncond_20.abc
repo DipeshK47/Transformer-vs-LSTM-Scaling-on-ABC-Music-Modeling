@@ -1,0 +1,22 @@
+X:5
+T:AI Tune
+M:4/4
+K:Am
+% | \
+%%MIDI program 11
+z6 z/2
+%%MIDI program 120
+[A-A,-]3/2| \
+[A-A,]/2A2-A/2-[A-E-]3/2[A-AE-]/2[AE]3/2z/2[A-A,-]| \
+[AA,]/2[F-F,-]3/2 [F-FF,-]2 [F-A,-F,-]4|
+[BFA,F,]4 z[AA,]/2z/2 [d-D-]2| \
+[dD][AA,]2[cC]2[dD]/2z2z/2|x \
+z4 z[AF-]/2F/2 [c-AC-][cA-C-]/2[dAC]/2| \
+B-[d-BD-]/2[d-D-]/2 [dB-D-]2 [B-D]/2Bz/2 G2-|
+G-[G-E]/2G2-G/2 G4-| \
+G/2z/2F2-F/2-F/2 F4-| \
+F/2z/2G2-G/2z/2 G3/2A3/2[B-G-]| \
+[BG-][c-G]/2c3/2[A-E-] [AEC]4|
+A-[cA]2A3 G2-| \
+G-[GE-]/2E3/2-[E-G,-]/2[EC-G,]/2 C2 [A-E-]2| \
+[AE-][GE]3/2z/

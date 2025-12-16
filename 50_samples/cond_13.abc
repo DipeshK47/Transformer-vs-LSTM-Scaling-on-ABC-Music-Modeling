@@ -1,0 +1,21 @@
+X: 1
+T: from /scratch/dk5288/data/lmd_full/9/9a5c499b1968a52200a69b0bb7da86e2.mid
+M: 2/4
+L: 1/16
+Q:1/4=170
+K:G % 1 sharps
+V:1
+%%clef treble
+%%MIDI program 0
+z4 [EC]2 [FD]2| \
+[GEE,B,,E,,]4 [GEE,B,,E,,]4| \
+[FDF,]3[AFA,]3 [FA,]z| \
+z4 [EC]2 [FD]2|
+[GEE,B,,E,,]3[G-E-E,-B,,-E,,-]4[G-E-E,-B,,-E,,-]| \
+[GEE,B,,E,,]8| \
+[F-D-A,D,A,,][FDA,D,A,,] [FDA,D,A,,][E-C-A,-E,-A,,-]4[ECA,E,A,,]| \
+[FDA,D,A,,][FDA,D,A,,] [FDA,D,A,,][E-C-A,-E,-A,,-]4[ECA,E,A,,]|
+[FDA,D,A,,][FDA,D,A,,]2[F-D-A,-D,-A,,-]4[FDA,D,A,,]| \
+[EB,G,E,B,,E,,][EB,G,E,B,,E,,]2[E-B,-G,-E,-B,,-E,,-]4[EB,G,E,B,,E,,]| \
+[FDA,D,A,,][FDA,D,A,,] [FDA,D,A,,][E-C-A,-E,-A,,-]4[ECA,E,A,,]| \
+[FDA,D,A,,][FDA,D,A,,] [FDA,D,A,,]2 [EB,G,E,B,,E,,][EB,G,E,

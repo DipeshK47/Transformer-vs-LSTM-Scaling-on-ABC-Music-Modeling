@@ -1,0 +1,24 @@
+X: 1
+T: from /scratch/dk5288/data/lmd_full/2/20667f871ceb95961299d4ded5a0f562.mid
+M: 4/4
+L: 1/8
+Q:1/4=83
+K:C % 0 sharps
+V:1
+%%clef treble
+%%MIDI program 0
+z8| \
+[FD^A,,]8| \
+z4 [CA,F,F,,]4| \
+^A,,3/2-[=A-F-D-^A,,]3/2[=AFD^A,,] [FC=A,F,,]4|
+[F-D-^A,-A,,-]6 [F-D-A,A,,-]3/2[FDA,,]/2| \
+F,,3/2-[A-F-C-^A,-F,,]3/2[=AFC^A,^D,,] F,,3/2-[A-F-C-A,-F,,-]2[AFCA,F,,]/2| \
+[^AG^DC^D,,]4 F,,2- [A-G-D-C-F,,-]2| \
+[^AG^DC^F,,]4 [AGCD,,]4|
+[^AFDF,,]4 F,,2- [A-G-^D-C-F,,-]2| \
+[^A-G-^D-C-^F,,-]3[A-GD-C-F,,]/2[ADC]/2 F,,2 [AGCF,,]2| \
+[^AFDF,,]6 [AG^DCF,,]2| \
+[^AG^DC^D,,]4 F,,2 [AGCF,,]2|
+[^AFDF,,]4 F,,2 [AGCF,,]2| \
+[^AFDF,,]2 [AGCF,,]2 [=A-F-C-F,,-]2 [AFCF,,]/2[A-F-C-F,,-]3/2| \
+[^A-F-C-F,,-]2 [AFCF,,]/2[AFD

@@ -1,0 +1,20 @@
+X: 1
+T: from /scratch/dk5288/data/lmd_full/6/6e4e726db8a1dda0dd5f6f845456056a.mid
+%***Missing time signature meta command in MIDI file
+M: 4/4
+L: 1/8
+Q:1/4=136
+% Last note suggests minor mode tune
+K:F# % 6 sharps
+V:1
+%%MIDI program 0
+[A,A,,][A,A,] [A,A,,A,,][A,A,] [A,A,,][A,A,] [A,A,,A,,][A,A,]| \
+[A,A,,][A,A,] [A,A,,A,,][A,A,] [A,A,,][A,A,] [A,A,,A,,][A,A,]| \
+A,,[A,F,-] [A,F,F,,-][A,F,-F,,] F,z2F,,-| \
+F,,[A,F,-] [B,F,-]/2F,/2[A,A,,] [A,A,,-]/2A,,/2[A,A,,-]/2A,,/2 [A,-A,,]A,/2z/2|
+[B,B,,]z [B,B,,-]/2B,,/2z [CC,]z [DD,]z| \
+A,,z6z| \
+A,,z A,A,, A,,A,/2z/2 A,,[A,E,A,,-]/2A,,/2-| \
+[A,,-F,,]A,, [A,F,-]/2F,/2z [B,F,]z [A,F,][A,F,]/2z/2|
+F,,F,/2z/2 [F,D,-]/2D,/2z [F,D,][A,F,]/2z3/2B,/2z/2| \
+F,z

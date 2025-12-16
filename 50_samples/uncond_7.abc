@@ -1,0 +1,14 @@
+X:2
+T:AI Jig
+M:6/8
+K:G
+% 1 sharps
+V:1
+%%clef bass
+%%MIDI program 0
+z6 [D-B,-A,-G,-]3/2[G-D-B,-A,-G,]/2| \
+[GD-B,-A,-E,-]/2[D-B,-A,-E,]/2[D-B,-A,-] [DB,A,B,,-]3/2[E-B,-A,-B,,]/2 [E-D-B,-A,-B,,][E-D-B,-A,-]3| \
+[EDB,A,]4 z/2D/2-[F-D-]/2[A-F-D-B,-]3/2[dAFDB,A,,-]/2A,,/2-| \
+A,,3-[EB,A,,]/2z/2 [E-D-B,-A,-]2 [E-D-B,-A,-A,,]/2[E-D-B,-A,-]/2[E-D-B,-A,-A,,]|
+[EDB,A,A,,-]3/2A,,/2- [E-D-B,A,-A,,][EDA,A,,]/2z/2 [EDB,A,]z [ECA,]/2z[E-B,-A,-]/2| \
+[E-B,-A,-]2 [E-B,-A,-A,,]/2[E-B,-A,-]/2[E-B,-A,-E,,] [EB,-A,-]/2[B,A,]/2z2B,,/2z/2| 

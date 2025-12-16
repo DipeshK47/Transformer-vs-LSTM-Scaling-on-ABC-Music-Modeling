@@ -1,0 +1,14 @@
+X:2
+T:AI Jig
+M:6/8
+K:G
+% Last note suggests Phrygian mode tune
+K:G % 1 sharps
+V:1
+z8| \
+z8| \
+%%MIDI program 0
+[EC-]/2[AC-]/2[cC-]/2[AC-]/2 [cC-]/2[eE-C]/2[AE]/2C/2- [cE-C-]/2[AE-C-]/2[cE-C-]/2[eE-C-]/2 [AE-C-]/2[cEC-]/2[E-C]/2[AE]/2| \
+[cE-]/2[GE-]/2[cE-]/2[eE-]/2 [eE-]/2[GE-]/2[eE-]/2[GE]/2 [cC-]/2[eC-]/2[GC-]/2[cC]/2 [eC-]/2[GC-]/2[eC-]/2[GC]/2| \
+[cE-]/2[GE-]/2[eE-]/2[GE]/2 [dD-]/2[GD-]/2[BD-]/2[GD]/2 [BD-]/2[GD-]/2[BD-]/2[GD]/2 [BD-]/2[GD-]/2[dD-]/2[BD]/2| \
+[eE-]/2[GE-]/2[eE-]/2[GE]/2 [dD-]/2[GD-]/2[BD-]/2[GD]/2

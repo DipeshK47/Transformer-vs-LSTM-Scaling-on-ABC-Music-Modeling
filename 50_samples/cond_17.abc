@@ -1,0 +1,28 @@
+X: 1
+T: from /scratch/dk5288/data/lmd_full/2/20667f871ceb95961299d4ded5a0f562.mid
+M: 4/4
+L: 1/8
+Q:1/4=83
+K:C % 0 sharps
+V:1
+%%clef treble
+%%MIDI program 0
+z8| \
+[FD^A,,]8| \
+z4 [CA,F,F,,]4| \
+^A,,3/2-[F-D-A,,-]/2 [F-D-A,-A,,-]/2[F-D-A,-D,-A,,-]2[FDA,D,-A,,-]/2[D,A,,]3|
+F,,3/2-[C-A,-F,,-][F-C-A,-F,,-]/2[c-F-C-A,-F,,-]/2[d-cF-C-A,-F,,-]/2 [d-^A-F-C-A,-F,,-]2 [d-A-F-C-A,F,,]/2[dAFC]/2z| \
+F,,3/2-[C-A,-F,,-]3/2[C-A,-F,-F,,-]2[CA,F,F,,-]/2F,,/2 z2| \
+z8| \
+F,,-[F-C-A,-F,,-]2[F-C-A,-F,-F,,-]3 [F-CA,-F,F,,]/2[FA,]/2z|
+z8| \
+z8| \
+z8| \
+z8|
+z8| \
+z8| \
+z6 z3/2F,,/2-| \
+F,,-[F,-F,,-]2[F,F,,]/2z2z/2 F,,/2-[F,-F,,-]3/2|
+[F,-F,,-]2 [F,F,,-]/2F,,/2z3 F,,z| \
+F,,2- F,,/2z2z/2[F,-F,,-]2[F,F,,]/2z/2| \
+F,,3

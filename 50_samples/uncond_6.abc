@@ -1,0 +1,35 @@
+X:1
+T:AI Composition 1
+M:4/4
+K:C
+% 0 sharps
+z8| \
+z8| \
+z8| \
+z4 z
+%%MIDI program 12
+c/2z/2 c/2z/2d-|
+[e-d]/2e/2d c3/2B/2 c3/2z2z/2| \
+z8| \
+z6 zc/2z/2| \
+c/2z/2d/2z/2 c/2z/2B/2z/2 c2- c/2zz/2|
+z8| \
+z8| \
+z6 zc/2z/2| \
+c/2z/2d/2z/2 c/2z/2B/2z/2 c3/2z3/2c/2z/2|
+c/2z/2d/2z/2 c/2z/2B/2z/2 c2 zc/2z/2| \
+c/2z/2d/2z/2 c/2z/2B/2z/2 c2 zz| \
+z8| \
+z6 zc/2z/2|
+c/2z/2d/2z/2 c/2z/2B/2z/2 c3/2z2z/2| \
+z8| \
+z8| \
+z6 zc/2z/2|
+c/2z/2d/2z/2 c/2z/2B/2z/2 c2 zc/2z/2| \
+c/2z/2d/2z/2 c/2z/2B/2z/2 c3/2
+V:6
+%%MIDI program 57
+z8| \
+z8| \
+z8| \
+z8|

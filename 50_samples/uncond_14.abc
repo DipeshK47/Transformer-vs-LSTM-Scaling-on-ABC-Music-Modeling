@@ -1,0 +1,50 @@
+X:4
+T:AI Waltz
+M:3/4
+K:F
+%%MIDI program 0
+z8| \
+z8| \
+z8| \
+z8|
+z8| \
+z8| \
+z8| \
+z8|
+z8| \
+z8| \
+z8| \
+z8|
+z8| \
+z8| \
+z8| \
+z8|
+z8| \
+z8| \
+%%MIDI program 0
+[F-D-A,-D,-]8| \
+[F-D-A,-D,-]8|
+[F-D-A,-D,-]8|[F-D-A,-D,-]8|[FDA,D,]8|
+
+
+X: 1
+T: from /scratch/dk5288/data/lmd_full/1/12228949191202281492c9096299990.mid
+M: 4/4
+L: 1/8
+Q:1/4=126
+K:C % 0 sharps
+V:1
+z8| \
+z8| \
+z8| \
+z2 
+%%MIDI program 26
+C,2 C,2 C,2|
+C,2 C,2 C,2 C,2| \
+C,2 C,2 C,2 C,2| \
+C,2 C,2 C2 C,2| \
+C2 C,2 C2 C,2|
+C,2 C,2 C,2 C,2| \
+C,2 C,2 C,2 C,2| \
+z8| \
+z

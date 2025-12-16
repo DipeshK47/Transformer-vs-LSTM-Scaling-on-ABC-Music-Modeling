@@ -1,0 +1,35 @@
+X:3
+T:AI Reel
+M:4/4
+K:D
+% 3 flats
+z8| \
+z8| \
+z8| \
+z8|
+z8| \
+z8| \
+z8| \
+z8|
+z8| \
+%%MIDI program 50
+[^c'-a-e-]3[c'ae]/2z/2 [c'ae-]3e/2z/2| \
+[^c'ae]4 [c'ae]2 z2| \
+z8|
+z8| \
+z8| \
+z8| \
+z8|
+z8| \
+z8| \
+z8| \
+z8|
+z8| \
+z8| \
+z8| \
+z8|
+[^c'ae]3/2z/2 [c'ae]/2z/2[c'ae]/2z/2 [c'ae]/2z/2[c'ae]/2z/2 [c'ae]/2z3/2| \
+z8| \
+[^c'ae]3/2z/2 [c'ae]/2z/2[c'ae]/2z/2 [c'ae]/2z/2[c'ae]/2z/2 [c'ae]/2z/2[c'ae]/2z/2| \
+[ae]/2z/2[ae]/2z/2 [ae]/2z/2[ae]/2z/2 [ae^c]3/2z/2 [b^fd]z|
+[^c'^fc]/2z/2[c'fc]/2z/2 [c'-fc]/2c'/2[c'fc]/2z/2 [beB-]3/2B

@@ -1,0 +1,20 @@
+X:4
+T:AI Waltz
+M:3/4
+K:F
+% Alabl winge.
+%  
+%%MIDI program 3
+z8| \
+z8| \
+z8| \
+z8|
+z8| \
+z8| \
+z4 z3/2^A,/2- [D-A,-]/2[F-D-A,-][A-F-D-A,-]/2| \
+[d-^A-F-D-A,-]2 [d-A-FDA,-]/2[dAA,-]/2[AA,]/2z/2 A/2z/2z/2z/2 z/2z/2z/2z/2|
+z/2z/2z/2[^A-FDA,]3A/2z3/2z/2z/2z/2z/2| \
+z/2z/2z/2[c-A-E-D-A,-]2[cAE-D-A,-]/2 [E-D-A,-]/2[c-ED-A,-]3/2 [cDA,]/2z3/2| \
+z2 z/2[FDA,^G,]2z/2z/2[G-^D-^A,-=G,-]2[G-D-A,-G,-]/2| \
+[^G^D-^A,-=G,-]/2[DA,G,]/2z3/2z/2z/2D,/2- [^D-^A,G,D,-]/2[DD,]/2z/2[DD,]/2 z2|
+z2 z/2[G^D^A,^G,D,]2z/2z/2[GD-A,-=G,-D,]3/2[D-A,-G]

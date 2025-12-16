@@ -1,0 +1,21 @@
+X:3
+T:AI Reel
+M:4/4
+K:D
+% 4 sharps
+V:1
+%%MIDI program 1
+%%MIDI program 11
+z4 [^f-d-A-][^g-f-d-A-] [d'-gf-d-A-]/2[d'fdA-]/2[d-A]| \
+[^f-d-A-]6 [fdA]3/2z/2| \
+[gd^A]3[^f-d-A-]4[fdA]| \
+[d^AG]6 [d=AF]2|
+[^c^FE]8| \
+[dBG]4 [g-d-B-][g-d-B-F]/2[gdBD-]/2 [fdAD][gdBD]| \
+[fdA]8| \
+[gd^A]3[^fdA]4z|
+[gd^A]4 [g-d-A-][g-d-A-E]/2[gdAG-]/2 [fdAG][gdA]| \
+[g-^d^A-][g-d-A-D]/2[g-d-A-E]/2 [gdAD][gdA]2[gdA] [gd][a-d-=d]| \
+[^a-^d-d-B-][a-d-d-B-F]/2[addBF]/2 z6| \
+[gd^GD]4 [^f-d-F-][f-d-BF-]/2[fdBF]/2 [=f^c^A][gdA]|
+[f-d^A-]3[f^cA]3 z2| 

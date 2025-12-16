@@ -1,0 +1,20 @@
+X: 1
+T: from /scratch/dk5288/data/lmd_full/9/9a5c499b1968a52200a69b0bb7da86e2.mid
+M: 2/4
+L: 1/16
+Q:1/4=170
+K:G % 1 sharps
+V:1
+%%clef treble
+%%MIDI program 0
+z4 [EC]2 [FD]2| \
+[GEE,B,,E,,]4 [GEE,B,,E,,]2 [BGEE,B,,E,,]2| \
+[cECA,E,A,,]4 [BEB,G,]2 [cE-C-G,-C,-]3/2[B-E-C-G,-C,-]/2| \
+[BECG,C,]4 [EE,]2 [EG,E,]2|
+[D-B,-G,-D,-G,,-]2 [E-DC-B,A,-G,F,-D,-G,,-]2 [B-G-E-DC-B,-B,G,-F,-D,-G,,-]2 [B-BG-E-DC-B,A,G,-F,D,G,,]2| \
+[BGE-DC-B,-A,G,F,C,]4 [AE-DC-B,-A,G,F,D,B,,]4| \
+[GE-DC-B,-A,-G,F,D,B,,G,,-]4 [E-DC-B,-A,-G,F,-D,B,,G,,-]2 [E-DCB,-A,G,-F,D,B,,-G,,]2| \
+[GE-EC-CB,-A,G,F,D,B,,G,,-]8|
+[AE-EC-B,-A,G,F,D,B,,G,,-]8| \
+[GE-DC-B,-A,G,F,D,B,,G,,-]4 [AE-EC-B,-A,G,F,D,B,,G,,-]4| \
+[GE-EC-CB,-A,G,F,D,B,,G,,-]
