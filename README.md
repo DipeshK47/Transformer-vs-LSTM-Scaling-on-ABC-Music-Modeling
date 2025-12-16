@@ -1,4 +1,4 @@
-# Scaling Laws for Symbolic Music Language Models (ABC)
+# Transformer-vs-LSTM-Scaling-on-ABC-Music-Modeling
 
 This repository contains code and artifacts for a scaling law study on **symbolic music** modeled as **ABC notation** using **character level language models**.
 
