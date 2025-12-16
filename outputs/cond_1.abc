@@ -1,0 +1,25 @@
+X: 1
+T: from /scratch/dk5288/data/lmd_full/9/9a5c499b1968a52200a69b0bb7da86e2.mid
+M: 2/4
+L: 1/16
+Q:1/4=170
+K:G % 1 sharps
+V:1
+%%clef treble
+%%MIDI program 0
+z4 [EC]2 [FD]2| \
+[GEE,B,,E,,]4 [GEE,B,,E,,]4| \
+[A-E-C,-]4 [AEC,][GEC] [AF][cG]| \
+[dBB,B,,]4 [B-B,,]2 [B-E,][B-D,]|
+[B-G-E,-E,,-]4 [BGE,E,,][A-A,-] [A-A,-][A-E-A,-]| \
+[AEA,]2 [A-E-A,-]4 [AEA,]/2z/2[G-G,-]| \
+[G-G,-]4 [GG,][EE,] [AA,][GG,]| \
+[FF,]2 [E-E,-]4 [EE,][DD,]|
+[EE,]2 E-[E-E,-]4[EE,]| \
+[AA,]2 z[A,A,,]2[CB,,] [DB,,][EC,]| \
+[GE,]2 [E-E,-]4 [EE,][G-D-G,-]| \
+[G-D-G,-]8|
+[GDG,][GDG,] z[GDG,] [DG,][G-D-G,-]2[G-DG,]/2G/2| \
+[G-G,-]2 [GG,-]/2G,/2[G-G,]3/2G/2[GG,]3/2z/2[GDG,]/2z/2| \
+[D-D,]2 D/2z/2[D-G,-]3 [D-G,]/2D/2[E-C-]| \
+[E-C-
