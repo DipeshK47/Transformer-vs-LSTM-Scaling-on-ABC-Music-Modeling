@@ -1,0 +1,15 @@
+{
+  "num_files_total": 178561,
+  "failed_reads": 0,
+  "empty_files": 2636,
+  "short_files_len_lt_64": 2636,
+  "long_files_len_gt_8192": 128953,
+  "min_len": 0,
+  "max_len": 10737452392,
+  "p50_len": 19050,
+  "p90_len": 44117,
+  "p95_len": 54345,
+  "p99_len": 86852,
+  "non_ascii_files": 0,
+  "non_ascii_chars_sample": []
+}

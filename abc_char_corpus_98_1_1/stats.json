@@ -1,0 +1,12 @@
+{
+  "num_files_total": 178561,
+  "num_files_train": 174989,
+  "num_files_val": 1785,
+  "num_files_test": 1787,
+  "train_chars": 41148853853,
+  "val_chars": 224087056,
+  "test_chars": 588521121,
+  "total_chars": 41961462030,
+  "vocab_size": 99,
+  "failed_reads": 0
+}
